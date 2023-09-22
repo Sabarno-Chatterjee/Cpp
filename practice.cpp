@@ -119,24 +119,58 @@
 
 //Can you find out the sum of the digits of a number?
 
+// #include<iostream>
+
+// using namespace std;
+
+// int sum_of_digits(int num){
+//     int sum=0;
+//     while(num){
+//         sum+= num%10;
+//         num/=10;
+//     }
+//     return sum;
+// }
+
+// int main(){
+//     int num;
+//     cout<<"Enter a number"<<endl;
+//     cin>>num;
+//     cout<<"Sum: "<<sum_of_digits(num)<<endl;
+    
+//     return 0;
+// }
+
+// Try to swap two numbers with a third variable.
+
+// #include<iostream>
+
+// using namespace std;
+
+// int main(){
+//     int a=6, b=9, temp;
+//     temp=a;
+//     a=b;
+//     b=temp;
+//     cout<<"a: "<<a<<" "<<"b: "<<b<<endl;
+    
+//     return 0;
+    
+// }
+
+//Can you now swap two numbers without a third variable?
+
 #include<iostream>
 
 using namespace std;
 
-int sum_of_digits(int num){
-    int sum=0;
-    while(num){
-        sum+= num%10;
-        num/=10;
-    }
-    return sum;
-}
-
 int main(){
-    int num;
-    cout<<"Enter a number"<<endl;
-    cin>>num;
-    cout<<"Sum: "<<sum_of_digits(num)<<endl;
+    int a =6, b=9;
+    a=a+b;
+    b=a-b;
+    a=a-b;
+    
+    cout<<"a: "<<a<<" "<<"b: "<<b<<endl;
     
     return 0;
 }
