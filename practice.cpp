@@ -197,34 +197,60 @@
 
 //Can you check whether a number is prime or not?
 
+// #include<iostream>
+
+// using namespace std;
+
+// void check_prime(int num){
+//     if(num==1){
+//         cout<<"One is neither a prime nor a composite number."<<endl;
+//         return;
+//     }
+//     int flag=1;
+//     for(int i =2; i<num/2; i++)
+//         if(num%i==0 && num!=2)
+//         {
+//             cout<<"Not prime."<<endl;
+//             flag = 0;
+//             break;
+//         }
+//     if(flag)
+//         cout<<"Prime.";
+    
+        
+// }
+
+// int main(){
+//     int num;
+//     cout<<"Enter a number to check for prime."<<endl;;
+//     cin>>num;
+//     check_prime(num);
+    
+//     return 0;
+// }
+
+// Write a program to find the reverse of a number.
+
 #include<iostream>
 
 using namespace std;
 
-void check_prime(int num){
-    if(num==1){
-        cout<<"One is neither a prime nor a composite number."<<endl;
-        return;
+int reverse(int num){
+    int rev=0;
+    while(num){
+        rev = 10*rev+ num%10;
+        num /= 10;
     }
-    int flag=1;
-    for(int i =2; i<num/2; i++)
-        if(num%i==0 && num!=2)
-        {
-            cout<<"Not prime."<<endl;
-            flag = 0;
-            break;
-        }
-    if(flag)
-        cout<<"Prime.";
     
-        
+    return rev;
 }
 
 int main(){
     int num;
-    cout<<"Enter a number to check for prime."<<endl;;
+    cout<<"Enter a number."<<endl;
     cin>>num;
-    check_prime(num);
+    
+    cout<<reverse(num);
     
     return 0;
 }
