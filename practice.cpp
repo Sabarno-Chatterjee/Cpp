@@ -399,33 +399,64 @@
 
 // Given an array of integers, sort the given array in descending order.
 
+// #include<iostream>
+
+// using namespace std;
+
+// void sort_array(int arr[],int length){
+//     int temp = 0;
+//     for(int i=0; i<length-1; i++)
+//         for(int j=0; j<length-1-i; j++){
+//             if(arr[j]<arr[j+1]){
+//                 temp=arr[j];
+//                 arr[j] = arr[j+1];
+//                 arr[j+1] = temp;
+//             }
+//         }
+// }
+
+// void print_array(int arr[],int length){
+//     for(int i = 0; i<length; i++)
+//         cout<<arr[i]<<" ";
+// } 
+
+
+// int main(){
+//     int arr[]= {56,34,23,76,67,2,1,32,12,53,532,97,5,3,1,2};
+//     int length = sizeof(arr)/sizeof(arr[0]);
+//     sort_array(arr, length);
+//     print_array(arr, length);
+    
+//     return 0;
+// }
+
+// Check if a year is a leap year or not.
+
 #include<iostream>
 
 using namespace std;
 
-void sort_array(int arr[],int length){
-    int temp = 0;
-    for(int i=0; i<length-1; i++)
-        for(int j=0; j<length-1-i; j++){
-            if(arr[j]<arr[j+1]){
-                temp=arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
-            }
+void leap_year(int year){
+    if(year%4 == 0){
+        if(year%100==0){
+            if(year%400==0)
+                cout<<"Leap Year."<<endl;
+            else
+                cout<<"Not Leap Year."<<endl;
         }
+        else
+            cout<<"Leap Year."<<endl;
+    }
+    else
+        cout<<"Not Leap Year."<<endl;
 }
 
-void print_array(int arr[],int length){
-    for(int i = 0; i<length; i++)
-        cout<<arr[i]<<" ";
-} 
-
-
 int main(){
-    int arr[]= {56,34,23,76,67,2,1,32,12,53,532,97,5,3,1,2};
-    int length = sizeof(arr)/sizeof(arr[0]);
-    sort_array(arr, length);
-    print_array(arr, length);
+    int year;
+    cout<<"Enter a year."<<endl;
+    cin>>year;
+    leap_year(year);
     
     return 0;
+    
 }
