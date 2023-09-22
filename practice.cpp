@@ -231,18 +231,45 @@
 
 // Write a program to find the reverse of a number.
 
+// #include<iostream>
+
+// using namespace std;
+
+// int reverse(int num){
+//     int rev=0;
+//     while(num){
+//         rev = 10*rev+ num%10;
+//         num /= 10;
+//     }
+    
+//     return rev;
+// }
+
+// int main(){
+//     int num;
+//     cout<<"Enter a number."<<endl;
+//     cin>>num;
+    
+//     cout<<reverse(num);
+    
+//     return 0;
+// }
+
+// Now when you know to reverse a number, can you try to check whether a number is a palindrome or not?
+
 #include<iostream>
 
 using namespace std;
 
-int reverse(int num){
-    int rev=0;
+int check_pallindrome(int num){
+    int rev=0, original_num = num;
     while(num){
         rev = 10*rev+ num%10;
         num /= 10;
     }
+   
+    return (original_num==rev) ? 1 : 0;
     
-    return rev;
 }
 
 int main(){
@@ -250,7 +277,10 @@ int main(){
     cout<<"Enter a number."<<endl;
     cin>>num;
     
-    cout<<reverse(num);
+    if(check_pallindrome(num)) 
+        cout<<"Pallindrome."<<endl;
+    else 
+        cout<<"Not pallindrome."<<endl;
     
     return 0;
 }
