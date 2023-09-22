@@ -160,17 +160,37 @@
 
 //Can you now swap two numbers without a third variable?
 
+// #include<iostream>
+
+// using namespace std;
+
+// int main(){
+//     int a =6, b=9;
+//     a=a+b;
+//     b=a-b;
+//     a=a-b;
+    
+//     cout<<"a: "<<a<<" "<<"b: "<<b<<endl;
+    
+//     return 0;
+// }
+
+//Swap two numbers using pointers.
+
 #include<iostream>
 
 using namespace std;
 
+void swap(int *a, int *b){
+    *a+=*b;
+    *b = *a-*b;
+    *a = *a-*b;
+    cout<<"a: "<<*a<<" "<<"b: "<<*b<<endl;
+}
+
 int main(){
-    int a =6, b=9;
-    a=a+b;
-    b=a-b;
-    a=a-b;
-    
-    cout<<"a: "<<a<<" "<<"b: "<<b<<endl;
+    int a=6, b=9;
+    swap(&a, &b);
     
     return 0;
 }
