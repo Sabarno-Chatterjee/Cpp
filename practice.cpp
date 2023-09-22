@@ -287,20 +287,59 @@
 
 //Find the factorial of a number.
 
+// #include<iostream>
+
+// using namespace std;
+
+// int factorial(int num){
+//     return (num==1 || num==0) ? 1 : num*factorial(num-1);
+// }
+
+// int main(){
+//     int num;
+//     cout<<"Enter a number"<<endl;
+//     cin>>num;
+    
+//     cout<<factorial(num);
+    
+//     return 0;
+// }
+
+// Write a C++ program to check whether a number is Armstrong number or not.
+
 #include<iostream>
+#include<math.h>
 
 using namespace std;
 
-int factorial(int num){
-    return (num==1 || num==0) ? 1 : num*factorial(num-1);
+void armstrong(int num){
+    int count=0, check=0, original_num=num;
+    while(num){
+        count++;
+        num/=10;
+    }
+    
+    num=original_num;
+    
+    while(num){
+        check += pow(num%10,count);
+        num/=10;
+    }
+    
+    if(check==original_num) 
+        cout<<"Armstrong"<<endl;
+    else
+        cout<<"Not armstrong"<<endl;
 }
 
 int main(){
     int num;
-    cout<<"Enter a number"<<endl;
+    
+    cout<<"Enter a number."<<endl;
     cin>>num;
     
-    cout<<factorial(num);
+    armstrong(num);
     
     return 0;
+    
 }
