@@ -177,20 +177,54 @@
 
 //Swap two numbers using pointers.
 
+// #include<iostream>
+
+// using namespace std;
+
+// void swap(int *a, int *b){
+//     *a+=*b;
+//     *b = *a-*b;
+//     *a = *a-*b;
+//     cout<<"a: "<<*a<<" "<<"b: "<<*b<<endl;
+// }
+
+// int main(){
+//     int a=6, b=9;
+//     swap(&a, &b);
+    
+//     return 0;
+// }
+
+//Can you check whether a number is prime or not?
+
 #include<iostream>
 
 using namespace std;
 
-void swap(int *a, int *b){
-    *a+=*b;
-    *b = *a-*b;
-    *a = *a-*b;
-    cout<<"a: "<<*a<<" "<<"b: "<<*b<<endl;
+void check_prime(int num){
+    if(num==1){
+        cout<<"One is neither a prime nor a composite number."<<endl;
+        return;
+    }
+    int flag=1;
+    for(int i =2; i<num/2; i++)
+        if(num%i==0 && num!=2)
+        {
+            cout<<"Not prime."<<endl;
+            flag = 0;
+            break;
+        }
+    if(flag)
+        cout<<"Prime.";
+    
+        
 }
 
 int main(){
-    int a=6, b=9;
-    swap(&a, &b);
+    int num;
+    cout<<"Enter a number to check for prime."<<endl;;
+    cin>>num;
+    check_prime(num);
     
     return 0;
 }
