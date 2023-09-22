@@ -307,39 +307,59 @@
 
 // Write a C++ program to check whether a number is Armstrong number or not.
 
+// #include<iostream>
+// #include<math.h>
+
+// using namespace std;
+
+// void armstrong(int num){
+//     int count=0, check=0, original_num=num;
+//     while(num){
+//         count++;
+//         num/=10;
+//     }
+    
+//     num=original_num;
+    
+//     while(num){
+//         check += pow(num%10,count);
+//         num/=10;
+//     }
+    
+//     if(check==original_num) 
+//         cout<<"Armstrong"<<endl;
+//     else
+//         cout<<"Not armstrong"<<endl;
+// }
+
+// int main(){
+//     int num;
+    
+//     cout<<"Enter a number."<<endl;
+//     cin>>num;
+    
+//     armstrong(num);
+    
+//     return 0;
+    
+// }
+
+//Do you know about Fibonacci Series? The series following 1,1,2,3,5,8…, can you try to print the series upto n elements?
+
 #include<iostream>
-#include<math.h>
 
 using namespace std;
 
-void armstrong(int num){
-    int count=0, check=0, original_num=num;
-    while(num){
-        count++;
-        num/=10;
-    }
-    
-    num=original_num;
-    
-    while(num){
-        check += pow(num%10,count);
-        num/=10;
-    }
-    
-    if(check==original_num) 
-        cout<<"Armstrong"<<endl;
-    else
-        cout<<"Not armstrong"<<endl;
+int fib(int n){
+    return (n==0 || n==1) ? n : fib(n-1)+fib(n-2);
 }
 
 int main(){
     int num;
-    
-    cout<<"Enter a number."<<endl;
+    cout<<"Enter the no. of terms."<<endl;
     cin>>num;
-    
-    armstrong(num);
+    for(int i=0; i<num; i++)
+        cout<<fib(i);
     
     return 0;
-    
 }
