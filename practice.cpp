@@ -64,27 +64,55 @@
 
 //Now can you revert back the original number from binary? Convert Binary to Decimal number.
 
+// #include<iostream>
+// #include<math.h>
+
+// using namespace std;
+
+// void binary_to_decimal(int num){
+//     int decimal=0, i=0;
+//     while(num){
+//         decimal += num%10 * pow(2, i);
+//         num /= 10;
+//         i++;
+//     }
+//     cout<<decimal<<endl;
+// }
+
+// int main(){
+//     int num;
+//     cout<<"Enter a binary number."<<endl;
+//     cin>>num;
+//     binary_to_decimal(num);
+    
+//     return 0;
+// }
+
+//Find the maximum number in an array of integers.
+
+//Find the maximum number in an array of integers.
+
 #include<iostream>
-#include<math.h>
 
 using namespace std;
 
-void binary_to_decimal(int num){
-    int decimal=0, i=0;
-    while(num){
-        decimal += num%10 * pow(2, i);
-        num /= 10;
-        i++;
-    }
-    cout<<decimal<<endl;
+int max(int arr[], int length){
+    int temp=0;
+    for(int i=0; i<length-1; i++)
+        for(int j=0; j<length-1-i; j++){
+            if(arr[j]>arr[j+1]){
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]= temp;
+            }
+        }
+    return arr[length-1];
 }
 
 int main(){
-    int num;
-    cout<<"Enter a binary number."<<endl;
-    cin>>num;
-    binary_to_decimal(num);
+    int arr[]={103,56,34,12,102,43,23,78,54,32,43,189};
+    int length= sizeof(arr)/sizeof(arr[0]);
+    cout<<"Max: "<<max(arr, length)<<endl;
     
     return 0;
 }
-
