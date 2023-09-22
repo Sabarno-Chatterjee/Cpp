@@ -432,31 +432,62 @@
 
 // Check if a year is a leap year or not.
 
+// #include<iostream>
+
+// using namespace std;
+
+// void leap_year(int year){
+//     if(year%4 == 0){
+//         if(year%100==0){
+//             if(year%400==0)
+//                 cout<<"Leap Year."<<endl;
+//             else
+//                 cout<<"Not Leap Year."<<endl;
+//         }
+//         else
+//             cout<<"Leap Year."<<endl;
+//     }
+//     else
+//         cout<<"Not Leap Year."<<endl;
+// }
+
+// int main(){
+//     int year;
+//     cout<<"Enter a year."<<endl;
+//     cin>>year;
+//     leap_year(year);
+    
+//     return 0;
+    
+// }
+
+
+//  Can you search for an element in a given array? Try to print that number if present else print -1.
+
 #include<iostream>
 
 using namespace std;
 
-void leap_year(int year){
-    if(year%4 == 0){
-        if(year%100==0){
-            if(year%400==0)
-                cout<<"Leap Year."<<endl;
-            else
-                cout<<"Not Leap Year."<<endl;
+void search_element(int arr[],int length,int num){
+    int flag = 1;
+    for(int i=0; i<length; i++){
+        if(arr[i]==num){
+            cout<<num<<endl;
+            flag = 0;
+            break;
         }
-        else
-            cout<<"Leap Year."<<endl;
     }
-    else
-        cout<<"Not Leap Year."<<endl;
+    if(flag)
+        cout<<"-1"<<endl;    
 }
 
 int main(){
-    int year;
-    cout<<"Enter a year."<<endl;
-    cin>>year;
-    leap_year(year);
+    int arr[]={45,32,12,64,2,4,42,64,23,75,21,41};
+    int length= sizeof(arr)/sizeof(arr[0]);
+    int num;
+    cout<<"Enter the number you want to check."<<endl;
+    cin>>num;
+    search_element(arr, length, num);
     
     return 0;
-    
 }
