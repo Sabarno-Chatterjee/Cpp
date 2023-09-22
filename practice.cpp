@@ -346,20 +346,53 @@
 
 //Do you know about Fibonacci Series? The series following 1,1,2,3,5,8…, can you try to print the series upto n elements?
 
+// #include<iostream>
+
+// using namespace std;
+
+// int fib(int n){
+//     return (n==0 || n==1) ? n : fib(n-1)+fib(n-2);
+// }
+
+// int main(){
+//     int num;
+//     cout<<"Enter the no. of terms."<<endl;
+//     cin>>num;
+//     for(int i=0; i<num; i++)
+//         cout<<fib(i);
+    
+//     return 0;
+// }
+
+// Given an array of integers, sort the given array in ascending order.
+
 #include<iostream>
 
 using namespace std;
 
-int fib(int n){
-    return (n==0 || n==1) ? n : fib(n-1)+fib(n-2);
+void sort_array(int arr[],int length){
+    int temp = 0;
+    for(int i=0; i<length-1; i++)
+        for(int j=0; j<length-1-i; j++){
+            if(arr[j]>arr[j+1]){
+                temp=arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
 }
 
+void print_array(int arr[],int length){
+    for(int i = 0; i<length; i++)
+        cout<<arr[i]<<" ";
+} 
+
+
 int main(){
-    int num;
-    cout<<"Enter the no. of terms."<<endl;
-    cin>>num;
-    for(int i=0; i<num; i++)
-        cout<<fib(i);
+    int arr[]= {56,34,23,76,67,2,1,32,12,53,532,97,5,3,1,2};
+    int length = sizeof(arr)/sizeof(arr[0]);
+    sort_array(arr, length);
+    print_array(arr, length);
     
     return 0;
 }
