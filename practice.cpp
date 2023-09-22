@@ -257,30 +257,50 @@
 
 // Now when you know to reverse a number, can you try to check whether a number is a palindrome or not?
 
+// #include<iostream>
+
+// using namespace std;
+
+// int check_pallindrome(int num){
+//     int rev=0, original_num = num;
+//     while(num){
+//         rev = 10*rev+ num%10;
+//         num /= 10;
+//     }
+   
+//     return (original_num==rev) ? 1 : 0;
+    
+// }
+
+// int main(){
+//     int num;
+//     cout<<"Enter a number."<<endl;
+//     cin>>num;
+    
+//     if(check_pallindrome(num)) 
+//         cout<<"Pallindrome."<<endl;
+//     else 
+//         cout<<"Not pallindrome."<<endl;
+    
+//     return 0;
+// }
+
+//Find the factorial of a number.
+
 #include<iostream>
 
 using namespace std;
 
-int check_pallindrome(int num){
-    int rev=0, original_num = num;
-    while(num){
-        rev = 10*rev+ num%10;
-        num /= 10;
-    }
-   
-    return (original_num==rev) ? 1 : 0;
-    
+int factorial(int num){
+    return (num==1 || num==0) ? 1 : num*factorial(num-1);
 }
 
 int main(){
     int num;
-    cout<<"Enter a number."<<endl;
+    cout<<"Enter a number"<<endl;
     cin>>num;
     
-    if(check_pallindrome(num)) 
-        cout<<"Pallindrome."<<endl;
-    else 
-        cout<<"Not pallindrome."<<endl;
+    cout<<factorial(num);
     
     return 0;
 }
