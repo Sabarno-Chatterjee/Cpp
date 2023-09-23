@@ -554,27 +554,27 @@
 // If an array arr contains n elements, then write a program to
 // check if arr[0] = arr[n-1], arr[1] = arr[n-2] and so on.
 
-#include<iostream>
+// #include<iostream>
 
-using namespace std;
+// using namespace std;
 
-// Function to check if arr[0] = arr[n-1], arr[1] = arr[n-2], and so on.
-bool check_array(int arr[], int n) {
-    for (int i = 0; i <= n / 2; i++) {
-        if (arr[i] != arr[n - (1 + i)])
-            return false; // If any pair of elements don't match, return false.
-    }
-    return true; // If all pairs match, return true.
-}
+// // Function to check if arr[0] = arr[n-1], arr[1] = arr[n-2], and so on.
+// bool check_array(int arr[], int n) {
+//     for (int i = 0; i <= n / 2; i++) {
+//         if (arr[i] != arr[n - (1 + i)])
+//             return false; // If any pair of elements don't match, return false.
+//     }
+//     return true; // If all pairs match, return true.
+// }
 
-int main() {
-    int arr[] = {45, 32, 64, 12, 73, 32, 46, 21, 64, 48, 45};
-    int length = sizeof(arr) / sizeof(arr[0]);
+// int main() {
+//     int arr[] = {45, 32, 64, 12, 73, 32, 46, 21, 64, 48, 45};
+//     int length = sizeof(arr) / sizeof(arr[0]);
     
-    if (check_array(arr, length))
-        cout << "Yes" << endl;
-    else
-        cout << "No" << endl;
+//     if (check_array(arr, length))
+//         cout << "Yes" << endl;
+//     else
+//         cout << "No" << endl;
     
-    return 0;
-}
+//     return 0;
+// }
