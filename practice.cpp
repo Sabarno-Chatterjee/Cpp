@@ -495,28 +495,29 @@
 
 // Write a program to reverse an array or string
 
-#include<iostream>
+// #include<iostream>
 
-using namespace std;
+// using namespace std;
 
-void reverse_array(int arr[],int length){
-    int reverse_arr[length];
-    for(int i=0; i<length;i++)
-        reverse_arr[i] = arr[length-1-i];
-}
+// void reverse_array(int arr[],int length){
+//     int reverse_arr[length];
+//     for(int i=0; i<length;i++)
+//         reverse_arr[i] = arr[length-1-i];
+// }
 
-void print_array(int arr[],int n){
-    for(int i=0; i<n; i++)
-        cout<<arr[i]<<" ";
+// void print_array(int arr[],int n){
+//     for(int i=0; i<n; i++)
+//         cout<<arr[i]<<" ";
     
-    cout<<endl;    
-}
+//     cout<<endl;    
+// }
 
-int main(){
-    int arr[]={34,23,67,43,65,97,23,41};
-    int length = sizeof(arr)/sizeof(arr[0]);
-    reverse_array(arr, length);
-    print_array(arr, length);
+// int main(){
+//     int arr[]={34,23,67,43,65,97,23,41};
+//     int length = sizeof(arr)/sizeof(arr[0]);
+//     reverse_array(arr, length);
+//     print_array(arr, length);
     
-    return 0;
-}
+//     return 0;
+// }
+
