@@ -521,3 +521,31 @@
 //     return 0;
 // }
 
+// Write a program to copy the contents of one array into another
+// in the reverse order.
+
+#include<iostream>
+
+using namespace std;
+
+void reverse_array(int arr[],int length){
+    int reverse_arr[length];
+    for(int i=0; i<length;i++)
+        reverse_arr[i] = arr[length-1-i];
+}
+
+void print_array(int arr[],int n){
+    for(int i=0; i<n; i++)
+        cout<<arr[i]<<" ";
+    
+    cout<<endl;    
+}
+
+int main(){
+    int arr[]={34,23,67,43,65,97,23,41};
+    int length = sizeof(arr)/sizeof(arr[0]);
+    reverse_array(arr, length);
+    print_array(arr, length);
+    
+    return 0;
+}
