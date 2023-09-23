@@ -524,28 +524,57 @@
 // Write a program to copy the contents of one array into another
 // in the reverse order.
 
+// #include<iostream>
+
+// using namespace std;
+
+// void reverse_array(int arr[],int length){
+//     int reverse_arr[length];
+//     for(int i=0; i<length;i++)
+//         reverse_arr[i] = arr[length-1-i];
+// }
+
+// void print_array(int arr[],int n){
+//     for(int i=0; i<n; i++)
+//         cout<<arr[i]<<" ";
+    
+//     cout<<endl;    
+// }
+
+// int main(){
+//     int arr[]={34,23,67,43,65,97,23,41};
+//     int length = sizeof(arr)/sizeof(arr[0]);
+//     reverse_array(arr, length);
+//     print_array(arr, length);
+    
+//     return 0;
+// }
+
+
+// If an array arr contains n elements, then write a program to
+// check if arr[0] = arr[n-1], arr[1] = arr[n-2] and so on.
+
 #include<iostream>
 
 using namespace std;
 
-void reverse_array(int arr[],int length){
-    int reverse_arr[length];
-    for(int i=0; i<length;i++)
-        reverse_arr[i] = arr[length-1-i];
+// Function to check if arr[0] = arr[n-1], arr[1] = arr[n-2], and so on.
+bool check_array(int arr[], int n) {
+    for (int i = 0; i <= n / 2; i++) {
+        if (arr[i] != arr[n - (1 + i)])
+            return false; // If any pair of elements don't match, return false.
+    }
+    return true; // If all pairs match, return true.
 }
 
-void print_array(int arr[],int n){
-    for(int i=0; i<n; i++)
-        cout<<arr[i]<<" ";
+int main() {
+    int arr[] = {45, 32, 64, 12, 73, 32, 46, 21, 64, 48, 45};
+    int length = sizeof(arr) / sizeof(arr[0]);
     
-    cout<<endl;    
-}
-
-int main(){
-    int arr[]={34,23,67,43,65,97,23,41};
-    int length = sizeof(arr)/sizeof(arr[0]);
-    reverse_array(arr, length);
-    print_array(arr, length);
+    if (check_array(arr, length))
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
     
     return 0;
 }
