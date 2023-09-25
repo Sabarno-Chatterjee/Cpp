@@ -578,3 +578,33 @@
     
 //     return 0;
 // }
+
+// Write a program which performs the following tasks:
+// − initialize an integer array of 10 elements in main( )
+// − pass the entire array to a function modify( )
+// − in modify( ) multiply each element of array by 3
+// − return the control to main( ) and print the new array
+// elements in main( )
+
+#include<iostream>
+
+using namespace std;
+
+void modify(int arr[],int length){
+    for(int i=0; i<length; i++)
+        arr[i] *= 3;
+}
+
+int main(){
+    int arr[10]={3,2,1,6,4,2,5,9,4,1};
+    int length=sizeof(arr)/sizeof(arr[0]);
+    
+    modify(arr, length);
+    
+    for(int i=0; i<length; i++)
+        cout<<arr[i]<<" ";
+        
+    cout<<endl;
+    
+    return 0;
+}
