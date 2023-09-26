@@ -769,23 +769,96 @@
 
 // Generate and print the first 10 numbers in the Fibonacci sequence using a while loop.
 
+// #include<iostream>
+
+// using namespace std;
+
+// void fibonacci(int num){
+//     int t1=0, t2=1;
+//     while(num){
+//         cout<<t1<<" ";
+//         int sum= t1+t2;
+//         t1=t2;
+//         t2=sum;
+//         num--;
+//     }
+// }
+
+// int main(){
+//     fibonacci(10);
+    
+//     return 0;
+// }
+
+// Write a C++ program to calculate and print the product of the first 10 positive integers using a while loop.
+
+// #include<iostream>
+
+// using namespace std;
+
+// void product(int n){
+//     int p=1;
+//     while(n){
+//         p *= n;
+//         n--;
+//     }
+//     cout<<p<<endl;
+// }
+
+// int main(){
+//     product(10);
+    
+//     return 0;
+// }
+
+// Sum of all even numbers till 100
+
+// #include<iostream>
+
+// using namespace std;
+
+// void sum(int n){
+//     int s=0;
+//     while(n){
+//         if(n%2==0)
+//             s+=n;
+//         n--;
+//     }
+//     cout<<s;
+// }
+
+// int main(){
+//     sum(100);
+    
+//     return 0;
+// }
+
+// Write a program that asks the user to enter a password. Keep asking for the password until the correct password is entered. Use a while loop to achieve this.
+
 #include<iostream>
 
 using namespace std;
 
-void fibonacci(int num){
-    int t1=0, t2=1;
-    while(num){
-        cout<<t1<<" ";
-        int sum= t1+t2;
-        t1=t2;
-        t2=sum;
-        num--;
+void compare(int password, int user_password){
+    bool flag=false;
+    while(!flag){
+        if(password!=user_password){
+            cout<<"Wrong password!"<<endl;
+            cout<<"Enter again"<<endl;
+            cin>>password;
+        }
+        else{
+            cout<<"Correct password."<<endl;
+            flag=true;
+        }
     }
 }
 
 int main(){
-    fibonacci(10);
-    
+    int user_password = 1234, password=0;
+    cout<<"Enter the password"<<endl;
+    cin>>password;
+    compare(password, user_password);
+
     return 0;
 }
