@@ -132,33 +132,95 @@
 
 /*Develop a C++ program that uses a switch-case statement to take the month as input (1 to 12) and determines the season (e.g., spring, summer, fall, or winter) based on the month entered.*/
 
+// #include<iostream>
+
+// using namespace std;
+
+// void season(int month){
+//     switch(month){
+//         case 1:
+//         case 2:
+//         case 12:
+//             cout<<"Winter"<<endl;
+//             break;
+//         case 3:
+//         case 4:
+//             cout<<"Spring"<<endl;
+//             break;
+//         case 5:
+//         case 6:
+//             cout<<"Summer"<<endl;
+//             break;
+//         case 7:
+//         case 8:
+//             cout<<"Rainy"<<endl;
+//             break;
+//         case 9:
+//         case 10:
+//         case 11:
+//             cout<<"Fall"<<endl;
+//             break;
+//         default:
+//             cout<<"Invalid input"<<endl;
+//     }
+// }
+
+// int main(){
+//     int month;
+
+//     cout<<"Enter a month between 1-12"<<endl;
+//     cin>>month;
+//     season(month);
+
+//     return 0;
+// }
+
+/*Write a C++ program that uses a switch-case statement to take an integer input (1 to 12) representing a month and then displays the number of days in that month. Consider leap years.*/
+
 #include<iostream>
 
 using namespace std;
 
-void season(int month){
+bool check_leap_year(int year){
+    if(year%4==0){
+        if(year%100==0){
+            if(year%400==0)
+                return true;
+            else
+                return false;
+        } else{
+            return true;
+        }
+    } else{
+        return false;
+    }
+}
+
+void check_days(int month,int year){
+    if(check_leap_year(year))
+        month=13;
+
     switch(month){
         case 1:
-        case 2:
-        case 12:
-            cout<<"Winter"<<endl;
-            break;
         case 3:
-        case 4:
-            cout<<"Spring"<<endl;
-            break;
         case 5:
-        case 6:
-            cout<<"Summer"<<endl;
-            break;
         case 7:
         case 8:
-            cout<<"Rainy"<<endl;
-            break;
-        case 9:
         case 10:
+        case 12:
+            cout<<"31 days"<<endl;
+            break;
+        case 4:
+        case 6:
+        case 9:
         case 11:
-            cout<<"Fall"<<endl;
+            cout<<"30 days"<<endl;
+            break;
+        case 2: 
+            cout<<"28 days"<<endl;
+            break;
+        case 13:
+            cout<<"29 days"<<endl;
             break;
         default:
             cout<<"Invalid input"<<endl;
@@ -166,11 +228,10 @@ void season(int month){
 }
 
 int main(){
-    int month;
-
-    cout<<"Enter a month between 1-12"<<endl;
-    cin>>month;
-    season(month);
+    int month, year;
+    cout<<"Enter the month(1-12) and year."<<endl;
+    cin>>month>>year;
+    check_days(month, year);
 
     return 0;
 }
