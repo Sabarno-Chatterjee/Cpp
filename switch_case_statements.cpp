@@ -98,33 +98,79 @@
 
 /*Create a C++ program that takes a day number (1 to 7) as input and uses a switch-case statement to determine whether it's a weekday or a weekend day.*/
 
+// #include<iostream>
+
+// using namespace std;
+
+// void check_day(int day){
+//     switch(day){
+//         case 1:
+//         case 2:
+//         case 3:
+//         case 4:
+//         case 5:
+//             cout<<"Weekday"<<endl;
+//             break;
+//         case 6:
+//         case 7:
+//             cout<<"Weekend. Party Time!"<<endl;
+//             break;
+//         default: 
+//             cout<<"Invalid Input"<<endl;
+//     }
+// }
+
+// int main(){
+//     int day;
+//     cout<<"Enter a day(1-7)"<<endl;
+//     cin>>day;
+//     check_day(day);
+
+//     return 0;
+// }
+
+
+/*Develop a C++ program that uses a switch-case statement to take the month as input (1 to 12) and determines the season (e.g., spring, summer, fall, or winter) based on the month entered.*/
+
 #include<iostream>
 
 using namespace std;
 
-void check_day(int day){
-    switch(day){
+void season(int month){
+    switch(month){
         case 1:
         case 2:
+        case 12:
+            cout<<"Winter"<<endl;
+            break;
         case 3:
         case 4:
+            cout<<"Spring"<<endl;
+            break;
         case 5:
-            cout<<"Weekday"<<endl;
-            break;
         case 6:
-        case 7:
-            cout<<"Weekend. Party Time!"<<endl;
+            cout<<"Summer"<<endl;
             break;
-        default: 
-            cout<<"Invalid Input"<<endl;
+        case 7:
+        case 8:
+            cout<<"Rainy"<<endl;
+            break;
+        case 9:
+        case 10:
+        case 11:
+            cout<<"Fall"<<endl;
+            break;
+        default:
+            cout<<"Invalid input"<<endl;
     }
 }
 
 int main(){
-    int day;
-    cout<<"Enter a day(1-7)"<<endl;
-    cin>>day;
-    check_day(day);
+    int month;
+
+    cout<<"Enter a month between 1-12"<<endl;
+    cin>>month;
+    season(month);
 
     return 0;
 }
