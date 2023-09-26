@@ -26,8 +26,8 @@ void play(){
 
 void check(int number){
     int guess, lives=5, running=1, play_again=1;
-    cout<<"Number: "<<number<<endl;
-    cout<<"Guess a number from 1-100"<<endl;
+    // cout<<"Number: "<<number<<endl;
+    cout<<endl<<"Guess a number from 1-100"<<endl;
     cin>>guess;
     while(running){
         if(guess==number){
@@ -42,7 +42,7 @@ void check(int number){
                 cin>>guess;
             else{
                 cout<<endl<<"You lose."<<endl;
-                cout<<"Correct answer: "<<number;
+                cout<<"Correct answer: "<<number<<endl;
                 break;
             }
         } 
@@ -53,7 +53,7 @@ void check(int number){
                 cin>>guess;
             else{
                 cout<<endl<<"You lose."<<endl;
-                cout<<"Correct answer: "<<number;
+                cout<<"Correct answer: "<<number<<endl;
                 break;
             }
         }
