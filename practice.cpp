@@ -745,23 +745,47 @@
  
 // Print the multiplication table (up to 10) for a given number using a while loop.
 
+// #include<iostream>
+
+// using namespace std;
+
+// void table(int num){
+//     int i=1;
+//     while(i<=10){
+//         cout<<num<<" x "<<i<<" = "<<num*i<<endl;
+//         i++;
+//     }
+// }
+
+// int main(){
+//     int num;
+//     cout<<"Enter a num."<<endl;
+//     cin>>num;
+//     table(num);
+    
+//     return 0;
+// }
+
+
+// Generate and print the first 10 numbers in the Fibonacci sequence using a while loop.
+
 #include<iostream>
 
 using namespace std;
 
-void table(int num){
-    int i=1;
-    while(i<=10){
-        cout<<num<<" x "<<i<<" = "<<num*i<<endl;
-        i++;
+void fibonacci(int num){
+    int t1=0, t2=1;
+    while(num){
+        cout<<t1<<" ";
+        int sum= t1+t2;
+        t1=t2;
+        t2=sum;
+        num--;
     }
 }
 
 int main(){
-    int num;
-    cout<<"Enter a num."<<endl;
-    cin>>num;
-    table(num);
+    fibonacci(10);
     
     return 0;
 }
