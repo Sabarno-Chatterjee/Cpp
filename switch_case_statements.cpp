@@ -44,54 +44,87 @@
 
 /*Create a C++ program that uses a switch-case statement to calculate the grade of a student based on their percentage score. The program should take the percentage as input and then display the corresponding grade (A, B, C, D, or F).*/
 
+// #include<iostream>
+
+// using namespace std;
+
+// void grade(float percentage){
+//     char grade;
+//     if(percentage>=90.0)
+//         grade = 'A';
+//     else if(percentage>=80.0)
+//         grade = 'B';
+//     else if(percentage>=70.0)
+//         grade = 'C';
+//     else if(percentage>=60.0)
+//         grade = 'D';
+//     else if(percentage>=50.0)
+//         grade = 'E';
+//     else
+//         grade = 'F';
+
+//     switch(grade){
+//         case 'A':
+//             cout<<"Grade A: Excellent"<<endl;
+//             break;
+//         case 'B':
+//             cout<<"Grade B: Good"<<endl;
+//             break;
+//         case 'C':
+//             cout<<"Grade C: Satisfactory"<<endl;
+//             break;
+//         case 'D':
+//             cout<<"Grade D: Average"<<endl;
+//             break;
+//         case 'E':
+//             cout<<"Grade E: Needs Improvement"<<endl;
+//             break;
+//         case 'F':
+//             cout<<"Grade F: Fail"<<endl;
+//             break;
+//         default:
+//             cout<<"Invalid percentage entered."<<endl;    
+//     }
+// }
+
+// int main(){
+//     float percentage;
+//     cout<<"Enter the percentage of the student."<<endl;
+//     cin>>percentage;
+//     grade(percentage);
+
+//     return 0;
+// }
+
+/*Create a C++ program that takes a day number (1 to 7) as input and uses a switch-case statement to determine whether it's a weekday or a weekend day.*/
+
 #include<iostream>
 
 using namespace std;
 
-void grade(float percentage){
-    char grade;
-    if(percentage>=90.0)
-        grade = 'A';
-    else if(percentage>=80.0)
-        grade = 'B';
-    else if(percentage>=70.0)
-        grade = 'C';
-    else if(percentage>=60.0)
-        grade = 'D';
-    else if(percentage>=50.0)
-        grade = 'E';
-    else
-        grade = 'F';
-
-    switch(grade){
-        case 'A':
-            cout<<"Grade A: Excellent"<<endl;
+void check_day(int day){
+    switch(day){
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            cout<<"Weekday"<<endl;
             break;
-        case 'B':
-            cout<<"Grade B: Good"<<endl;
+        case 6:
+        case 7:
+            cout<<"Weekend. Party Time!"<<endl;
             break;
-        case 'C':
-            cout<<"Grade C: Satisfactory"<<endl;
-            break;
-        case 'D':
-            cout<<"Grade D: Average"<<endl;
-            break;
-        case 'E':
-            cout<<"Grade E: Needs Improvement"<<endl;
-            break;
-        case 'F':
-            cout<<"Grade F: Fail"<<endl;
-            break;
-        default:
-            cout<<"Invalid percentage entered."<<endl;    
+        default: 
+            cout<<"Invalid Input"<<endl;
     }
 }
 
 int main(){
-    float percentage;
-    cout<<"Enter the percentage of the student."<<endl;
-    cin>>percentage;
-    grade(percentage);
+    int day;
+    cout<<"Enter a day(1-7)"<<endl;
+    cin>>day;
+    check_day(day);
 
     return 0;
 }
