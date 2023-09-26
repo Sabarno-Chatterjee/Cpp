@@ -88,7 +88,7 @@
 //     return 0;
 // }
 
-//Find the maximum number in an array of integers.
+
 
 //Find the maximum number in an array of integers.
 
@@ -586,25 +586,132 @@
 // − return the control to main( ) and print the new array
 // elements in main( )
 
+// #include<iostream>
+
+// using namespace std;
+
+// void modify(int arr[],int length){
+//     for(int i=0; i<length; i++)
+//         arr[i] *= 3;
+// }
+
+// int main(){
+//     int arr[10]={3,2,1,6,4,2,5,9,4,1};
+//     int length=sizeof(arr)/sizeof(arr[0]);
+    
+//     modify(arr, length);
+    
+//     for(int i=0; i<length; i++)
+//         cout<<arr[i]<<" ";
+        
+//     cout<<endl;
+    
+//     return 0;
+// }
+
+// Write a program that uses a while loop to print numbers from 1 to 10.
+
+// #include<iostream>
+
+// using namespace std;
+
+// void count_up(){
+//     int num=1;
+//     while(num<=10){
+//         cout<<num<<endl;
+//         num++;
+//     }
+// }
+
+// int main(){
+//     count_up();
+    
+//     return 0;
+// }
+
+
+// Write a program that uses a while loop to print numbers from 10 to 1 in descending order.
+
+// #include<iostream>
+
+// using namespace std;
+
+// void count_down(){
+//     int num=10;
+//     while(num){
+//         cout<<num<<endl;
+//         num--;
+//     }
+// }
+
+// int main(){
+//     count_down();
+    
+//     return 0;
+// }
+
+
+// Create a program that calculates and prints the sum of all numbers from 1 to 100 using a while loop.
+//using iteration
+
+// #include<iostream>
+
+// using namespace std;
+
+// int sum(){
+//     int num=100, s=0;
+//     while(num){
+//         s+=num;
+//         num--;
+//     }
+//     return s;
+// }
+
+// int main(){
+    
+//     cout<<"Sum: "<<sum()<<endl;
+    
+//     return 0;
+// }
+
+// Create a program that calculates and prints the sum of all numbers from 1 to 100 using a while loop.
+
+
+//Gauss sum
+
+// #include<iostream>
+
+// using namespace std;
+
+// int sum(){
+//     int num=100;
+    
+//     return num*(num+1)/2;
+// }
+
+// int main(){
+    
+//     cout<<"Sum: "<<sum()<<endl;
+    
+//     return 0;
+// }
+
+//Using recursion
+
 #include<iostream>
 
 using namespace std;
 
-void modify(int arr[],int length){
-    for(int i=0; i<length; i++)
-        arr[i] *= 3;
+int sum(int num){
+    if(num==0)
+        return 0;
+    
+    return num + sum(num-1);
 }
 
 int main(){
-    int arr[10]={3,2,1,6,4,2,5,9,4,1};
-    int length=sizeof(arr)/sizeof(arr[0]);
     
-    modify(arr, length);
-    
-    for(int i=0; i<length; i++)
-        cout<<arr[i]<<" ";
-        
-    cout<<endl;
+    cout<<"Sum: "<<sum(100)<<endl;
     
     return 0;
 }
