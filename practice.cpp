@@ -630,6 +630,8 @@
 // }
 
 
+
+
 // Write a program that uses a while loop to print numbers from 10 to 1 in descending order.
 
 // #include<iostream>
@@ -698,20 +700,68 @@
 
 //Using recursion
 
+// #include<iostream>
+
+// using namespace std;
+
+// int sum(int num){
+//     if(num==0)
+//         return 0;
+    
+//     return num + sum(num-1);
+// }
+
+// int main(){
+    
+//     cout<<"Sum: "<<sum(100)<<endl;
+    
+//     return 0;
+// }
+
+// Write a program that calculates the factorial of a given number using a while loop.
+
+// #include<iostream>
+
+// using namespace std;
+
+// void factorial(int num){
+//     int f=1;
+//     while(num){
+//         f *= num;
+//         num--;
+//     }
+//     cout<<f;
+// }
+
+// int main(){
+//     int num;
+//     cout<<"Enter"<<endl;
+//     cin>>num;
+//     factorial(num);
+    
+//     return 0;
+// }
+
+ 
+// Print the multiplication table (up to 10) for a given number using a while loop.
+
 #include<iostream>
 
 using namespace std;
 
-int sum(int num){
-    if(num==0)
-        return 0;
-    
-    return num + sum(num-1);
+void table(int num){
+    int i=1;
+    while(i<=10){
+        cout<<num<<" x "<<i<<" = "<<num*i<<endl;
+        i++;
+    }
 }
 
 int main(){
-    
-    cout<<"Sum: "<<sum(100)<<endl;
+    int num;
+    cout<<"Enter a num."<<endl;
+    cin>>num;
+    table(num);
     
     return 0;
 }
