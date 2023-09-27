@@ -2,28 +2,42 @@
 
 #include<iostream>
 
-int calculate(int, int, char);
+float calculate(int, int, char);
 
 void user_input(){
     int num1, num2;
+    float output;
     char operation;
+    bool calculate_more = true, run=true;
 
-    //First number user input
-    std::cout<<"Enter the first number."<<std::endl;
-    std::cin>>num1;
-    
-    //Operation user input
-    std::cout<<"Enter the operator."<<std::endl;
-    std::cin>>operation;
+    while(run){
+         //First number user input
+        std::cout<<"Enter the first number."<<std::endl;
+        std::cin>>num1;
 
-    //Second number user input
-    std::cout<<"Enter the second number."<<std::endl;
-    std::cin>>num2;
+        //Operation user input
+        std::cout<<"Enter the operator."<<std::endl;
+        std::cin>>operation;
 
-    std::cout<<calculate(num1, num2, operation)<<std::endl;
+        //Second number user input
+        std::cout<<"Enter the second number."<<std::endl;
+        std::cin>>num2;
+
+        //calculation
+        output = calculate(num1, num2, operation);
+
+        //output
+        std::cout<<output<<std::endl;
+
+        std::cout<<"Do you want to perform more calculations?(1/0)"<<std::endl;
+        std::cin>>calculate_more;
+        if(!calculate_more)
+            run = false;
+    }
+
 }
 
-int calculate(int num1,int num2,char operation){
+float calculate(int num1,int num2,char operation){
     int calc;
 
     if(operation=='+')
@@ -48,7 +62,7 @@ int calculate(int num1,int num2,char operation){
             return num1*num2;
         case 4:
             if(num2!=0)
-                return num1/num2;
+                return float(num1)/float(num2);
             else{
                 std::cout<<"Division by zero not allowed"<<std::endl;
                 return -1;
