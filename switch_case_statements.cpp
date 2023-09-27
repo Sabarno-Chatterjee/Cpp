@@ -341,26 +341,55 @@
 /*Write a C++ program that uses a switch-case statement to determine whether a given character entered by the user is a vowel (a, e, i, o, u), a consonant, a digit, or a special character.*/
 
 
+// #include<iostream>
+
+// using namespace std;
+
+// void check_character(char ch){
+//     if(ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U')
+//         cout<<"Vowel"<<endl;
+//     else if((ch>=65 && ch<=90)||(ch>=97 && ch<=122))
+//         cout<<"Consonent"<<endl;
+//     else if(ch>=48 && ch<=57)
+//         cout<<"Digits"<<endl;
+//     else
+//         cout<<"Special character"<<endl;  
+// }
+
+// int main(){
+//     char ch;
+//     cout<<"Enter a character"<<endl;
+//     cin>>ch;
+//     check_character(ch);
+
+//     return 0;
+// }
+
+
+/*Create a C++ program that takes a length in inches, feet, or meters as input along with the unit type and uses a switch-case statement to convert and display the length in the desired unit.*/
+
 #include<iostream>
 
 using namespace std;
 
-void check_character(char ch){
-    if(ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U')
-        cout<<"Vowel"<<endl;
-    else if((ch>=65 && ch<=90)||(ch>=97 && ch<=122))
-        cout<<"Consonent"<<endl;
-    else if(ch>=48 && ch<=57)
-        cout<<"Digits"<<endl;
-    else
-        cout<<"Special character"<<endl;  
+void convert(float length,string unit,string desired_unit){
+
 }
 
 int main(){
-    char ch;
-    cout<<"Enter a character"<<endl;
-    cin>>ch;
-    check_character(ch);
+    float length;
+    string unit, desired_unit;
+
+    cout<<"Enter the length"<<endl;
+    cin>>length;
+
+    cout<<"Enter the unit"<<endl;
+    cin>>unit;
+
+    cout<<"Enter the desired unit"<<endl;
+    cin>>desired_unit;
+
+    convert(length, unit, desired_unit);
 
     return 0;
 }
