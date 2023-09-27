@@ -36,14 +36,29 @@ int calculate(int num1,int num2,char operation){
         calc=4;
     else{
         std::cout<<"Operation not supported"<<std::endl;
-        return; 
+        return -1; 
+    }
+    
+    switch(calc){
+        case 1:
+            std::cout<<num1+num2<<std::endl;
+            break;
+        case 2:
+            std::cout<<num1-num2<<std::endl;
+            break;
+        case 3:
+            std::cout<<num1*num2<<std::endl;
+            break;
+        case 4:
+            std::cout<<num1/num2<<std::endl;
+            break;
+        default:
+            std::cout<<"Operation not supported"<<std::endl;
     }
 }
 
 
 int main(){
     user_input();
-
-
     return 0;
 }
