@@ -177,50 +177,91 @@
 
 /*Write a C++ program that uses a switch-case statement to take an integer input (1 to 12) representing a month and then displays the number of days in that month. Consider leap years.*/
 
+// #include<iostream>
+
+// using namespace std;
+
+// bool check_leap_year(int year){
+//     if(year%4==0){
+//         if(year%100==0){
+//             if(year%400==0)
+//                 return true;
+//             else
+//                 return false;
+//         } else{
+//             return true;
+//         }
+//     } else{
+//         return false;
+//     }
+// }
+
+// void check_days(int month,int year){
+//     if(check_leap_year(year))
+//         month=13;
+
+//     switch(month){
+//         case 1:
+//         case 3:
+//         case 5:
+//         case 7:
+//         case 8:
+//         case 10:
+//         case 12:
+//             cout<<"31 days"<<endl;
+//             break;
+//         case 4:
+//         case 6:
+//         case 9:
+//         case 11:
+//             cout<<"30 days"<<endl;
+//             break;
+//         case 2: 
+//             cout<<"28 days"<<endl;
+//             break;
+//         case 13:
+//             cout<<"29 days"<<endl;
+//             break;
+//         default:
+//             cout<<"Invalid input"<<endl;
+//     }
+// }
+
+// int main(){
+//     int month, year;
+//     cout<<"Enter the month(1-12) and year."<<endl;
+//     cin>>month>>year;
+//     check_days(month, year);
+
+//     return 0;
+// }
+
+// Write a C++ program that simulates a traffic light using a switch-case statement. The program should take a color (red, yellow, or green) as input and display the action drivers should take (stop, prepare to stop, go) based on the color.
+
 #include<iostream>
 
 using namespace std;
 
-bool check_leap_year(int year){
-    if(year%4==0){
-        if(year%100==0){
-            if(year%400==0)
-                return true;
-            else
-                return false;
-        } else{
-            return true;
-        }
-    } else{
-        return false;
-    }
-}
+void action(string color_str){
+    int color;
+    if(color_str=="red")
+        color=1;
+    else if (color_str=="yellow")
+        color=2;
+    else if(color_str=="green")
+        color=3;
+    else
+        cout<<"Invalid input"<<endl;
 
-void check_days(int month,int year){
-    if(check_leap_year(year))
-        month=13;
-
-    switch(month){
+    switch(color){
         case 1:
+            cout<<"Stop"<<endl;
+            break;
+        case 2:
+            cout<<"Prepare to stop"<<endl;
+            break;
         case 3:
-        case 5:
-        case 7:
-        case 8:
-        case 10:
-        case 12:
-            cout<<"31 days"<<endl;
-            break;
-        case 4:
-        case 6:
-        case 9:
-        case 11:
-            cout<<"30 days"<<endl;
-            break;
-        case 2: 
-            cout<<"28 days"<<endl;
-            break;
-        case 13:
-            cout<<"29 days"<<endl;
+            cout<<"Go"<<endl;
             break;
         default:
             cout<<"Invalid input"<<endl;
@@ -228,10 +269,10 @@ void check_days(int month,int year){
 }
 
 int main(){
-    int month, year;
-    cout<<"Enter the month(1-12) and year."<<endl;
-    cin>>month>>year;
-    check_days(month, year);
+    string color;
+    cout<<"Enter red/yellow/green."<<endl;
+    cin>>color;
+    action(color);
 
     return 0;
 }
