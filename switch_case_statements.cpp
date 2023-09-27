@@ -373,7 +373,10 @@
 using namespace std;
 
 void convert(float length,string unit,string desired_unit){
-
+    float measure;
+    if(unit=="inches" && desired_unit=="meters")
+        measure= ;
+    else if(unit=="inches" && desired_unit=="meters")
 }
 
 int main(){
@@ -383,10 +386,10 @@ int main(){
     cout<<"Enter the length"<<endl;
     cin>>length;
 
-    cout<<"Enter the unit"<<endl;
+    cout<<"Enter the unit(inches, feet, or meters)."<<endl;
     cin>>unit;
 
-    cout<<"Enter the desired unit"<<endl;
+    cout<<"Enter the desired unit(inches, feet, or meters)."<<endl;
     cin>>desired_unit;
 
     convert(length, unit, desired_unit);
