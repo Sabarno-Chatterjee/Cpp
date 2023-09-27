@@ -276,25 +276,66 @@
 
 //  Write a program that asks the user to enter a number and then finds and prints all the factors of that number using a while loop.
 
+// #include<iostream>
+
+// void factors(int n){
+//     int i=1;
+//     while(i<=n/2){
+//         if(n%i==0)
+//             std::cout<<i<<" ";
+//         i++;
+//     }
+//     std::cout<<n<<std::endl;
+// }
+
+// int main(){
+//     int num;
+//     std::cout<<"Enter a number"<<std::endl;
+//     std::cin>>num;
+
+//     factors(num);
+
+//     return 0;
+// }
+
+
+// Write a program that asks the user for a year and determines whether it is a leap year or not using a while loop. A leap year is divisible by 4 but not divisible by 100 unless it is also divisible by 400.
+
 #include<iostream>
 
-void factors(int n){
-    int i=1;
-    while(i<=n/2){
-        if(n%i==0)
-            std::cout<<i<<" ";
-        i++;
+using namespace std;
+
+void leap_year(){
+    bool running=true;
+    int check_more;
+    
+    while(running){
+        int year;
+        cout<<"Enter a year"<<endl;
+        cin>>year;
+        if(year%4==0){
+            if(year%100==0){
+                if(year%400==0)
+                    cout<<"Leap year"<<endl;
+                else
+                    cout<<"Not a leap year"<<endl;
+            }
+            else
+                cout<<"Leap year"<<endl;
+        }
+        else
+            cout<<"Not a leap year"<<endl;
+
+        cout<<"Do you want to check for another year?(1/0)"<<endl;
+        cin>>check_more;
+
+        if(!check_more)
+            running=false;
     }
-    std::cout<<n<<std::endl;
 }
 
 int main(){
-    int num;
-    std::cout<<"Enter a number"<<std::endl;
-    std::cin>>num;
-
-    factors(num);
+    leap_year();
 
     return 0;
 }
-
