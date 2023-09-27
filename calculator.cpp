@@ -20,7 +20,7 @@ void user_input(){
     std::cout<<"Enter the second number."<<std::endl;
     std::cin>>num2;
 
-    calculate(num1, num2, operation);
+    std::cout<<calculate(num1, num2, operation)<<std::endl;
 }
 
 int calculate(int num1,int num2,char operation){
@@ -41,19 +41,21 @@ int calculate(int num1,int num2,char operation){
     
     switch(calc){
         case 1:
-            std::cout<<num1+num2<<std::endl;
-            break;
+            return num1+num2;
         case 2:
-            std::cout<<num1-num2<<std::endl;
-            break;
+            return num1-num2;
         case 3:
-            std::cout<<num1*num2<<std::endl;
-            break;
+            return num1*num2;
         case 4:
-            std::cout<<num1/num2<<std::endl;
-            break;
+            if(num2!=0)
+                return num1/num2;
+            else{
+                std::cout<<"Division by zero not allowed"<<std::endl;
+                return -1;
+            }
         default:
             std::cout<<"Operation not supported"<<std::endl;
+            return -1;
     }
 }
 
