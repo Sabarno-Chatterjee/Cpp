@@ -301,39 +301,94 @@
 
 // Write a program that asks the user for a year and determines whether it is a leap year or not using a while loop. A leap year is divisible by 4 but not divisible by 100 unless it is also divisible by 400.
 
+// #include<iostream>
+
+// using namespace std;
+
+// void leap_year(){
+//     bool running=true, check_more;
+    
+//     while(running){
+//         int year;
+//         cout<<"Enter a year"<<endl;
+//         cin>>year;
+//         if(year%4==0){
+//             if(year%100==0){
+//                 if(year%400==0)
+//                     cout<<"Leap year"<<endl;
+//                 else
+//                     cout<<"Not a leap year"<<endl;
+//             }
+//             else
+//                 cout<<"Leap year"<<endl;
+//         }
+//         else
+//             cout<<"Not a leap year"<<endl;
+
+//         cout<<"Do you want to check for another year?(1/0)"<<endl;
+//         cin>>check_more;
+
+//         if(!check_more)
+//             running=false;
+//     }
+// }
+
+// int main(){
+//     leap_year();
+//     return 0;
+// }
+
+
+/*Create a C++ program that simulates a basic ATM machine. Allow the user to withdraw money from their account, deposit money, and check their account balance. Use a `while` loop to keep the program running until the user chooses to exit.*/
+
+
 #include<iostream>
 
-using namespace std;
+void atm(int choice);
 
-void leap_year(){
-    bool running=true, check_more;
-    
-    while(running){
-        int year;
-        cout<<"Enter a year"<<endl;
-        cin>>year;
-        if(year%4==0){
-            if(year%100==0){
-                if(year%400==0)
-                    cout<<"Leap year"<<endl;
-                else
-                    cout<<"Not a leap year"<<endl;
-            }
-            else
-                cout<<"Leap year"<<endl;
+void greet(){
+    int choice;
+    std::cout<<"XYZ bank"<<std::endl;
+    std::cout<<"1 Deposit"<<std::endl;
+    std::cout<<"2 Withdrawl"<<std::endl;
+    std::cout<<"3 Check Balance"<<std::endl;
+    std::cout<<"4 Exit"<<std::endl;
+    std::cin>>choice;
+    atm(choice);
+}
+
+void atm(int choice){
+    int balance=10000, amt=0;
+    bool run=true;
+
+    while(run){
+        switch(choice){
+            case 1:
+                std::cout<<"Enter the amount you wish to deposit:"<<std::endl;
+                std::cin>>amt;
+                std::cout<<"Deposit Successful"<<std::endl;
+                balance+=amt;
+                std::cout<<"Total balance:"<<balance<<std::endl;
+                break;
+            case 2:
+                std::cout<<"Enter the amount you wish to withdraw:"<<std::endl;
+                std::cin>>amt;
+                std::cout<<"Withdrawl Successful"<<std::endl;
+                balance-=amt;
+                std::cout<<"Total balance:"<<balance<<std::endl;
+                break;
+            case 3:
+                std::cout<<"Account Balance:"<<balance<<std::endl;
+                break;
+            case 4:
+                std::cout<<"Thank you for using our ATM"<<std::endl;
+                run=false;     
         }
-        else
-            cout<<"Not a leap year"<<endl;
-
-        cout<<"Do you want to check for another year?(1/0)"<<endl;
-        cin>>check_more;
-
-        if(!check_more)
-            running=false;
+        greet();
     }
 }
 
 int main(){
-    leap_year();
+    greet();
     return 0;
 }
