@@ -373,7 +373,7 @@
 using namespace std;
 
 float convert(float length,string unit,string desired_unit){
-    float condition;
+    int condition;
     if(unit=="inches")
         if(desired_unit=="feet")
             condition=1;
@@ -395,8 +395,31 @@ float convert(float length,string unit,string desired_unit){
             condition=6;
         else
             cout<<"Unit not supported."<<endl;
-    else
+    else{
         cout<<"Unit not supported."<<endl;
+        return -1;
+    }
+
+    switch(condition){
+        case 1:
+            return length/12;
+            break;
+        case 2:
+            return length/12;
+            break;
+        case 3:
+            return length/12;
+            break;
+        case 4:
+            return length/12;
+            break;
+        case 5:
+            return length/12;
+            break;
+        case 6:
+            return length/12;
+            break;
+    }
 
 }
 
