@@ -238,41 +238,101 @@
 
 // Write a C++ program that simulates a traffic light using a switch-case statement. The program should take a color (red, yellow, or green) as input and display the action drivers should take (stop, prepare to stop, go) based on the color.
 
-#include<iostream>
+// #include<iostream>
 
-using namespace std;
+// using namespace std;
 
-void action(string color_str){
-    int color;
-    if(color_str=="red")
-        color=1;
-    else if (color_str=="yellow")
-        color=2;
-    else if(color_str=="green")
-        color=3;
-    else
-        cout<<"Invalid input"<<endl;
+// void action(string color_str){
+//     int color;
+//     if(color_str=="red")
+//         color=1;
+//     else if (color_str=="yellow")
+//         color=2;
+//     else if(color_str=="green")
+//         color=3;
+//     else
+//         cout<<"Invalid input"<<endl;
 
-    switch(color){
-        case 1:
-            cout<<"Stop"<<endl;
-            break;
-        case 2:
-            cout<<"Prepare to stop"<<endl;
-            break;
-        case 3:
-            cout<<"Go"<<endl;
-            break;
-        default:
-            cout<<"Invalid input"<<endl;
-    }
-}
+//     switch(color){
+//         case 1:
+//             cout<<"Stop"<<endl;
+//             break;
+//         case 2:
+//             cout<<"Prepare to stop"<<endl;
+//             break;
+//         case 3:
+//             cout<<"Go"<<endl;
+//             break;
+//         default:
+//             cout<<"Invalid input"<<endl;
+//     }
+// }
 
-int main(){
-    string color;
-    cout<<"Enter red/yellow/green."<<endl;
-    cin>>color;
-    action(color);
+// int main(){
+//     string color;
+//     cout<<"Enter red/yellow/green."<<endl;
+//     cin>>color;
+//     action(color);
 
-    return 0;
-}
+//     return 0;
+// }
+
+/*Develop a basic menu-driven program in C++ using a switch-case statement. The menu should have options to print "Hello," "Goodbye," or "Quit" the program based on user input.*/
+
+// #include<iostream>
+
+// void message(int user_input){
+//     switch(user_input){
+//         case 1:
+//             std::cout<<"Hello"<<std::endl;
+//             break;
+//         case 2:
+//             std::cout<<"Goodbye"<<std::endl;
+//             break;
+//         case 3:
+//             std::cout<<"Quit"<<std::endl;
+//             break;
+//         default:
+//             std::cout<<"Invalid input"<<std::endl;
+//     }
+// }
+
+// int main(){
+//     int user_input;
+//     std::cout<<"Enter a number(1/2/3)"<<std::endl;
+//     std::cin>>user_input;
+//     message(user_input);
+
+//     return 0;
+// }
+
+
+// Write a C++ program that takes an integer as input and uses a switch-case statement to determine if it's an even or odd number.
+
+// #include<iostream>
+
+// void check_num(int num){
+//     int type;
+//     if(num%2==0)
+//         type=1;
+//     else
+//         type=2;
+
+//     switch(type){
+//         case 1:
+//             std::cout<<"Even"<<std::endl;
+//         case 2:
+//             std::cout<<"Odd"<<std::endl;
+//         default:
+//             std::cout<<"Not a valid input"<<std::endl;
+//     }
+// }
+
+// int main(){
+//     int num;
+//     std::cout<<"Enter a number"<<std::endl;
+//     std::cin>>num;
+//     check_num(num);
+
+//     return 0;
+// }
