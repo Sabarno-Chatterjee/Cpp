@@ -1,6 +1,7 @@
 /*Develop a menu-driven calculator program in C++ using a switch-case statement. The menu should include options for addition, subtraction, multiplication, and division. Take two numbers as input and perform the selected operation, displaying the result.*/
 
 #include<iostream>
+#include<math.h>
 
 float calculate(int, int, char);
 
@@ -16,7 +17,7 @@ void user_input(){
         std::cin>>num1;
 
         //Operation user input
-        std::cout<<"Enter the operator."<<std::endl;
+        std::cout<<"Enter the operator.('+','-','*','/','^')"<<std::endl;
         std::cin>>operation;
 
         //Second number user input
@@ -48,6 +49,8 @@ float calculate(int num1,int num2,char operation){
         calc=3;
     else if(operation=='/')
         calc=4;
+    else if(operation=='^')
+        calc=5;
     else{
         std::cout<<"Operation not supported"<<std::endl;
         return -1; 
@@ -67,6 +70,8 @@ float calculate(int num1,int num2,char operation){
                 std::cout<<"Division by zero not allowed"<<std::endl;
                 return -1;
             }
+        case 5:
+            return pow(num1,num2);
         default:
             std::cout<<"Operation not supported"<<std::endl;
             return -1;
