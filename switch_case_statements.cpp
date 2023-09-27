@@ -372,11 +372,32 @@
 
 using namespace std;
 
-void convert(float length,string unit,string desired_unit){
-    float measure;
-    if(unit=="inches" && desired_unit=="meters")
-        measure= ;
-    else if(unit=="inches" && desired_unit=="meters")
+float convert(float length,string unit,string desired_unit){
+    float condition;
+    if(unit=="inches")
+        if(desired_unit=="feet")
+            condition=1;
+        else if(desired_unit=="meters")
+            condition=2;
+        else
+            cout<<"Unit not supported."<<endl;
+    else if(unit=="meters")
+        if(desired_unit=="inches")
+            condition=3;
+        else if(desired_unit=="feet")
+            condition=4;
+        else
+            cout<<"Unit not supported."<<endl;
+    else if(unit=="feet")
+        if(desired_unit=="inches")
+            condition=5;
+        else if(desired_unit=="meters")
+            condition=6;
+        else
+            cout<<"Unit not supported."<<endl;
+    else
+        cout<<"Unit not supported."<<endl;
+
 }
 
 int main(){
@@ -392,7 +413,7 @@ int main(){
     cout<<"Enter the desired unit(inches, feet, or meters)."<<endl;
     cin>>desired_unit;
 
-    convert(length, unit, desired_unit);
+    cout<<convert(length, unit, desired_unit)<<endl;
 
     return 0;
 }
