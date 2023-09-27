@@ -405,20 +405,23 @@ float convert(float length,string unit,string desired_unit){
             return length/12;
             break;
         case 2:
-            return length/12;
+            return length/39.37;
             break;
         case 3:
-            return length/12;
+            return length*39.37;
             break;
         case 4:
-            return length/12;
+            return length*3.281;
             break;
         case 5:
-            return length/12;
+            return length*12;
             break;
         case 6:
-            return length/12;
+            return length/3.281;
             break;
+        default:
+            cout<<"Conversion type not supported"<<endl;
+            return -1;
     }
 
 }
