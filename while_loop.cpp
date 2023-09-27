@@ -306,8 +306,7 @@
 using namespace std;
 
 void leap_year(){
-    bool running=true;
-    int check_more;
+    bool running=true, check_more;
     
     while(running){
         int year;
@@ -336,6 +335,5 @@ void leap_year(){
 
 int main(){
     leap_year();
-
     return 0;
 }
