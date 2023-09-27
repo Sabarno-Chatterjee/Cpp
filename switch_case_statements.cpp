@@ -426,7 +426,7 @@ float convert(float length,string unit,string desired_unit){
 
 }
 
-int main(){
+void process_data(){
     float length;
     string unit, desired_unit;
 
@@ -440,6 +440,9 @@ int main(){
     cin>>desired_unit;
 
     cout<<convert(length, unit, desired_unit)<<endl;
+}
 
+int main(){
+    process_data();
     return 0;
 }
