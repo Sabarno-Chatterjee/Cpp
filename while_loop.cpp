@@ -252,3 +252,49 @@
 //     return 0;
 // }
 
+// Write a program that calculates and prints the powers of 2 from 1 to 10 (2^1, 2^2, 2^3, etc.) using a while loop.
+
+// #include<iostream>
+// #include<math.h>
+
+// using namespace std;
+
+// void print_power(int n){
+//     int i=1;
+//     while(i<=10){
+//         cout<<n<<"^"<<i<<" = "<<pow(n,i)<<endl;
+//         i++;
+//     }
+// }
+
+// int main(){
+//     print_power(5);
+
+//     return 0;
+// }
+
+
+//  Write a program that asks the user to enter a number and then finds and prints all the factors of that number using a while loop.
+
+#include<iostream>
+
+void factors(int n){
+    int i=1;
+    while(i<=n/2){
+        if(n%i==0)
+            std::cout<<i<<" ";
+        i++;
+    }
+    std::cout<<n<<std::endl;
+}
+
+int main(){
+    int num;
+    std::cout<<"Enter a number"<<std::endl;
+    std::cin>>num;
+
+    factors(num);
+
+    return 0;
+}
+
