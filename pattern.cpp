@@ -109,6 +109,31 @@
 
 // Right angled triangle.
 
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int n){
+//     for(int i=1; i<=n; i++){
+//         for(int k=1; k<=n-i; k++){
+//             cout<<" ";
+//         }
+//         for(int j=1; j<=i;j++){
+//             cout<<"*";
+//         }
+//     cout<<endl;
+//     }    
+// }
+
+// int main(){
+//     pattern(5);
+
+//     return 0;
+// }
+
+
+// Star pyramid
+
 #include<iostream>
 
 using namespace std;
@@ -119,7 +144,7 @@ void pattern(int n){
             cout<<" ";
         }
         for(int j=1; j<=i;j++){
-            cout<<"*";
+            cout<<"* ";
         }
     cout<<endl;
     }    
