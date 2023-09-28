@@ -344,24 +344,19 @@
 
 #include<iostream>
 
-void atm(int choice);
-
-void greet(){
-    int choice;
-    std::cout<<"XYZ bank"<<std::endl;
-    std::cout<<"1 Deposit"<<std::endl;
-    std::cout<<"2 Withdrawl"<<std::endl;
-    std::cout<<"3 Check Balance"<<std::endl;
-    std::cout<<"4 Exit"<<std::endl;
-    std::cin>>choice;
-    atm(choice);
-}
-
-void atm(int choice){
-    int balance=10000, amt=0;
+void atm(){
+    int balance=10000, amt=0, choice;
     bool run=true;
 
     while(run){
+
+        std::cout<<"XYZ bank"<<std::endl;
+        std::cout<<"1 Deposit"<<std::endl;
+        std::cout<<"2 Withdrawl"<<std::endl;
+        std::cout<<"3 Check Balance"<<std::endl;
+        std::cout<<"4 Exit"<<std::endl;
+        std::cin>>choice;
+
         switch(choice){
             case 1:
                 std::cout<<"Enter the amount you wish to deposit:"<<std::endl;
@@ -384,11 +379,10 @@ void atm(int choice){
                 std::cout<<"Thank you for using our ATM"<<std::endl;
                 run=false;     
         }
-        greet();
     }
 }
 
 int main(){
-    greet();
+    atm();
     return 0;
 }
