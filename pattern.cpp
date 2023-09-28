@@ -75,35 +75,59 @@
         
 // }
 
-int main(){
-    pattern(5);
-    return 0;
-}
+// int main(){
+//     pattern(5);
+//     return 0;
+// }
 
-hollow rectangle
+// hollow rectangle
+
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int n, int m){
+    
+//     for(int i=1; i<=n;i++){
+//         for(int j=1;j<=m;j++){
+//             if(i==1 || i==n || j==1 || j==m)
+//                 cout<<"*";
+//             else
+//                 cout<<" ";
+//         }
+//     cout<<endl; 
+//     }       
+// }
+        
+
+// int main(){
+//     pattern(7,9);
+//     return 0;
+// }
+
+
+
+// Right angled triangle.
 
 #include<iostream>
 
 using namespace std;
 
-void pattern(int n, int m){
-    
-    for(int i=1; i<=n;i++){
-        for(int j=1;j<=m;j++){
-            if(i==1 || i==n || j==1 || j==m)
-                cout<<"*";
-            else
-                cout<<" ";
+void pattern(int n){
+    for(int i=1; i<=n; i++){
+        for(int k=1; k<=n-i; k++){
+            cout<<" ";
         }
-    cout<<endl; 
-    }       
+        for(int j=1; j<=i;j++){
+            cout<<"*";
+        }
+    cout<<endl;
+    }    
 }
-        
 
 int main(){
-    pattern(7,9);
+    pattern(5);
+
     return 0;
 }
-
-
 
