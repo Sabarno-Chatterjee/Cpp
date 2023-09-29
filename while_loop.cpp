@@ -377,6 +377,9 @@ void atm(){
                 break;
             case 4:
                 std::cout<<"Thank you for using our ATM"<<std::endl;
+                run=false;
+            default:
+                std::cout<<"Invalid choice"<<std::endl;
                 run=false;     
         }
     }

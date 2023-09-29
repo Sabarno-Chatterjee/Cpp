@@ -368,81 +368,120 @@
 
 /*Create a C++ program that takes a length in inches, feet, or meters as input along with the unit type and uses a switch-case statement to convert and display the length in the desired unit.*/
 
+// #include<iostream>
+
+// using namespace std;
+
+// float convert(float length,string unit,string desired_unit){
+//     int condition;
+//     if(unit=="inches")
+//         if(desired_unit=="feet")
+//             condition=1;
+//         else if(desired_unit=="meters")
+//             condition=2;
+//         else
+//             cout<<"Unit not supported."<<endl;
+//     else if(unit=="meters")
+//         if(desired_unit=="inches")
+//             condition=3;
+//         else if(desired_unit=="feet")
+//             condition=4;
+//         else
+//             cout<<"Unit not supported."<<endl;
+//     else if(unit=="feet")
+//         if(desired_unit=="inches")
+//             condition=5;
+//         else if(desired_unit=="meters")
+//             condition=6;
+//         else
+//             cout<<"Unit not supported."<<endl;
+//     else{
+//         cout<<"Unit not supported."<<endl;
+//         return -1;
+//     }
+
+//     switch(condition){
+//         case 1:
+//             return length/12;
+//             break;
+//         case 2:
+//             return length/39.37;
+//             break;
+//         case 3:
+//             return length*39.37;
+//             break;
+//         case 4:
+//             return length*3.281;
+//             break;
+//         case 5:
+//             return length*12;
+//             break;
+//         case 6:
+//             return length/3.281;
+//             break;
+//         default:
+//             cout<<"Conversion type not supported"<<endl;
+//             return -1;
+//     }
+
+// }
+
+// void process_data(){
+//     float length;
+//     string unit, desired_unit;
+
+//     cout<<"Enter the length"<<endl;
+//     cin>>length;
+
+//     cout<<"Enter the unit(inches, feet, or meters)."<<endl;
+//     cin>>unit;
+
+//     cout<<"Enter the desired unit(inches, feet, or meters)."<<endl;
+//     cin>>desired_unit;
+
+//     cout<<convert(length, unit, desired_unit)<<endl;
+// }
+
+// int main(){
+//     process_data();
+//     return 0;
+// }
+
+
+
+// Menu based matrix operations(add,mul,sub)
+
 #include<iostream>
 
 using namespace std;
 
-float convert(float length,string unit,string desired_unit){
-    int condition;
-    if(unit=="inches")
-        if(desired_unit=="feet")
-            condition=1;
-        else if(desired_unit=="meters")
-            condition=2;
-        else
-            cout<<"Unit not supported."<<endl;
-    else if(unit=="meters")
-        if(desired_unit=="inches")
-            condition=3;
-        else if(desired_unit=="feet")
-            condition=4;
-        else
-            cout<<"Unit not supported."<<endl;
-    else if(unit=="feet")
-        if(desired_unit=="inches")
-            condition=5;
-        else if(desired_unit=="meters")
-            condition=6;
-        else
-            cout<<"Unit not supported."<<endl;
-    else{
-        cout<<"Unit not supported."<<endl;
-        return -1;
-    }
+#define m 3
+#define n 3
 
-    switch(condition){
-        case 1:
-            return length/12;
-            break;
-        case 2:
-            return length/39.37;
-            break;
-        case 3:
-            return length*39.37;
-            break;
-        case 4:
-            return length*3.281;
-            break;
-        case 5:
-            return length*12;
-            break;
-        case 6:
-            return length/3.281;
-            break;
-        default:
-            cout<<"Conversion type not supported"<<endl;
-            return -1;
-    }
+void user_input(int matrix[m][n]){
+    cout<<"Enter the elements"<<endl;
 
+    for(int i=0; i<m;i++)
+        for(int j=0;j<n;j++)
+            cin>>matrix[i][j];
 }
 
-void process_data(){
-    float length;
-    string unit, desired_unit;
-
-    cout<<"Enter the length"<<endl;
-    cin>>length;
-
-    cout<<"Enter the unit(inches, feet, or meters)."<<endl;
-    cin>>unit;
-
-    cout<<"Enter the desired unit(inches, feet, or meters)."<<endl;
-    cin>>desired_unit;
-
-    cout<<convert(length, unit, desired_unit)<<endl;
+void print_matrix(int matrix[m][n]){
+    for(int i=0; i<m;i++){
+        for(int j=0;j<n;j++)
+            cout<<matrix[i][j];
+        cout<<endl;
+    }
 }
 
 int main(){
-    process_data();
+    int matrix1[m][n], matrix2[m][n];
+    // add data to the matrix1
+    user_input(matrix1);
+
+    // add data to the matrix2
+    user_input(matrix2);
+    
+
     return 0;
 }
