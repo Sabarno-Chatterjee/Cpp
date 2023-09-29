@@ -220,25 +220,92 @@
 
 // Inverted solid pyramid
 
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int n){
+//     for(int i=n; i>=1; i--){
+//         for(int k=1; k<=n-i; k++)
+//             cout<<" ";
+//         for(int j=i; j>=1; j--)
+//             cout<<"* ";
+            
+//         cout<<endl;
+//     }
+    
+// }
+
+// int main(){
+//     pattern(10);
+//     return 0;
+// }
+
+// numbered triangle
+
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int m, int n){
+//     for(int i=1; i<=n; i++){
+//         for(int k=1; k<=n-i;k++)
+//             cout<<" ";
+//         for(int j=1;j<=i;j++)
+//             cout<<j;
+            
+//     cout<<endl;
+//     }
+// }
+
+// int main(){
+//     pattern(5,7);
+    
+//     return 0;
+// }
+
+// number pyramid
+
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int m, int n){
+//     for(int i=1; i<=n; i++){
+//         for(int k=1; k<=n-i;k++)
+//             cout<<" ";
+//         for(int j=1;j<=i;j++)
+//             cout<<j<<" ";
+            
+//     cout<<endl;
+//     }
+// }
+
+// int main(){
+//     pattern(5,7);
+    
+//     return 0;
+// }
+
+// number pyramid
+
 #include<iostream>
 
 using namespace std;
 
-void pattern(int n){
-    for(int i=n; i>=1; i--){
-        for(int k=1; k<=n-i; k++)
+void pattern(int m, int n){
+    for(int i=1; i<=n; i++){
+        for(int k=1; k<=n-i;k++)
             cout<<" ";
-        for(int j=i; j>=1; j--)
-            cout<<"* ";
+        for(int j=1;j<=i;j++)
+            cout<<i<<" ";
             
-        cout<<endl;
+    cout<<endl;
     }
-    
 }
 
 int main(){
-    pattern(10);
+    pattern(5,7);
+    
     return 0;
 }
-
-
