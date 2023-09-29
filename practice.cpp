@@ -611,15 +611,52 @@
 
 // Reading an unknown number of inputs
 
+// #include<iostream>
+
+// int main(){
+//     int value=0, sum=0;
+    
+//     while(std::cin>>value)
+//         sum+=value;
+    
+//     std::cout<<sum<<std::endl;
+
+//     return 0;
+// }
+
+// matrix addition
+
 #include<iostream>
 
-int main(){
-    int value=0, sum=0;
-    
-    while(std::cin>>value)
-        sum+=value;
-    
-    std::cout<<sum<<std::endl;
+using namespace std;
 
+#define m 3
+#define n 3
+
+void add(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
+    for(int i=0; i<m;i++){
+        for(int j=0; j<n;j++){
+            result[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+}
+
+void print_matrix(int matrix[m][n]){
+    for(int i=0; i<m;i++){
+        for(int j=0; j<n;j++){
+            cout<<matrix[i][j]<<" ";
+        }
+    cout<<endl;
+    }
+}
+
+int main(){
+    int matrix1[m][n]={{1,2,1},{2,1,2},{1,2,1}};
+    int matrix2[m][n]={{1,1,1},{1,1,1},{1,1,1}};
+    int result[m][n];
+
+    add(matrix1,matrix2,result);
+    print_matrix(result);
+    
     return 0;
 }
