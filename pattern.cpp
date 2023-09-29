@@ -195,27 +195,50 @@
 
 // Solid Rhombus
 
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int n){
+//     for(int i=1; i<=n; i++){
+//         for(int k=1; k<=n-i; k++)
+//             cout<<" ";
+//         for(int j=1; j<=n; j++)
+//             cout<<"*";
+        
+//         cout<<endl;
+//     }
+    
+// }
+
+// int main(){
+//     pattern(8);
+    
+//     return 0;
+// }
+
+
+// Inverted solid pyramid
+
 #include<iostream>
 
 using namespace std;
 
 void pattern(int n){
-    for(int i=1; i<=n; i++){
+    for(int i=n; i>=1; i--){
         for(int k=1; k<=n-i; k++)
             cout<<" ";
-        for(int j=1; j<=n; j++)
-            cout<<"*";
-        
+        for(int j=i; j>=1; j--)
+            cout<<"* ";
+            
         cout<<endl;
     }
     
 }
 
 int main(){
-    pattern(8);
-    
+    pattern(10);
     return 0;
 }
-
 
 
