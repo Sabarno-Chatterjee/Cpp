@@ -336,24 +336,72 @@
 
 // number increasing pyramid
 
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int n){
+//     int count=0;
+//     for(int i=n; i>=1; i--){
+//         for(int j=1;j<=n-count;j++){
+//             cout<<j;
+//         }
+//         count++;
+            
+//     cout<<endl;
+//     }
+// }
+
+// int main(){
+//     pattern(5);
+    
+//     return 0;
+// }
+
+// number changing pyramid
+
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int n){
+//     int count=1;
+//     for(int i=1; i<=n; i++){
+//         for(int j=1;j<=i;j++){
+//             cout<<count<<" ";
+//             count++;
+//         }      
+//     cout<<endl;
+//     }
+// }
+
+// int main(){
+//     pattern(4);
+    
+//     return 0;
+// }
+
+
+// zero-one triangle
+
 #include<iostream>
 
 using namespace std;
 
 void pattern(int n){
-    int count=0;
-    for(int i=n; i>=1; i--){
-        for(int j=1;j<=n-count;j++){
-            cout<<j;
+    
+    for(int i=1; i<=n; i++){
+        for(int j=1;j<=i;j++){
+            if((i+j)%2==0)
+                cout<<"1"<<" ";
+            else
+                cout<<"0"<<" ";
         }
-        count++;
-            
     cout<<endl;
     }
 }
 
 int main(){
-    pattern(5);
-    
+    pattern(8);
     return 0;
 }
