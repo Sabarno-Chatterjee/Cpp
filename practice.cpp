@@ -624,7 +624,7 @@
 //     return 0;
 // }
 
-// matrix addition
+// matrix calculations
 
 #include<iostream>
 
@@ -649,6 +649,18 @@ void subtract(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
     }
 }
 
+void multiply(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
+    for(int i=0; i<m;i++){
+        for(int j=0; j<n;j++)
+         {
+            result[i][j]=0;
+            for(int k=0; k<n;k++){
+                result[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+        }
+    }
+}
+
 void print_matrix(int matrix[m][n]){
     for(int i=0; i<m;i++){
         for(int j=0; j<n;j++){
@@ -663,14 +675,20 @@ int main(){
     int matrix2[m][n]={{1,1,1},{1,1,1},{1,1,1}};
     int result[m][n];
 
+    // matrix addition
     add(matrix1,matrix2,result);
+    cout<<endl;
     print_matrix(result);
 
     // matrix subtraction
     subtract(matrix1,matrix2,result);
+    cout<<endl;
     print_matrix(result);
 
-    
+    // matrix multiplication
+    multiply(matrix1,matrix2,result);
+    cout<<endl;
+    print_matrix(result);
 
     return 0;
 }
