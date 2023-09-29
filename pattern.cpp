@@ -434,6 +434,36 @@
 
 // k pattern
 
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int n){
+    
+//     for(int i=n; i>=1; i--){
+        
+//         for(int j=1;j<=i;j++){
+//             cout<<"* ";
+//         } 
+//     cout<<endl;
+//     }
+//     for(int i=2; i<=n; i++){
+//         for(int j=1;j<=i;j++){
+//             cout<<"* ";
+//         } 
+//     cout<<endl;
+//     }
+    
+// }
+
+// int main(){
+//     pattern(4);
+//     return 0;
+// }
+
+
+// mirror image triangle pattern
+
 #include<iostream>
 
 using namespace std;
@@ -441,6 +471,9 @@ using namespace std;
 void pattern(int n){
     
     for(int i=n; i>=1; i--){
+        for(int k=1; k<=n-i; k++){
+            cout<<" ";
+        }
         
         for(int j=1;j<=i;j++){
             cout<<"* ";
@@ -448,6 +481,9 @@ void pattern(int n){
     cout<<endl;
     }
     for(int i=2; i<=n; i++){
+        for(int k=1; k<=n-i; k++){
+            cout<<" ";
+        }
         for(int j=1;j<=i;j++){
             cout<<"* ";
         } 
@@ -457,6 +493,6 @@ void pattern(int n){
 }
 
 int main(){
-    pattern(4);
+    pattern(8);
     return 0;
 }
