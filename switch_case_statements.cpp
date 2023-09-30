@@ -459,7 +459,6 @@ using namespace std;
 #define n 3
 
 void user_input(int matrix[m][n]){
-    cout<<"Enter the elements"<<endl;
 
     for(int i=0; i<m;i++)
         for(int j=0;j<n;j++)
@@ -502,19 +501,53 @@ void subtract_matrix(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
     }
 
 
-void operation(){
-    int result[m][n];
+void operation(int matrix1[m][n], int matrix2[m][n],int result[m][n]){
+    char operation;
+    int choice;
+    cout<<"Enter the operation you tou want to perform.('+','-','*')"<<endl;
+    cin>>operation;
+
+    if(operation=='+')
+        choice=1;
+    else if(operation=='-')
+        choice=2;
+    else if(operation=='*')
+        choice=3;
+    else
+        cout<<"Invalid choice"<<endl;
+
+    switch(choice){
+        case 1:
+            add_matrix(matrix1, matrix2, result);
+            break;
+        case 2:
+            add_matrix(matrix1, matrix2, result);
+            break;
+        case 3:
+            add_matrix(matrix1, matrix2, result);
+            break;
+        default:
+            cout<<"Operation not supported";
+    }
+
 }
 
 
 int main(){
-    int matrix1[m][n], matrix2[m][n];
+    int matrix1[m][n], matrix2[m][n], result[m][n];
     // add data to the matrix1
+    cout<<"Enter the elements for matrix 1."<<endl;
     user_input(matrix1);
 
+    cout<<endl;
+
     // add data to the matrix2
+    cout<<"Enter the elements for matrix 2."<<endl;
     user_input(matrix2);
-    
+
+    operation(matrix1,matrix2,result);
+
+    print_matrix(result);
 
     return 0;
 }
