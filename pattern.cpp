@@ -558,31 +558,54 @@
 
 // Reverse number Triangle Pattern
 
+// #include<iostream>
+// using namespace std;
+
+// void pattern(int n){
+    
+//     for(int i=1; i<=n; i++){
+        
+//         for(int k=1; k<i; k++){
+//             cout<<" ";
+//         }
+        
+//         for(int j=i;j<=n;j++){
+//             cout<<j<<" ";
+//         }
+        
+//         cout<<endl;
+        
+//     }
+// }
+
+// int main(){
+//     pattern(4); 
+//     return 0;
+// }
+
+
+// Right hollow triangle
+
 #include<iostream>
+
 using namespace std;
 
 void pattern(int n){
-    
-    for(int i=1; i<=n; i++){
-        
-        for(int k=1; k<i; k++){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+        if(j==1 || i==n || i==j)
+            cout<<"*";
+        else
             cout<<" ";
         }
-        
-        for(int j=i;j<=n;j++){
-            cout<<j<<" ";
-        }
-        
         cout<<endl;
-        
     }
 }
 
 int main(){
-    pattern(4); 
+    pattern(7);
+
     return 0;
 }
-
-
 
 
