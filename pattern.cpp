@@ -611,26 +611,63 @@
 
 // Left hollow triangle
 
-#include<iostream>
+// #include<iostream>
 
+// using namespace std;
+
+// void pattern(int n){
+//     for(int i=1;i<=n;i++){
+//         for(int j=n;j>=1;j--){
+//         if(j==1 || i==n || i==j)
+//             cout<<"*";
+//         else
+//             cout<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+
+// int main(){
+//     pattern(7);
+
+//     return 0;
+// }
+
+// pyramid
+
+
+#include<iostream>
 using namespace std;
 
 void pattern(int n){
-    for(int i=1;i<=n;i++){
-        for(int j=n;j>=1;j--){
-        if(j==1 || i==n || i==j)
-            cout<<"*";
-        else
-            cout<<" ";
-        }
-        cout<<endl;
+    int i, j;
+    
+    // outer loop to handle the number of rows
+    for(i = 1; i <= n; i++){
+        
+        // inner loop to print spaces
+        for(int k = 1; k <= 2 * (n - i); k++)
+            cout << " ";
+        
+        // inner loop to print the first part
+        for(j = i; j >= 1; j--)
+        if(i==n)
+            cout << "*" << " ";
+        
+        // inner loop to print the second part    
+        for(j = 2; j <= i; j++)
+        if(i==n)
+            cout << "*" << " ";
+        
+        // Move to the next line after each row
+        cout << endl;
     }
 }
 
 int main(){
-    pattern(7);
-
+    pattern(4); 
     return 0;
 }
+
 
 
