@@ -633,8 +633,9 @@
 //     return 0;
 // }
 
-// pyramid
 
+
+// pyramid
 
 #include<iostream>
 using namespace std;
