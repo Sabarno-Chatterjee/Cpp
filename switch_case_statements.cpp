@@ -468,7 +468,7 @@ void user_input(int matrix[m][n]){
 void print_matrix(int matrix[m][n]){
     for(int i=0; i<m;i++){
         for(int j=0;j<n;j++)
-            cout<<matrix[i][j];
+            cout<<matrix[i][j]<<" ";
         cout<<endl;
     }
 }
@@ -521,10 +521,10 @@ void operation(int matrix1[m][n], int matrix2[m][n],int result[m][n]){
             add_matrix(matrix1, matrix2, result);
             break;
         case 2:
-            add_matrix(matrix1, matrix2, result);
+            subtract_matrix(matrix1, matrix2, result);
             break;
         case 3:
-            add_matrix(matrix1, matrix2, result);
+            multiply_matrix(matrix1, matrix2, result);
             break;
         default:
             cout<<"Operation not supported";
