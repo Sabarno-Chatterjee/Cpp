@@ -474,6 +474,39 @@ void print_matrix(int matrix[m][n]){
     }
 }
 
+void multiply_matrix(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
+    for(int i=0; i<m;i++){
+        for(int j=0;j<n;j++){
+            result[i][j]=0;
+            for(int k=0; k<n;k++){
+                result[i][j] += matrix1[i][k]*matrix2[k][j];
+            }
+        }
+    }
+}
+
+void add_matrix(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
+    for(int i=0; i<m;i++){
+        for(int j=0;j<n;j++){
+            result[i][j] = matrix1[i][j]+matrix2[i][j];
+        }
+        }
+    }
+
+void subtract_matrix(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
+    for(int i=0; i<m;i++){
+        for(int j=0;j<n;j++){
+            result[i][j] = matrix1[i][j]-matrix2[i][j];
+        }
+        }
+    }
+
+
+void operation(){
+    int result[m][n];
+}
+
+
 int main(){
     int matrix1[m][n], matrix2[m][n];
     // add data to the matrix1
