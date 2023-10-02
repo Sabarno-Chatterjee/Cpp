@@ -696,27 +696,53 @@
 
 // Perfect number
 
+// #include<iostream>
+
+// int perfect_num(int n){
+//     int sum=1;
+//     for(int i=2; i<=n/2;i++){
+//         if(n%i==0)
+//             sum+=i;
+//     }
+//     sum+=n;
+    
+//     return (sum==2*n) ? 1 : 0;
+// }
+
+// int main(){
+//     int n;
+//     std::cout<<"Enter a num"<<std::endl;
+//     std::cin>>n;
+//     if(perfect_num(n))
+//         std::cout<<"Perfect num"<<std::endl;
+//     else
+//         std::cout<<"Not a perfect num"<<std::endl;
+
+//     return 0;
+// }
+
+
+
+// GCD of two numbers
+
 #include<iostream>
 
-int perfect_num(int n){
-    int sum=1;
-    for(int i=2; i<=n/2;i++){
-        if(n%i==0)
-            sum+=i;
+void gcd(int m, int n){
+    while(m!=n){
+        if(m>n)
+            m=m-n;
+        else
+            n=n-m;
     }
-    sum+=n;
-    
-    return (sum==2*n) ? 1 : 0;
+    std::cout<<"GCD: "<<m<<std::endl;
 }
 
 int main(){
-    int n;
-    std::cout<<"Enter a num"<<std::endl;
-    std::cin>>n;
-    if(perfect_num(n))
-        std::cout<<"Perfect num"<<std::endl;
-    else
-        std::cout<<"Not a perfect num"<<std::endl;
+    int m, n;
+    std::cout<<"Enter m and n"<<std::endl;
+    std::cin>>m>>n;
+
+    gcd(m,n);
 
     return 0;
 }
