@@ -674,6 +674,35 @@
 
 // upper triangle
 
+// #include<iostream>
+// using namespace std;
+
+// void Draw(int n)
+// {
+    
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n;j++){
+//             if(i<=j){
+//                 cout<<"* ";
+//             }
+//             else{
+//                 cout<<" ";
+//             }
+//         }
+//         cout<<endl;
+//     }
+// }
+
+
+// int main(){
+//     Draw(5);
+    
+//     return 0;
+// }
+
+
+// Cross lower triangle
+
 #include<iostream>
 using namespace std;
 
@@ -682,8 +711,8 @@ void Draw(int n)
     
     for(int i=1;i<=n;i++){
         for(int j=1;j<=n;j++){
-            if(i<=j){
-                cout<<"* ";
+            if(i+j>=n+1){
+                cout<<"*";
             }
             else{
                 cout<<" ";
