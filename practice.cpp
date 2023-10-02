@@ -626,73 +626,100 @@
 
 // matrix calculations
 
+// #include<iostream>
+
+// using namespace std;
+
+// #define m 3
+// #define n 3
+
+// void add(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
+//     for(int i=0; i<m;i++){
+//         for(int j=0; j<n;j++){
+//             result[i][j] = matrix1[i][j] + matrix2[i][j];
+//         }
+//     }
+// }
+
+// void subtract(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
+//     for(int i=0; i<m;i++){
+//         for(int j=0; j<n;j++){
+//             result[i][j] = matrix1[i][j] - matrix2[i][j];
+//         }
+//     }
+// }
+
+// void multiply(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
+//     for(int i=0; i<m;i++){
+//         for(int j=0; j<n;j++)
+//          {
+//             result[i][j]=0;
+//             for(int k=0; k<n;k++){
+//                 result[i][j] += matrix1[i][k] * matrix2[k][j];
+//             }
+//         }
+//     }
+// }
+
+// void print_matrix(int matrix[m][n]){
+//     for(int i=0; i<m;i++){
+//         for(int j=0; j<n;j++){
+//             cout<<matrix[i][j]<<" ";
+//         }
+//     cout<<endl;
+//     }
+// }
+
+// int main(){
+//     int matrix1[m][n]={{1,2,1},{2,1,2},{1,2,1}};
+//     int matrix2[m][n]={{1,1,1},{1,1,1},{1,1,1}};
+//     int result[m][n];
+
+//     // matrix addition
+//     add(matrix1,matrix2,result);
+//     cout<<endl;
+//     print_matrix(result);
+
+//     // matrix subtraction
+//     subtract(matrix1,matrix2,result);
+//     cout<<endl;
+//     print_matrix(result);
+
+//     // matrix multiplication
+//     multiply(matrix1,matrix2,result);
+//     cout<<endl;
+//     print_matrix(result);
+
+//     return 0;
+// }
+
+
+// Perfect number
+
 #include<iostream>
 
-using namespace std;
-
-#define m 3
-#define n 3
-
-void add(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
-    for(int i=0; i<m;i++){
-        for(int j=0; j<n;j++){
-            result[i][j] = matrix1[i][j] + matrix2[i][j];
-        }
+int perfect_num(int n){
+    int sum=1;
+    for(int i=2; i<=n/2;i++){
+        if(n%i==0)
+            sum+=i;
     }
-}
-
-void subtract(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
-    for(int i=0; i<m;i++){
-        for(int j=0; j<n;j++){
-            result[i][j] = matrix1[i][j] - matrix2[i][j];
-        }
-    }
-}
-
-void multiply(int matrix1[m][n],int matrix2[m][n],int result[m][n]){
-    for(int i=0; i<m;i++){
-        for(int j=0; j<n;j++)
-         {
-            result[i][j]=0;
-            for(int k=0; k<n;k++){
-                result[i][j] += matrix1[i][k] * matrix2[k][j];
-            }
-        }
-    }
-}
-
-void print_matrix(int matrix[m][n]){
-    for(int i=0; i<m;i++){
-        for(int j=0; j<n;j++){
-            cout<<matrix[i][j]<<" ";
-        }
-    cout<<endl;
-    }
+    sum+=n;
+    
+    return (sum==2*n) ? 1 : 0;
 }
 
 int main(){
-    int matrix1[m][n]={{1,2,1},{2,1,2},{1,2,1}};
-    int matrix2[m][n]={{1,1,1},{1,1,1},{1,1,1}};
-    int result[m][n];
-
-    // matrix addition
-    add(matrix1,matrix2,result);
-    cout<<endl;
-    print_matrix(result);
-
-    // matrix subtraction
-    subtract(matrix1,matrix2,result);
-    cout<<endl;
-    print_matrix(result);
-
-    // matrix multiplication
-    multiply(matrix1,matrix2,result);
-    cout<<endl;
-    print_matrix(result);
+    int n;
+    std::cout<<"Enter a num"<<std::endl;
+    std::cin>>n;
+    if(perfect_num(n))
+        std::cout<<"Perfect num"<<std::endl;
+    else
+        std::cout<<"Not a perfect num"<<std::endl;
 
     return 0;
 }
-
 
 
 
