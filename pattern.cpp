@@ -760,12 +760,49 @@
 
 // pattern reverse triangle
 
+// #include<iostream>
+// using namespace std;
+
+// void Draw(int n)
+// {
+    
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n;j++){
+//             if(i+j<=n+1){
+//                 cout<<"* ";
+//             }
+//             else{
+//                 cout<<" ";
+//             }
+//         }
+//         cout<<endl;
+//     }
+// }
+
+
+// int main(){
+//     Draw(6);
+    
+//     return 0;
+// }
+
+
+// Angled(90 degree) Pyramid Star Pattern
+
 #include<iostream>
 using namespace std;
 
-void Draw(int n)
-{
-    
+
+void pattern1(int n){
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
+}
+
+void pattern2(int n){
     for(int i=1;i<=n;i++){
         for(int j=1;j<=n;j++){
             if(i+j<=n+1){
@@ -779,9 +816,47 @@ void Draw(int n)
     }
 }
 
+void Draw(int n)
+{
+    pattern1(n);
+    pattern2(n-1);
+}
+
 
 int main(){
     Draw(6);
     
     return 0;
 }
+
+// hollow diamond star pattern
+
+// #include<iostream>
+// using namespace std;
+
+
+// void pattern1(int n){
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n;j++){
+//             if(i+j<=n+1){
+//                 cout<<"* ";
+//             }
+//             else{
+//                 cout<<" ";
+//             }
+//         }
+//         cout<<endl;
+//     }
+// }
+
+// void Draw(int n)
+// {
+//     pattern1(n);
+// }
+
+
+// int main(){
+//     Draw(6);
+    
+//     return 0;
+// }
