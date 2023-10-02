@@ -732,6 +732,34 @@
 
 // pyramid
 
+// #include<iostream>
+// using namespace std;
+
+// void Draw(int n)
+// {
+    
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n;j++){
+//             if(i+j>=n+1){
+//                 cout<<"* ";
+//             }
+//             else{
+//                 cout<<" ";
+//             }
+//         }
+//         cout<<endl;
+//     }
+// }
+
+
+// int main(){
+//     Draw(5);
+    
+//     return 0;
+// }
+
+// pattern reverse triangle
+
 #include<iostream>
 using namespace std;
 
@@ -740,7 +768,7 @@ void Draw(int n)
     
     for(int i=1;i<=n;i++){
         for(int j=1;j<=n;j++){
-            if(i+j>=n+1){
+            if(i+j<=n+1){
                 cout<<"* ";
             }
             else{
@@ -753,7 +781,7 @@ void Draw(int n)
 
 
 int main(){
-    Draw(5);
+    Draw(6);
     
     return 0;
 }
