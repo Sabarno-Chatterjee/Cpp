@@ -637,38 +637,67 @@
 
 // pyramid
 
+// #include<iostream>
+// using namespace std;
+
+// void pattern(int n){
+//     int i, j;
+    
+//     // outer loop to handle the number of rows
+//     for(i = 1; i <= n; i++){
+        
+//         // inner loop to print spaces
+//         for(int k = 1; k <= 2 * (n - i); k++)
+//             cout << " ";
+        
+//         // inner loop to print the first part
+//         for(j = i; j >= 1; j--)
+//         if(i==n)
+//             cout << "*" << " ";
+        
+//         // inner loop to print the second part    
+//         for(j = 2; j <= i; j++)
+//         if(i==n)
+//             cout << "*" << " ";
+        
+//         // Move to the next line after each row
+//         cout << endl;
+//     }
+// }
+
+// int main(){
+//     pattern(4); 
+//     return 0;
+// }
+
+
+
+// upper triangle
+
 #include<iostream>
 using namespace std;
 
-void pattern(int n){
-    int i, j;
+void Draw(int n)
+{
     
-    // outer loop to handle the number of rows
-    for(i = 1; i <= n; i++){
-        
-        // inner loop to print spaces
-        for(int k = 1; k <= 2 * (n - i); k++)
-            cout << " ";
-        
-        // inner loop to print the first part
-        for(j = i; j >= 1; j--)
-        if(i==n)
-            cout << "*" << " ";
-        
-        // inner loop to print the second part    
-        for(j = 2; j <= i; j++)
-        if(i==n)
-            cout << "*" << " ";
-        
-        // Move to the next line after each row
-        cout << endl;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            if(i<=j){
+                cout<<"* ";
+            }
+            else{
+                cout<<" ";
+            }
+        }
+        cout<<endl;
     }
 }
 
+
 int main(){
-    pattern(4); 
+    Draw(5);
+    
     return 0;
 }
-
 
 
