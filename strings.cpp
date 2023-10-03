@@ -51,24 +51,56 @@
 
 // Convert lowercase string to uppercase
 
+// #include<iostream>
+// #include<cstring>
+
+// void str_lower(char str[]){
+//     int count=0;
+//     while(str[count]!='\0'){
+//         if(str[count]>=97 && str[count]<=122)
+//             str[count]-=32;
+//         count++;
+//     }
+//     std::cout<<str<<std::endl;
+// }
+
+// int main(){
+//     char str[50];
+//     std::cout<<"Enter a string to convert to uppercase"<<std::endl;
+//     std::cin.getline(str,50);
+//     str_lower(str);
+
+//     return 0;
+// }
+
+
+// Program to count the number of vowels and consonents 
+
 #include<iostream>
 #include<cstring>
 
-void str_lower(char str[]){
-    int count=0;
-    while(str[count]!='\0'){
-        if(str[count]>=97 && str[count]<=122)
-            str[count]-=32;
-        count++;
+void count_vowels(char str[]){
+    int i=0, vowels=0, consonents=0;
+    while(str[i]!='\0'){
+        if(str[i]>=65 && str[i]<=90)
+            str[i]+=32;
+        if(str[i]=='a' || str[i]=='e' ||str[i]=='u' || str[i]=='o' ||str[i]=='u')
+            vowels++;
+        else if((str[i]!=32) && (str[i]>=97 && str[i]<=122))
+            consonents++;
+        i++;
     }
-    std::cout<<str<<std::endl;
+    std::cout<<"Vowels: "<<vowels<<std::endl;
+    std::cout<<"Consonents: "<<consonents<<std::endl;
 }
+
 
 int main(){
     char str[50];
-    std::cout<<"Enter a string to convert to uppercase"<<std::endl;
+    std::cout<<"Enter a string to count the number of vowels and consonents."<<std::endl;
     std::cin.getline(str,50);
-    str_lower(str);
+    
+    count_vowels(str);
 
     return 0;
 }
