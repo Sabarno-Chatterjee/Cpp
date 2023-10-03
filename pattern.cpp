@@ -832,24 +832,72 @@
 
 // Pencil Shape Star Pattern
 
+// #include<iostream>
+// using namespace std;
+
+
+// void pattern1(int n){
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n;j++){
+//             cout<<"* ";
+//         }
+//         cout<<endl;
+//     }
+// }
+
+// void pattern2(int n){
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n;j++){
+//             if(j>=i){
+//                 cout<<"* ";
+//             }
+//             else{
+//                 cout<<" ";
+//             }
+//         }
+//         cout<<endl;
+//     }
+// }
+
+// void Draw(int n)
+// {
+//     pattern1(n);
+//     pattern2(n);
+// }
+
+
+// int main(){
+//     Draw(6);
+    
+//     return 0;
+// }
+
+// Angled puramid star
+
 #include<iostream>
 using namespace std;
 
 
 void pattern1(int n){
     for(int i=1;i<=n;i++){
-        for(int j=1;j<=n;j++){
-            cout<<"* ";
+        for(int j=1;j<=n;j++)
+        if(i+j>=n+1){
+            cout<<"*";
+        }
+        else{
+            cout<<" ";
         }
         cout<<endl;
     }
 }
 
 void pattern2(int n){
+    
     for(int i=1;i<=n;i++){
+        cout<<" ";
         for(int j=1;j<=n;j++){
             if(j>=i){
-                cout<<"* ";
+                cout<<"*";
             }
             else{
                 cout<<" ";
@@ -862,7 +910,7 @@ void pattern2(int n){
 void Draw(int n)
 {
     pattern1(n);
-    pattern2(n);
+    pattern2(n-1);
 }
 
 
