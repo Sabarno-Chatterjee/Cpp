@@ -76,31 +76,60 @@
 
 // Program to count the number of vowels and consonents 
 
+// #include<iostream>
+// #include<cstring>
+
+// void count_vowels(char str[]){
+//     int i=0, vowels=0, consonents=0;
+//     while(str[i]!='\0'){
+//         if(str[i]>=65 && str[i]<=90)
+//             str[i]+=32;
+//         if(str[i]=='a' || str[i]=='e' ||str[i]=='u' || str[i]=='o' ||str[i]=='u')
+//             vowels++;
+//         else if((str[i]!=32) && (str[i]>=97 && str[i]<=122))
+//             consonents++;
+//         i++;
+//     }
+//     std::cout<<"Vowels: "<<vowels<<std::endl;
+//     std::cout<<"Consonents: "<<consonents<<std::endl;
+// }
+
+
+// int main(){
+//     char str[50];
+//     std::cout<<"Enter a string to count the number of vowels and consonents."<<std::endl;
+//     std::cin.getline(str,50);
+    
+//     count_vowels(str);
+
+//     return 0;
+// }
+
+
+// Program to count words and spaces
+
+
 #include<iostream>
 #include<cstring>
 
-void count_vowels(char str[]){
-    int i=0, vowels=0, consonents=0;
+void count_words(char str[]){
+    int i=0, space=0;
     while(str[i]!='\0'){
-        if(str[i]>=65 && str[i]<=90)
-            str[i]+=32;
-        if(str[i]=='a' || str[i]=='e' ||str[i]=='u' || str[i]=='o' ||str[i]=='u')
-            vowels++;
-        else if((str[i]!=32) && (str[i]>=97 && str[i]<=122))
-            consonents++;
+        if(str[i]==32)
+            space++;
         i++;
     }
-    std::cout<<"Vowels: "<<vowels<<std::endl;
-    std::cout<<"Consonents: "<<consonents<<std::endl;
+    std::cout<<"Space: "<<space<<std::endl;
+    std::cout<<"Words: "<<space+1<<std::endl;
 }
 
 
 int main(){
     char str[50];
-    std::cout<<"Enter a string to count the number of vowels and consonents."<<std::endl;
+    std::cout<<"Enter a string to count the number of words and spaces."<<std::endl;
     std::cin.getline(str,50);
     
-    count_vowels(str);
+    count_words(str);
 
     return 0;
 }
