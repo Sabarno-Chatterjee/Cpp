@@ -109,27 +109,63 @@
 // Program to count words and spaces
 
 
+// #include<iostream>
+// #include<cstring>
+
+// void count_words(char str[]){
+//     int i=0, space=0;
+//     while(str[i]!='\0'){
+//         if(str[i]==32)
+//             space++;
+//         i++;
+//     }
+//     std::cout<<"Space: "<<space<<std::endl;
+//     std::cout<<"Words: "<<space+1<<std::endl;
+// }
+
+
+// int main(){
+//     char str[50];
+//     std::cout<<"Enter a string to count the number of words and spaces."<<std::endl;
+//     std::cin.getline(str,50);
+    
+//     count_words(str);
+
+//     return 0;
+// }
+
+
+// Program to check string pallindromes
+
 #include<iostream>
 #include<cstring>
 
-void count_words(char str[]){
-    int i=0, space=0;
-    while(str[i]!='\0'){
-        if(str[i]==32)
-            space++;
-        i++;
-    }
-    std::cout<<"Space: "<<space<<std::endl;
-    std::cout<<"Words: "<<space+1<<std::endl;
-}
+int check_pallindrome(char str[]){
+    int length=strlen(str), j=0;
+    char reverse[50];
 
+    for(int i=length-1; i>=0;i--,j++){
+        reverse[j]=str[i];
+    }
+    reverse[j]='\0';
+
+    for(int i=0; i<length; i++){
+        if(str[i]!=reverse[i]){
+            std::cout<<"Not a Pallindrome"<<std::endl;
+            return 0;
+        }
+    } 
+    std::cout<<"It is a pallindrome"<<std::endl;
+    return 0;
+}
 
 int main(){
     char str[50];
-    std::cout<<"Enter a string to count the number of words and spaces."<<std::endl;
-    std::cin.getline(str,50);
-    
-    count_words(str);
+    std::cout<<"Enter a string to check for pallindrome."<<std::endl;
+    std::cin.get(str,50);
+    std::cin.ignore();
 
+    check_pallindrome(str);
+    
     return 0;
 }
