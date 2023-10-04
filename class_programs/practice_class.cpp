@@ -17,6 +17,7 @@ class Student{
 
     //member functions
     public:
+    //Constructor
     Student(int roll, string name,int m1, int m2, int m3);
 
     //accessor functions
@@ -31,10 +32,50 @@ class Student{
     void setName(int name);
     void setMarks(int m1, int m2, int m3);
 
-    //
-
+    //facilitators
+    int TotalMarks();
+    char Grade();
+    
 };
 
-int main(){
+int main(int ){
+return 0;
+}
 
+
+Student::Student(int roll, string name,int m1, int m2, int m3){
+    this->roll=roll;
+    this->name=name;
+    this->marks_maths=m1;
+    this->marks_phy=m2;
+    this->marks_chem=m3;
+}
+
+void Student::setRoll(int roll){
+    this->roll=roll;
+}
+
+void Student::setName(int name){
+    this->name=name;
+}
+    
+void Student::setMarks(int m1, int m2, int m3){
+    this->marks_maths=m1;
+    this->marks_phy=m2;
+    this->marks_chem=m3;
+}
+
+    //facilitators
+int Student::TotalMarks(){
+    return marks_maths+marks_phy+marks_chem;
+}
+
+char Student::Grade(){
+    float avg=TotalMarks()/3;
+    if(avg>=60)
+       return 'A';
+    else if(avg>=40 &&avg<60)
+        return 'B';
+    else
+        return 'C';
 }
