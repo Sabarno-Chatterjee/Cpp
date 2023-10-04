@@ -112,11 +112,15 @@ class Complex{
     //members functions
     public:
     Complex(int r=0, int i=0);
+    //accessor functions
+    int getReal(){return real;}
+    int getImaginary(){return imaginary;}
     //facilitator
-    Complex add(Complex x){
+    Complex operator+(Complex x){
         Complex temp;
         temp.real=x.real+real;
         temp.imaginary=x.imaginary+imaginary;
+        return temp;
     }
 };
 
@@ -124,9 +128,9 @@ int main(){
     Complex c1(3,5);
     Complex c2(1,2);
     Complex c;
-    c=c1.add(c2);
+    c=c1+c2;
 
-    
+    cout<<c.getReal()<<"+i"<<c.getImaginary()<<endl;
     return 0;
 }
 
