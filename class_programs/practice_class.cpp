@@ -99,54 +99,54 @@ Write functions for total marks, grade and required methods.*/
 
 // Adding complex numbers using operator overloading
 
-#include<iostream>
+// #include<iostream>
 
-using namespace std;
+// using namespace std;
 
-class Complex{
-    //data members
-    private:
-    int real;
-    int imaginary;
+// class Complex{
+//     //data members
+//     private:
+//     int real;
+//     int imaginary;
 
-    //members functions
-    public:
-    Complex(int r=0, int i=0);
-    //accessor functions
-    int getReal(){return real;}
-    int getImaginary(){return imaginary;}
-    //facilitator
-    Complex operator+(Complex x){
-        Complex temp;
-        temp.real=x.real+real;
-        temp.imaginary=x.imaginary+imaginary;
-        return temp;
-    }
+//     //members functions
+//     public:
+//     Complex(int r=0, int i=0);
+//     //accessor functions
+//     int getReal(){return real;}
+//     int getImaginary(){return imaginary;}
+//     //facilitator
+//     Complex operator+(Complex x){
+//         Complex temp;
+//         temp.real=x.real+real;
+//         temp.imaginary=x.imaginary+imaginary;
+//         return temp;
+//     }
 
-    //Insertion operator overloading declaration
-    friend ostream & operator<<(ostream &out, Complex &c); 
-};
+//     //Insertion operator overloading declaration
+//     friend ostream & operator<<(ostream &out, Complex &c); 
+// };
 
-int main(){
-    Complex c1(3,5);
-    Complex c2(1,2);
-    Complex c;
-    c=c1+c2;
+// int main(){
+//     Complex c1(3,5);
+//     Complex c2(1,2);
+//     Complex c;
+//     c=c1+c2;
 
-    cout<<c;
-    return 0;
-}
+//     cout<<c;
+//     return 0;
+// }
 
-Complex::Complex(int r, int i){
-    real=r;
-    imaginary=i;
-}
+// Complex::Complex(int r, int i){
+//     real=r;
+//     imaginary=i;
+// }
 
-// Insertion operator overloading definition
-ostream & operator<<(ostream &out, Complex &c){
-    out<<c.getReal()<<"+"<<c.getImaginary()<<"i"<<endl;
-    return out;
-}
+// // Insertion operator overloading definition
+// ostream & operator<<(ostream &out, Complex &c){
+//     out<<c.getReal()<<"+"<<c.getImaginary()<<"i"<<endl;
+//     return out;
+// }
 
 
 
@@ -204,4 +204,36 @@ ostream & operator<<(ostream &out, Complex &c){
 // }
 
 
+// Write a class for Rational number (p/q) with overloading (addition)+ and (insertion)<< operator.
 
+#include<iostream>
+
+using namespace std;
+
+class Rational{
+    // data members
+    private:
+        int p;
+        int q;
+
+    // member functions
+    public:
+        //constructor
+    Rational(int p=1, int q=1);
+
+    
+
+    //accessor functions
+    int getP(){return p;}
+    int getQ(){return q;}
+
+    //mutator functions
+    void setP();
+    void setQ();
+
+};
+
+int main(){
+
+    return 0;
+}
