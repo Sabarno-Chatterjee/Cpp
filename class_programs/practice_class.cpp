@@ -232,7 +232,7 @@ class Rational{
     void setP();
     void setQ();
 
-    //facilitator functions
+    //facilitator function using operator overloading
     Rational operator+(Rational r){
         Rational temp;
         temp.p=this->p*r.q+this->q*r.p;
@@ -240,11 +240,22 @@ class Rational{
         return temp;
     }
 
-    friend 
+    // friend function for operator overloading
+    friend ostream & operator<<(ostream &out,Rational &r);
 
 };
 
 int main(){
 
     return 0;
+}
+
+Rational::Rational(int p=1, int q=1){
+    this->p=p;
+    this->q=q;
+}
+
+Rational::Rational (Rational &r){
+    this->p=r.p;
+    this->q=r.q;
 }
