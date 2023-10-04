@@ -246,11 +246,16 @@ class Rational{
 };
 
 int main(){
-
+    Rational r1(1,4);
+    Rational r2(1,2);
+    Rational r;
+    
+    r=r1+r2;
+    cout<<r;
     return 0;
 }
 
-Rational::Rational(int p=1, int q=1){
+Rational::Rational(int p, int q){
     this->p=p;
     this->q=q;
 }
@@ -271,4 +276,5 @@ void Rational::setQ(int q){
 
 ostream & operator<<(ostream &out,Rational &r){
     out<<r.getP()<<"/"<<r.getQ()<<endl;
+    return out;
 }
