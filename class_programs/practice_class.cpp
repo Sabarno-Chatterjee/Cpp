@@ -39,7 +39,20 @@ class Student{
 };
 
 int main(){
-    Student s1(4, "John", 78,98,80);
+    int roll,m,p,c;
+    string name;
+
+    cout<<"Enter the roll number"<<endl;
+    cin>>roll;
+
+    cout<<"Enter the name of student"<<endl;
+    cin>>name;
+
+    cout<<"Enter the marks obtained in maths, physics and chemistry"<<endl;
+    cin>>m>>p>>c;
+
+    Student s1(roll,name,m,p,c);
+
     cout<<"Total Marks: "<<s1.TotalMarks()<<endl;
     cout<<"Grade: "<<s1.Grade()<<endl;
     return 0;
