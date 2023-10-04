@@ -130,7 +130,7 @@ int main(){
     Complex c;
     c=c1+c2;
 
-    cout<<c.getReal()<<"+i"<<c.getImaginary()<<endl;
+    cout<<c.getReal()<<"+"<<c.getImaginary()<<"i"<<endl;
     return 0;
 }
 
@@ -138,4 +138,6 @@ Complex::Complex(int r, int i){
     real=r;
     imaginary=i;
 }
+
+
 
