@@ -221,7 +221,8 @@ class Rational{
         //constructor
     Rational(int p=1, int q=1);
 
-    
+    //copy constructor
+    Rational (Rational &r);
 
     //accessor functions
     int getP(){return p;}
@@ -230,6 +231,16 @@ class Rational{
     //mutator functions
     void setP();
     void setQ();
+
+    //facilitator functions
+    Rational operator+(Rational r){
+        Rational temp;
+        temp.p=this->p*r.q+this->q*r.p;
+        temp.q=this->q*r.q;
+        return temp;
+    }
+
+    friend 
 
 };
 
