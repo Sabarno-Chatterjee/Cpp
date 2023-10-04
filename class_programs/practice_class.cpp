@@ -99,50 +99,6 @@ Write functions for total marks, grade and required methods.*/
 
 // Adding complex numbers using operator overloading
 
-// #include<iostream>
-
-// using namespace std;
-
-// class Complex{
-//     //data members
-//     private:
-//     int real;
-//     int imaginary;
-
-//     //members functions
-//     public:
-//     Complex(int r=0, int i=0);
-//     //accessor functions
-//     int getReal(){return real;}
-//     int getImaginary(){return imaginary;}
-//     //facilitator
-//     Complex operator+(Complex x){
-//         Complex temp;
-//         temp.real=x.real+real;
-//         temp.imaginary=x.imaginary+imaginary;
-//         return temp;
-//     }
-// };
-
-// int main(){
-//     Complex c1(3,5);
-//     Complex c2(1,2);
-//     Complex c;
-//     c=c1+c2;
-
-//     cout<<c.getReal()<<"+"<<c.getImaginary()<<"i"<<endl;
-//     return 0;
-// }
-
-// Complex::Complex(int r, int i){
-//     real=r;
-//     imaginary=i;
-// }
-
-
-
-// Subtracting complex numbers using operator overloading and friend functions
-
 #include<iostream>
 
 using namespace std;
@@ -160,16 +116,24 @@ class Complex{
     int getReal(){return real;}
     int getImaginary(){return imaginary;}
     //facilitator
-    friend Complex operator-(Complex x, Complex y);
+    Complex operator+(Complex x){
+        Complex temp;
+        temp.real=x.real+real;
+        temp.imaginary=x.imaginary+imaginary;
+        return temp;
+    }
+
+    //Insertion operator overloading declaration
+    friend ostream & operator<<(ostream &out, Complex &c); 
 };
 
 int main(){
     Complex c1(3,5);
     Complex c2(1,2);
     Complex c;
-    c=c1-c2;
+    c=c1+c2;
 
-    cout<<c.getReal()<<"+"<<c.getImaginary()<<"i"<<endl;
+    cout<<c;
     return 0;
 }
 
@@ -178,12 +142,66 @@ Complex::Complex(int r, int i){
     imaginary=i;
 }
 
-Complex operator-(Complex x, Complex y){
-    Complex temp;
-    temp.real=x.real-y.real;
-    temp.imaginary=x.imaginary-y.imaginary;
-    return temp;
+// Insertion operator overloading definition
+ostream & operator<<(ostream &out, Complex &c){
+    out<<c.getReal()<<"+"<<c.getImaginary()<<"i"<<endl;
+    return out;
 }
+
+
+
+/*Subtracting complex numbers using operator overloading and friend functions+insertion function overloading.*/ 
+
+// #include<iostream>
+
+// using namespace std;
+
+// class Complex{
+//     //data members
+//     private:
+//     int real;
+//     int imaginary;
+
+//     //members functions
+//     public:
+//     Complex(int r=0, int i=0);
+//     //accessor functions
+//     int getReal(){return real;}
+//     int getImaginary(){return imaginary;}
+//     //facilitator
+//     friend Complex operator-(Complex x, Complex y);
+
+//      //Insertion operator overloading declaration using friend function    
+//     friend ostream & operator<<(ostream &o, Complex &c);
+// };
+
+// int main(){
+//     Complex c1(3,5);
+//     Complex c2(1,2);
+//     Complex c;
+//     c=c1-c2;
+
+//     cout<<c;
+//     return 0;
+// }
+
+// Complex::Complex(int r, int i){
+//     real=r;
+//     imaginary=i;
+// }
+
+// Complex operator-(Complex x, Complex y){
+//     Complex temp;
+//     temp.real=x.real-y.real;
+//     temp.imaginary=x.imaginary-y.imaginary;
+//     return temp;
+// }
+
+//// Insertion operator overloading definition
+// ostream & operator<<(ostream &o, Complex &c){
+//     o<<c.getReal()<<"+"<<c.getImaginary()<<"i"<<endl;
+//     return o;
+// }
 
 
 
