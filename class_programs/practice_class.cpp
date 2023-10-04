@@ -38,8 +38,11 @@ class Student{
     
 };
 
-int main(int ){
-return 0;
+int main(){
+    Student s1(4, "John", 78,98,80);
+    cout<<"Total Marks: "<<s1.TotalMarks()<<endl;
+    cout<<"Grade: "<<s1.Grade()<<endl;
+    return 0;
 }
 
 
