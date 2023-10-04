@@ -229,8 +229,8 @@ class Rational{
     int getQ(){return q;}
 
     //mutator functions
-    void setP();
-    void setQ();
+    void setP(int p);
+    void setQ(int q);
 
     //facilitator function using operator overloading
     Rational operator+(Rational r){
@@ -258,4 +258,17 @@ Rational::Rational(int p=1, int q=1){
 Rational::Rational (Rational &r){
     this->p=r.p;
     this->q=r.q;
+}
+
+void Rational::setP(int p){
+    this->p=p;
+}
+
+void Rational::setQ(int q){
+    this->q=q;
+}
+
+
+ostream & operator<<(ostream &out,Rational &r){
+    out<<r.getP()<<"/"<<r.getQ()<<endl;
 }
