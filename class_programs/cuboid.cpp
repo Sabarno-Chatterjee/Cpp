@@ -47,19 +47,18 @@ class Cuboid:public Rectangle{
     void setHeight(int h);
     //facilitators
     int volume();
+    int Lateral_Surface_Area();
 };
 
 int main(){
-    Rectangle r(8,9);
-
-    cout<<"Area: "<<r.area()<<endl;
-    cout<<"Perimeter: "<<r.perimeter()<<endl;
-    
     Cuboid c(2,3,4);
     cout<<c.volume()<<endl;
     
-    Cuboid c1(c);
-    cout<<c1.volume()<<endl;
+    // Cuboid c1(c);
+    // cout<<c1.volume()<<endl;
+    cout<<"Volume: "<<c.volume()<<endl;
+    cout<<"Lateral Surface Area: "<<c.Lateral_Surface_Area()<<endl;
+
 
     return 0;
 }
@@ -109,4 +108,8 @@ void Cuboid::setHeight(int h){
 
 int Cuboid::volume(){
     return getLength()*getBreadth()*height;
+}
+
+int Cuboid::Lateral_Surface_Area(){
+    return 2*height*(getLength() + getBreadth());
 }
