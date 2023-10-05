@@ -31,7 +31,7 @@ class Rectangle{
 };
 
 int main(){
-    Rectangle r(8, 4);
+    Rectangle r(8,9);
 
     cout<<"Area: "<<r.area()<<endl;
     cout<<"Perimeter: "<<r.perimeter()<<endl;
