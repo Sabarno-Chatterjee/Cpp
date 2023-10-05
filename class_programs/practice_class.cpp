@@ -206,75 +206,140 @@ Write functions for total marks, grade and required methods.*/
 
 // Write a class for Rational number (p/q) with overloading (addition)+ and (insertion)<< operator.
 
+// #include<iostream>
+
+// using namespace std;
+
+// class Rational{
+//     // data members
+//     private:
+//         int p;
+//         int q;
+
+//     // member functions
+//     public:
+//         //constructor
+//     Rational(int p=1, int q=1);
+
+//     //copy constructor
+//     Rational (Rational &r);
+
+//     //accessor functions
+//     int getP(){return p;}
+//     int getQ(){return q;}
+
+//     //mutator functions
+//     void setP(int p);
+//     void setQ(int q);
+
+//     //facilitator function using operator overloading
+//     Rational operator+(Rational r){
+//         Rational temp;
+//         temp.p=this->p*r.q+this->q*r.p;
+//         temp.q=this->q*r.q;
+//         return temp;
+//     }
+
+//     // friend function for operator overloading
+//     friend ostream & operator<<(ostream &out,Rational &r);
+
+// };
+
+// int main(){
+//     Rational r1(1,4);
+//     Rational r2(1,2);
+//     Rational r;
+    
+//     r=r1+r2;
+//     cout<<r;
+//     return 0;
+// }
+
+// Rational::Rational(int p, int q){
+//     this->p=p;
+//     this->q=q;
+// }
+
+// Rational::Rational (Rational &r){
+//     this->p=r.p;
+//     this->q=r.q;
+// }
+
+// void Rational::setP(int p){
+//     this->p=p;
+// }
+
+// void Rational::setQ(int q){
+//     this->q=q;
+// }
+
+
+// ostream & operator<<(ostream &out,Rational &r){
+//     out<<r.getP()<<"/"<<r.getQ()<<endl;
+//     return out;
+// }
+
+
+/*Write a class for Employee
+Derived classes:
+1.Full time employee with salary
+2.Part time employee with daily wages
+Write the required methods.*/
+
 #include<iostream>
 
 using namespace std;
 
-class Rational{
-    // data members
+class Employee{
+    //data members
     private:
-        int p;
-        int q;
+    int empID;
+    string empNAME;
 
-    // member functions
+    //members functions
     public:
-        //constructor
-    Rational(int p=1, int q=1);
+    //accessor methods
+    Employee(int id=0, string name="abc");
+    int get_empID(){return empID;}
+    string get_empNAME(){return empNAME;}
+};
 
-    //copy constructor
-    Rational (Rational &r);
-
-    //accessor functions
-    int getP(){return p;}
-    int getQ(){return q;}
-
-    //mutator functions
-    void setP(int p);
-    void setQ(int q);
-
-    //facilitator function using operator overloading
-    Rational operator+(Rational r){
-        Rational temp;
-        temp.p=this->p*r.q+this->q*r.p;
-        temp.q=this->q*r.q;
-        return temp;
+class FullTimeEmployee:public Employee{
+    //data members
+    private:
+    int salary;
+    public:
+    FullTimeEmployee(int i, string n, int s):Employee(i,n){
+        this->salary=s;
     }
 
-    // friend function for operator overloading
-    friend ostream & operator<<(ostream &out,Rational &r);
+    int getSalary(){return salary;} 
+};
 
+class PartTimeEmployee:public Employee{
+    //data members
+    private:
+    int wage;
+    public:
+    PartTimeEmployee(int i, string n, int w):Employee(i,n){
+        this->wage=w;
+    }
+
+    int getWage(){return wage;}
 };
 
 int main(){
-    Rational r1(1,4);
-    Rational r2(1,2);
-    Rational r;
+    PartTimeEmployee p1(1,"Max",350);
+    FullTimeEmployee p2(2,"Sally",7000);
+    Employee e;
+    cout<<p1.get_empID()<<" "<<p1.get_empNAME()<<" "<<p1.getWage()<<endl;
+    cout<<p2.get_empID()<<" "<<p2.get_empNAME()<<" "<<p2.getSalary()<<endl;
+    cout<<e.get_empID()<<" "<<e.get_empNAME()<<endl;
     
-    r=r1+r2;
-    cout<<r;
     return 0;
 }
 
-Rational::Rational(int p, int q){
-    this->p=p;
-    this->q=q;
-}
-
-Rational::Rational (Rational &r){
-    this->p=r.p;
-    this->q=r.q;
-}
-
-void Rational::setP(int p){
-    this->p=p;
-}
-
-void Rational::setQ(int q){
-    this->q=q;
-}
-
-
-ostream & operator<<(ostream &out,Rational &r){
-    out<<r.getP()<<"/"<<r.getQ()<<endl;
-    return out;
+Employee::Employee(int id, string name){
+    this->empID=id;
+    this->empNAME=name;
 }
