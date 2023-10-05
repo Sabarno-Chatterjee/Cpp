@@ -47,7 +47,7 @@ class Cuboid:public Rectangle{
     //mutator methods
     void setHeight(int h);
     //facilitators
-    int volume();
+    int Volume();
     int Lateral_Surface_Area();
     int Total_Surface_Area();
     float Diagonal();
@@ -56,11 +56,11 @@ class Cuboid:public Rectangle{
 
 int main(){
     Cuboid c(2,3,4);
-    cout<<c.volume()<<endl;
-    
+
+    //copy constructor demonstration
     // Cuboid c1(c);
     // cout<<c1.volume()<<endl;
-    cout<<"Volume: "<<c.volume()<<endl;
+    cout<<"Volume: "<<c.Volume()<<endl;
     cout<<"Lateral Surface Area: "<<c.Lateral_Surface_Area()<<endl;
     cout<<"Total Surface Area: "<<c.Total_Surface_Area()<<endl;
     cout<<"Diagonal: "<<c.Diagonal()<<endl;
@@ -112,7 +112,7 @@ void Cuboid::setHeight(int h){
 }
     
 
-int Cuboid::volume(){
+int Cuboid::Volume(){
     return getLength()*getBreadth()*height;
 }
 
