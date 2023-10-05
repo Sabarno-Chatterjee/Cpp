@@ -51,6 +51,7 @@ class Cuboid:public Rectangle{
     int Lateral_Surface_Area();
     int Total_Surface_Area();
     float Diagonal();
+    int Perimeter_Cuboid();
 };
 
 int main(){
@@ -63,8 +64,7 @@ int main(){
     cout<<"Lateral Surface Area: "<<c.Lateral_Surface_Area()<<endl;
     cout<<"Total Surface Area: "<<c.Total_Surface_Area()<<endl;
     cout<<"Diagonal: "<<c.Diagonal()<<endl;
-
-
+    cout<<"Perimeter: "<<c.Perimeter_Cuboid()<<endl;
 
     return 0;
 }
@@ -126,4 +126,8 @@ int Cuboid::Total_Surface_Area(){
 
 float Cuboid::Diagonal(){
     return sqrt(pow(getLength(),2)+pow(getBreadth(),2)+pow(height,2));
+}
+
+int Cuboid::Perimeter_Cuboid(){
+    return 4*(getLength()+getBreadth()+height);
 }
