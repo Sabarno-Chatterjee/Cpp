@@ -1,6 +1,7 @@
 // inheritance
 
 #include<iostream>
+#include<cmath>
 
 using namespace std;
 
@@ -49,6 +50,7 @@ class Cuboid:public Rectangle{
     int volume();
     int Lateral_Surface_Area();
     int Total_Surface_Area();
+    float Diagonal();
 };
 
 int main(){
@@ -60,6 +62,7 @@ int main(){
     cout<<"Volume: "<<c.volume()<<endl;
     cout<<"Lateral Surface Area: "<<c.Lateral_Surface_Area()<<endl;
     cout<<"Total Surface Area: "<<c.Total_Surface_Area()<<endl;
+    cout<<"Diagonal: "<<c.Diagonal()<<endl;
 
 
 
@@ -119,4 +122,8 @@ int Cuboid::Lateral_Surface_Area(){
 
 int Cuboid::Total_Surface_Area(){
     return 2*(getLength()*getBreadth() + getBreadth()*height + height*getLength());
+}
+
+float Cuboid::Diagonal(){
+    return sqrt(pow(getLength(),2)+pow(getBreadth(),2)+pow(height,2));
 }
