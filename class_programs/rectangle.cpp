@@ -9,46 +9,25 @@ class Rectangle{
     int breadth;
 
     public:
-    //Non-parameterised constructor; default constructor
-    Rectangle(){
-        length = 0;
-        breadth = 0;
-    }
-
-    //Parameterised constructor
-    Rectangle(int l, int b){
-        length = l;
-        breadth = b;
-    }
-
+     //Parameterised constructor
+    Rectangle(int l=0, int b=0);
+    //Copy constructor
+    Rectangle(Rectangle &r);
     //member_functions
-    int area(){
-        return length*breadth;
-    }
-
-    int perimeter(){
-        return 2*(length+breadth);
-    }
-
     int getlength(){            //accessor method
         return length;
     }
-
     int getbreadth(){           //accessor method
         return breadth;
     }
 
-    void setlength(int l){      //mutator method
-        length = l;
-    }
+    //mutator methods
+    void setlength(int l);
+    void setbreadth(int b);
 
-    void setbreadth(int b){     //mutator method
-        breadth = b;
-    }
-
-    ~Rectangle(){               // just a demonstration of destructor
-        cout<<"Destructor"<<endl;
-    }
+    //facilitators
+    int area();
+    int perimeter();
 };
 
 int main(){
@@ -58,4 +37,31 @@ int main(){
     cout<<"Perimeter: "<<r.perimeter()<<endl;
 
     return 0;
+}
+
+Rectangle::Rectangle(int l, int b){
+    length=l;
+    breadth=b;
+}
+    
+Rectangle::Rectangle(Rectangle &r){
+    this->length=r.length;
+    this->breadth=r.breadth;
+}
+
+void Rectangle::setlength(int l){
+    length=l;
+}
+    
+void Rectangle::setbreadth(int b){
+    breadth=b;
+}
+
+    
+int Rectangle::area(){
+    return length*breadth;
+}
+    
+int Rectangle::perimeter(){
+    return 2*(length+breadth);
 }
