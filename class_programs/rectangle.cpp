@@ -1,3 +1,5 @@
+// inheritance
+
 #include<iostream>
 
 using namespace std;
@@ -30,6 +32,7 @@ class Rectangle{
     int perimeter();
 };
 
+
 int main(){
     Rectangle r(8,9);
 
@@ -40,8 +43,8 @@ int main(){
 }
 
 Rectangle::Rectangle(int l, int b){
-    length=l;
-    breadth=b;
+    this->length=l;
+    this->breadth=b;
 }
     
 Rectangle::Rectangle(Rectangle &r){
@@ -50,11 +53,11 @@ Rectangle::Rectangle(Rectangle &r){
 }
 
 void Rectangle::setlength(int l){
-    length=l;
+    this->length=l;
 }
     
 void Rectangle::setbreadth(int b){
-    breadth=b;
+    this->breadth=b;
 }
 
     
