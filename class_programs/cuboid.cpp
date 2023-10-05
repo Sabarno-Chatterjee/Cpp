@@ -48,6 +48,7 @@ class Cuboid:public Rectangle{
     //facilitators
     int volume();
     int Lateral_Surface_Area();
+    int Total_Surface_Area();
 };
 
 int main(){
@@ -58,6 +59,8 @@ int main(){
     // cout<<c1.volume()<<endl;
     cout<<"Volume: "<<c.volume()<<endl;
     cout<<"Lateral Surface Area: "<<c.Lateral_Surface_Area()<<endl;
+    cout<<"Total Surface Area: "<<c.Total_Surface_Area()<<endl;
+
 
 
     return 0;
@@ -112,4 +115,8 @@ int Cuboid::volume(){
 
 int Cuboid::Lateral_Surface_Area(){
     return 2*height*(getLength() + getBreadth());
+}
+
+int Cuboid::Total_Surface_Area(){
+    return 2*(getLength()*getBreadth() + getBreadth()*height + height*getLength());
 }
