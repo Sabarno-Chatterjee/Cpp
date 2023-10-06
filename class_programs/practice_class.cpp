@@ -356,28 +356,75 @@ circle*/
 
 using namespace std;
 
+#define PI 3.14
+
 class Shape{
     //Abstract function/interface/pure virtual functions
-
-    virtual float Area()=0;
-    virtual float Perimeter()=0;
+    public:
+        virtual float Area()=0;
+        virtual float Perimeter()=0;
 };
 
 class Rectangle:public Shape{
     //data members
-    float length;
-    float breadth;
+    private:
+        float length;
+        float breadth;
 
-    //member functions
-    Rectangle(int l=0,int b=0);
+    public:
+        //member functions
+        Rectangle(float l=0,float b=0);
+        float Area();
+        float Perimeter();
+};
+
+class Circle:public Shape{
+    //data members
+    private:
+        float radius;
+
+    public:
+        //member functions
+        Circle(float r=0);
+        float Area();
+        float Perimeter();
 };
 
 int main(){
+    Shape *Sptr;
+    Sptr= new Rectangle(7,3);
+    cout<<"Area of rectangle: "<<Sptr->Area()<<endl;
+    cout<<"Perimeter of rectangle: "<<Sptr->Perimeter()<<endl;
+    
+    Sptr= new Circle(5);
+    cout<<"Area of circle: "<<Sptr->Area()<<endl;
+    cout<<"Perimeter of circle: "<<Sptr->Perimeter()<<endl;
 
     return 0;
 }
 
-Rectangle::Rectangle(int l=0,int b=0){
+Rectangle::Rectangle(float l,float b){
     this->length=l;
     this->breadth=b;
+}
+
+float Rectangle::Area(){
+    return length*breadth;
+}
+
+float Rectangle::Perimeter(){
+    return 2*(length+breadth);
+}
+
+Circle::Circle(float r){
+    this->radius=r;
+}
+
+float Circle::Area(){
+    return PI*radius*radius;
+}
+ 
+
+float Circle::Perimeter(){
+    return 2*PI*radius;
 }
