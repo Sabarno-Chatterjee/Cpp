@@ -365,9 +365,19 @@ class Shape{
 
 class Rectangle:public Shape{
     //data members
+    float length;
+    float breadth;
+
+    //member functions
+    Rectangle(int l=0,int b=0);
 };
 
 int main(){
 
     return 0;
+}
+
+Rectangle::Rectangle(int l=0,int b=0){
+    this->length=l;
+    this->breadth=b;
 }
