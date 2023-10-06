@@ -286,60 +286,88 @@ Derived classes:
 2.Part time employee with daily wages
 Write the required methods.*/
 
+// #include<iostream>
+
+// using namespace std;
+
+// class Employee{
+//     //data members
+//     private:
+//     int empID;
+//     string empNAME;
+
+//     //members functions
+//     public:
+//     //accessor methods
+//     Employee(int id=0, string name="abc");
+//     int get_empID(){return empID;}
+//     string get_empNAME(){return empNAME;}
+// };
+
+// class FullTimeEmployee:public Employee{
+//     //data members
+//     private:
+//     int salary;
+//     public:
+//     FullTimeEmployee(int i, string n, int s):Employee(i,n){
+//         this->salary=s;
+//     }
+
+//     int getSalary(){return salary;} 
+// };
+
+// class PartTimeEmployee:public Employee{
+//     //data members
+//     private:
+//     int wage;
+//     public:
+//     PartTimeEmployee(int i, string n, int w):Employee(i,n){
+//         this->wage=w;
+//     }
+
+//     int getWage(){return wage;}
+// };
+
+// int main(){
+//     PartTimeEmployee p1(1,"Max",350);
+//     FullTimeEmployee p2(2,"Sally",7000);
+//     Employee e;
+//     cout<<p1.get_empID()<<" "<<p1.get_empNAME()<<" "<<p1.getWage()<<endl;
+//     cout<<p2.get_empID()<<" "<<p2.get_empNAME()<<" "<<p2.getSalary()<<endl;
+//     cout<<e.get_empID()<<" "<<e.get_empNAME()<<endl;
+    
+//     return 0;
+// }
+
+// Employee::Employee(int id, string name){
+//     this->empID=id;
+//     this->empNAME=name;
+// }
+
+
+/*Write classes to demonstrate polymorphism. 
+Base class Shape
+Derived classes:
+rectangle
+circle*/
+
+
 #include<iostream>
 
 using namespace std;
 
-class Employee{
-    //data members
-    private:
-    int empID;
-    string empNAME;
+class Shape{
+    //Abstract function/interface/pure virtual functions
 
-    //members functions
-    public:
-    //accessor methods
-    Employee(int id=0, string name="abc");
-    int get_empID(){return empID;}
-    string get_empNAME(){return empNAME;}
+    virtual float Area()=0;
+    virtual float Perimeter()=0;
 };
 
-class FullTimeEmployee:public Employee{
+class Rectangle:public Shape{
     //data members
-    private:
-    int salary;
-    public:
-    FullTimeEmployee(int i, string n, int s):Employee(i,n){
-        this->salary=s;
-    }
-
-    int getSalary(){return salary;} 
-};
-
-class PartTimeEmployee:public Employee{
-    //data members
-    private:
-    int wage;
-    public:
-    PartTimeEmployee(int i, string n, int w):Employee(i,n){
-        this->wage=w;
-    }
-
-    int getWage(){return wage;}
 };
 
 int main(){
-    PartTimeEmployee p1(1,"Max",350);
-    FullTimeEmployee p2(2,"Sally",7000);
-    Employee e;
-    cout<<p1.get_empID()<<" "<<p1.get_empNAME()<<" "<<p1.getWage()<<endl;
-    cout<<p2.get_empID()<<" "<<p2.get_empNAME()<<" "<<p2.getSalary()<<endl;
-    cout<<e.get_empID()<<" "<<e.get_empNAME()<<endl;
-    
-    return 0;
-}
 
-Employee::Employee(int id, string name){
-    this->empID=id;
-    this->empNAME=name;
+    return 0;
 }
