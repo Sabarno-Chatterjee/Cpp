@@ -5,9 +5,9 @@ using namespace std;
 class Stack{
     //data members
     private:
-        int *stk;
-        int top;
-        int size;
+        int *stk;           //pointer to a dynamic array
+        int top;            //initial position of top, it is always increment hence '-1'
+        int size;           // the size desired by the user
     
     //member functions    
     public:
@@ -25,9 +25,20 @@ void Stack::push(int x){
     if(top==size-1)
         cout<<"Stack is full."<<endl;
     else{
-        top++;
-        stk[top]=x;
+        top++;              //top is incremented as it starts from -1
+        stk[top]=x;         //element is placed in the stack
     }
+}
+
+int Stack::pop(){
+    int x=0;
+    if(top==-1)
+        cout<<"Stack is empty";
+    else{
+        x=stk[top];         //the element being deleted
+        x--;                //top position is reset
+    }
+    return x;               //popped element is returned
 }
 
 int main(){
