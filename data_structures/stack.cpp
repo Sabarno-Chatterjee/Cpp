@@ -36,12 +36,19 @@ int Stack::pop(){
         cout<<"Stack is empty";
     else{
         x=stk[top];         //the element being deleted
-        x--;                //top position is reset
+        top--;                //top position is reset
     }
     return x;               //popped element is returned
 }
 
 int main(){
+    Stack s(3);
+    s.push(5);
+    s.push(7);
+    s.push(8);
+    cout<<s.pop()<<endl;
+    
+    
     
     return 0;
 }
