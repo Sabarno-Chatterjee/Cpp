@@ -725,27 +725,30 @@
 
 // GCD of two numbers
 
-#include<iostream>
+// #include<iostream>
 
-void gcd(int m, int n){
-    while(m!=n){
-        if(m>n)
-            m=m-n;
-        else
-            n=n-m;
-    }
-    std::cout<<"GCD: "<<m<<std::endl;
-}
+// void gcd(int m, int n){
+//     while(m!=n){
+//         if(m>n)
+//             m=m-n;
+//         else
+//             n=n-m;
+//     }
+//     std::cout<<"GCD: "<<m<<std::endl;
+// }
 
-int main(){
-    int m, n;
-    std::cout<<"Enter m and n"<<std::endl;
-    std::cin>>m>>n;
+// int main(){
+//     int m, n;
+//     std::cout<<"Enter m and n"<<std::endl;
+//     std::cin>>m>>n;
 
-    gcd(m,n);
+//     gcd(m,n);
 
-    return 0;
-}
+//     return 0;
+// }
+
+
+// function overloading
 
 
 

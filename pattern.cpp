@@ -890,7 +890,7 @@ void pattern1(int n){
         cout<<endl;
     }
 }
-
+ 
 void pattern2(int n){
     
     for(int i=1;i<=n;i++){
