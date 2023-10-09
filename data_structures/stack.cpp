@@ -133,6 +133,10 @@ class Stack{
         
         void push(T x);
         T pop();
+        ~Stack(){
+            delete []stk;
+            cout<<"Destructor called"<<endl;
+        }
 };
 
 template<class T>
