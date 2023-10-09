@@ -75,6 +75,11 @@
         
 //         void push(int x);
 //         int pop();
+
+            // ~Stack(){
+            //     delete []stk;
+            //     cout<<"Destructor called"<<endl;
+            // }
 // };
 
 // void Stack::push(int x){
