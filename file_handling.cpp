@@ -90,8 +90,48 @@
 
 //Reading objects from a file
 
+// #include<iostream>
+// #include<fstream>
+
+// using namespace std;
+
+// class Student{
+//     public:
+//     //data members
+
+//     int roll;
+//     string name;
+//     string branch;
+// };
+
+// int main(){
+//     Student s;
+
+//     ifstream infile;
+//     infile.open("new.txt");
+
+//     if(!infile)                                 
+//         cout<<"File does not exist"<<endl;     
+//     infile>>s.name;
+//     infile>>s.roll;
+//     infile>>s.branch;
+
+//     cout<<s.name<<endl;
+//     cout<<s.roll<<endl;
+//     cout<<s.branch<<endl;
+
+//     if(infile.eof())
+//         cout<<"End of file"<<endl;
+
+//     return 0;
+// }
+
+
+//Reading objects from a file
+
 #include<iostream>
 #include<fstream>
+
 
 using namespace std;
 
@@ -102,7 +142,20 @@ class Student{
     int roll;
     string name;
     string branch;
+
+    //member functions
+
+    Student(){};
+    Student(string name, int roll, string branch){
+        this->name=name;
+        this->roll=roll;
+        this->branch=branch;
+    }
+
+    friend ifstream & operator>>(ifstream &infile, Student s);
 };
+
+
 
 int main(){
     Student s;
@@ -122,11 +175,8 @@ int main(){
 
     if(infile.eof())
         cout<<"End of file"<<endl;
-        
+
     return 0;
 }
-
-
-
 
     
