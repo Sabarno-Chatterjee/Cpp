@@ -1,52 +1,58 @@
-// #include<iostream>
-// #include<fstream>
-
-// using namespace std;
-
-// int main(){
-//     ofstream outfile("new.txt",ios::trunc); // or ios::app to append
-//     outfile<<"Will this work?"<<endl;
-//     outfile<<"I guess it will"<<endl;
-
-//     outfile.close();
-
-
-//     return 0;
-// }
-
-
 #include<iostream>
 #include<fstream>
 
 using namespace std;
 
 int main(){
-    ifstream infile;
-    infile.open("new.txt");  // Open the file "new.txt" for reading
+    // Open the file "new.txt" for writing (ios::trunc will create a new file or overwrite an existing one)
+    ofstream outfile("new.txt", ios::trunc);
 
-    if(!infile) {
-        cout << "File does not exist" << endl; // Check if the file exists and can be opened
-        return 1;  // Exit the program if the file doesn't exist
-    }
+    // Write the first line to the file
+    outfile << "Will this work?" << endl;
 
-    string str1, str2;
+    // Write the second line to the file
+    outfile << "I guess it will" << endl;
 
-    // Read two strings from the file
-    infile >> str1;
-    infile >> str2;
-
-    // Display the two strings
-    cout << str1 << endl;
-    cout << str2 << endl;
-
-    // Check if the end of the file has been reached
-    if(infile.eof())
-        cout << "End of file reached";
-
-    infile.close();  // Close the file
+    // Close the file
+    outfile.close();
 
     return 0;
 }
+
+
+
+// #include<iostream>
+// #include<fstream>
+
+// using namespace std;
+
+// int main(){
+//     ifstream infile;
+//     infile.open("new.txt");  // Open the file "new.txt" for reading
+
+//     if(!infile) {
+//         cout << "File does not exist" << endl; // Check if the file exists and can be opened
+//         return 1;  // Exit the program if the file doesn't exist
+//     }
+
+//     string str1, str2;
+
+//     // Read two strings from the file
+//     infile >> str1;
+//     infile >> str2;
+
+//     // Display the two strings
+//     cout << str1 << endl;
+//     cout << str2 << endl;
+
+//     // Check if the end of the file has been reached
+//     if(infile.eof())
+//         cout << "End of file reached";
+
+//     infile.close();  // Close the file
+
+//     return 0;
+// }
 
 
 
