@@ -42,6 +42,54 @@
 
 // Writing objects into a file
 
+// #include<iostream>
+// #include<fstream>
+
+// using namespace std;
+
+// class Student{
+//     public:
+//     //data members
+//     string name;
+//     int roll;
+//     string branch;
+
+//     //member functions
+//     Student(){}
+//     Student(string name, int roll, string branch){
+//         this->name=name;
+//         this->roll=roll;
+//         this->branch=branch;
+//     }
+
+//     friend ofstream & operator<<(ofstream &outfile, Student &s);
+// };
+
+// ofstream & operator<<(ofstream &outfile, Student &s){
+//     outfile<<s.name<<endl;
+//     outfile<<s.roll<<endl;
+//     outfile<<s.branch<<endl;
+
+//     return outfile;
+// }
+
+// int main(){
+//     Student s;
+//     s.name="Ron";
+//     s.roll=5;
+//     s.branch="Potion";
+
+//     ofstream outfile("new.txt", ios::trunc);
+//     outfile<<s;
+
+//     outfile.close();
+
+//     return 0;
+// }
+
+
+//Reading objects from a file
+
 #include<iostream>
 #include<fstream>
 
@@ -50,42 +98,22 @@ using namespace std;
 class Student{
     public:
     //data members
-    string name;
+
     int roll;
+    string name;
     string branch;
-
-    //member functions
-    Student(){}
-    Student(string name, int roll, string branch){
-        this->name=name;
-        this->roll=roll;
-        this->branch=branch;
-    }
-
-    friend ofstream & operator<<(ofstream &outfile, Student &s);
 };
-
-ofstream & operator<<(ofstream &outfile, Student &s){
-    outfile<<s.name<<endl;
-    outfile<<s.roll<<endl;
-    outfile<<s.branch<<endl;
-
-    return outfile;
-}
 
 int main(){
     Student s;
-    s.name="Ron";
-    s.roll=5;
-    s.branch="Potion";
 
-    ofstream outfile("new.txt", ios::trunc);
-    outfile<<s;
+    ifstream infile;
+    infile.open("new.txt");
 
-    outfile.close();
-
+    
     return 0;
 }
+
 
 
 
