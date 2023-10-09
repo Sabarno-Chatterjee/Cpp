@@ -90,6 +90,53 @@
 
 //Reading objects from a file
 
+#include<iostream>
+#include<fstream>
+
+using namespace std;
+
+class Student {
+public:
+    // Data members
+    int roll;
+    string name;
+    string branch;
+};
+
+int main() {
+    Student s;
+
+    ifstream infile;
+    infile.open("new.txt");  // Open the file "new.txt" for reading
+
+    if (!infile) {
+        cout << "File does not exist" << endl;
+        return 1;  // Exit the program if the file doesn't exist
+    }
+
+    // Read data from the file and store it in the Student object
+    infile >> s.name;
+    infile >> s.roll;
+    infile >> s.branch;
+
+    // Display the data read from the file
+    cout << "Name: " << s.name << endl;
+    cout << "Roll No: " << s.roll << endl;
+    cout << "Branch: " << s.branch << endl;
+
+    if (infile.eof()) {
+        cout << "End of file" << endl;
+    }
+
+    infile.close();  // Close the file
+
+    return 0;
+}
+
+
+
+//Reading objects from a file
+
 // #include<iostream>
 // #include<fstream>
 
@@ -99,10 +146,44 @@
 //     public:
 //     //data members
 
-//     int roll;
-//     string name;
-//     string branch;
+//     int roll;        // Student's roll number
+//     string name;     // Student's name
+//     string branch;   // Student's branch
+
+//     //member functions
+
+//     // Default constructor
+//     Student(){};
+
+//     // Parameterized constructor to initialize student data
+//     Student(string name, int roll, string branch){
+//         this->name = name;
+//         this->roll = roll;
+//         this->branch = branch;
+//     }
+
+//     // Overloaded extraction operator to read student data from a file
+//     friend ifstream & operator>>(ifstream &infile, Student &s);
+
+//     // Overloaded insertion operator to display student data
+//     friend ostream & operator<<(ostream &out, Student &s);
 // };
+
+// // Overloaded extraction operator definition
+// ifstream & operator>>(ifstream &infile, Student &s){
+//     infile >> s.name;
+//     infile >> s.roll;
+//     infile >> s.branch;
+//     return infile;
+// }
+
+// // Overloaded insertion operator definition
+// ostream & operator<<(ostream &out, Student &s){
+//     out << "Name: " << s.name << endl;
+//     out << "Roll No: " << s.roll << endl;
+//     out << "Branch: " << s.branch << endl;
+//     return out;
+// }
 
 // int main(){
 //     Student s;
@@ -110,94 +191,21 @@
 //     ifstream infile;
 //     infile.open("new.txt");
 
+//     // Check if the file exists and can be opened
 //     if(!infile)                                 
-//         cout<<"File does not exist"<<endl;     
-//     infile>>s.name;
-//     infile>>s.roll;
-//     infile>>s.branch;
+//         cout << "File does not exist" << endl;     
 
-//     cout<<s.name<<endl;
-//     cout<<s.roll<<endl;
-//     cout<<s.branch<<endl;
+//     // Read student data from the file
+//     infile >> s;
 
+//     // Display the student data
+//     cout << s;
+
+//     // Check if the end of the file has been reached
 //     if(infile.eof())
-//         cout<<"End of file"<<endl;
-
+//         cout << "End of file" << endl;
+//       infile.close();   // Close the file
 //     return 0;
 // }
-
-
-//Reading objects from a file
-
-#include<iostream>
-#include<fstream>
-
-using namespace std;
-
-class Student{
-    public:
-    //data members
-
-    int roll;        // Student's roll number
-    string name;     // Student's name
-    string branch;   // Student's branch
-
-    //member functions
-
-    // Default constructor
-    Student(){};
-
-    // Parameterized constructor to initialize student data
-    Student(string name, int roll, string branch){
-        this->name = name;
-        this->roll = roll;
-        this->branch = branch;
-    }
-
-    // Overloaded extraction operator to read student data from a file
-    friend ifstream & operator>>(ifstream &infile, Student &s);
-
-    // Overloaded insertion operator to display student data
-    friend ostream & operator<<(ostream &out, Student &s);
-};
-
-// Overloaded extraction operator definition
-ifstream & operator>>(ifstream &infile, Student &s){
-    infile >> s.name;
-    infile >> s.roll;
-    infile >> s.branch;
-    return infile;
-}
-
-// Overloaded insertion operator definition
-ostream & operator<<(ostream &out, Student &s){
-    out << "Name: " << s.name << endl;
-    out << "Roll No: " << s.roll << endl;
-    out << "Branch: " << s.branch << endl;
-    return out;
-}
-
-int main(){
-    Student s;
-
-    ifstream infile;
-    infile.open("new.txt");
-
-    // Check if the file exists and can be opened
-    if(!infile)                                 
-        cout << "File does not exist" << endl;     
-
-    // Read student data from the file
-    infile >> s;
-
-    // Display the student data
-    cout << s;
-
-    // Check if the end of the file has been reached
-    if(infile.eof())
-        cout << "End of file" << endl;
-
-    return 0;
-}
 
     
