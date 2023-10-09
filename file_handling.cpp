@@ -110,7 +110,19 @@ int main(){
     ifstream infile;
     infile.open("new.txt");
 
-    
+    if(!infile)                                 
+        cout<<"File does not exist"<<endl;     
+    infile>>s.name;
+    infile>>s.roll;
+    infile>>s.branch;
+
+    cout<<s.name<<endl;
+    cout<<s.roll<<endl;
+    cout<<s.branch<<endl;
+
+    if(infile.eof())
+        cout<<"End of file"<<endl;
+        
     return 0;
 }
 
