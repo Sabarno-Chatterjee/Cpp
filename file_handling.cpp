@@ -345,7 +345,7 @@ class Item{
 
     //member funtions
     Item(string name="abc", float price=0,int quantity=0);
-    friend ofstream & operator<<()
+    friend ofstream &operator<<(ofstream &outfile, Item &i);
 
 };
 
@@ -353,6 +353,14 @@ Item::Item(string name, float price,int quantity){
     this->name=name;
     this->price=price;
     this->quantity=quantity;
+}
+
+ofstream &operator<<(ofstream &outfile, Item &i){
+    outfile<<i.name<<endl;
+    outfile<<i.price<<endl;
+    outfile<<i.quantity<<endl;
+
+    return outfile;
 }
 
 int main(){
