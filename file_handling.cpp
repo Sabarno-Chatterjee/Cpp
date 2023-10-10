@@ -347,6 +347,7 @@ class Item{
     Item(string name="abc", float price=0,int quantity=0);
     friend ofstream &operator<<(ofstream &outfile, Item &i);
     friend ifstream &operator>>(ifstream &infile, Item &i);
+    friend ostream &operator<<(ostream &out, Item &i);
 
 };
 
@@ -364,6 +365,14 @@ ofstream &operator<<(ofstream &outfile, Item &i){
     return outfile;
 }
 
+ostream &operator<<(ostream &out, Item &i){
+    out<<i.name<<endl;
+    out<<i.price<<endl;
+    out<<i.quantity<<endl;
+
+    return out;
+}
+
 ifstream &operator>>(ifstream &infile, Item &i){
     infile>>i.name;
     infile>>i.price;
@@ -373,7 +382,7 @@ ifstream &operator>>(ifstream &infile, Item &i){
 }
 
 int main(){
-    Item i1("Nirma", 30.0, 12);
+    Item i1("Nirma", 30.0, 15);
     ofstream outfile("item.txt");
     outfile<<i1;
     outfile.close();
@@ -384,6 +393,10 @@ int main(){
         cout<<"File does not exist"<<endl;
     
     infile>>i2;
+    cout<<i2;
 
+    if(infile.eof())
+        infile.close();
+    
     return 0;
 }
