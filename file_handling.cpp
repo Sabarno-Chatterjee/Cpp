@@ -337,66 +337,69 @@ Class items should have:
 using namespace std;
 
 class Item{
-    public:
-    //data members
+public:
+    // Data members
     string name;
     float price;
     int quantity;
 
-    //member funtions
-    Item(string name="abc", float price=0,int quantity=0);
-    friend ofstream &operator<<(ofstream &outfile, Item &i);
-    friend ifstream &operator>>(ifstream &infile, Item &i);
-    friend ostream &operator<<(ostream &out, Item &i);
-
+    // Member functions
+    Item(string name = "abc", float price = 0, int quantity = 0); // Constructor
+    friend ofstream &operator<<(ofstream &outfile, Item &i);     // Friend function to write Item object to a file
+    friend ifstream &operator>>(ifstream &infile, Item &i);       // Friend function to read Item object from a file
+    friend ostream &operator<<(ostream &out, Item &i);            // Friend function to display Item object
 };
 
-Item::Item(string name, float price,int quantity){
-    this->name=name;
-    this->price=price;
-    this->quantity=quantity;
+// Constructor to initialize Item object
+Item::Item(string name, float price, int quantity){
+    this->name = name;
+    this->price = price;
+    this->quantity = quantity;
 }
 
+// Friend function to write Item object to a file
 ofstream &operator<<(ofstream &outfile, Item &i){
-    outfile<<i.name<<endl;
-    outfile<<i.price<<endl;
-    outfile<<i.quantity<<endl;
-
+    outfile << i.name << endl;
+    outfile << i.price << endl;
+    outfile << i.quantity << endl;
     return outfile;
 }
 
+// Friend function to display Item object
 ostream &operator<<(ostream &out, Item &i){
-    out<<i.name<<endl;
-    out<<i.price<<endl;
-    out<<i.quantity<<endl;
-
+    out << "Name: " << i.name << endl;
+    out << "Price: " << i.price << endl;
+    out << "Quantity: " << i.quantity << endl;
     return out;
 }
 
+// Friend function to read Item object from a file
 ifstream &operator>>(ifstream &infile, Item &i){
-    infile>>i.name;
-    infile>>i.price;
-    infile>>i.quantity;
-
+    infile >> i.name;
+    infile >> i.price;
+    infile >> i.quantity;
     return infile;
 }
 
 int main(){
+    // Create an Item object i1 and write it to a file
     Item i1("Nirma", 30.0, 15);
     ofstream outfile("item.txt");
-    outfile<<i1;
+    outfile << i1;
     outfile.close();
 
+    // Read an Item object i2 from the file and display it
     Item i2;
     ifstream infile("item.txt");
-    if(!infile)
-        cout<<"File does not exist"<<endl;
-    
-    infile>>i2;
-    cout<<i2;
+    if (!infile)
+        cout << "File does not exist" << endl;
 
-    if(infile.eof())
+    infile >> i2;
+    cout << "Item Details:" << endl;
+    cout << i2;
+
+    if (infile.eof())
         infile.close();
-    
+
     return 0;
 }
