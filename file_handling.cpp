@@ -236,83 +236,89 @@
     
 // File input, output
 
-#include<iostream>
-#include<fstream>
-#include<cstring>
+// C++ program to demonstrate file operations and class serialization
 
+#include <iostream>
+#include <fstream>
+#include <cstring>
 
 using namespace std;
 
-class Employee{
-    public:
-    //data members
+class Employee {
+public:
+    // Data members
     int emp_id;
     string name;
     string department;
 
-    //member functions
-    Employee(){}
-    Employee(int id,string name,string department);
+    // Member functions
+    Employee() {} // Default constructor
+    Employee(int id, string name, string department);
 
-    friend ofstream & operator<<(ofstream &outfile,Employee &e);
-    friend ifstream & operator>>(ifstream &infile, Employee &e);
-    friend ostream & operator<<(ostream &out, Employee &e);
-
+    // Friend functions for file operations
+    friend ofstream &operator<<(ofstream &outfile, Employee &e);
+    friend ifstream &operator>>(ifstream &infile, Employee &e);
+    friend ostream &operator<<(ostream &out, Employee &e);
 };
 
-int main(){
-    int id;
-    string name, dept;
-    cout<<"Enter the employee id, name and department"<<endl;
-    cin>>id>>name>>dept;
-
-    ofstream outfile("emp.txt", ios::trunc);
-    Employee e1(id,name,dept);
-    outfile<<e1;
-
-    outfile.close();
-
-    Employee e2;
-    ifstream infile;
-    infile.open("emp.txt");
-    if(!infile)
-        cout<<"File does not exist"<<endl;
-
-    infile>>e2;
-
-    cout<<e2;
-
-    if(infile.eof())
-        infile.close();
-
-    return 0;
+// Parameterized constructor to initialize Employee object
+Employee::Employee(int id, string name, string department) {
+    this->emp_id = id;
+    this->name = name;
+    this->department = department;
 }
 
-Employee::Employee(int id,string name,string department){
-    this->emp_id=id;
-    this->name=name;
-    this->department=department;
-}
-
-ofstream & operator<<(ofstream &outfile, Employee &e){
-    outfile<<e.emp_id<<endl;
-    outfile<<e.name<<endl;
-    outfile<<e.department<<endl;
+// Friend function to write Employee object to a file
+ofstream &operator<<(ofstream &outfile, Employee &e) {
+    outfile << e.emp_id << endl;
+    outfile << e.name << endl;
+    outfile << e.department << endl;
     return outfile;
 }
 
-ifstream & operator>>(ifstream &infile, Employee &e){
-    infile>>e.emp_id;
-    infile>>e.name;
-    infile>>e.department;
-
+// Friend function to read Employee object from a file
+ifstream &operator>>(ifstream &infile, Employee &e) {
+    infile >> e.emp_id;
+    infile >> e.name;
+    infile >> e.department;
     return infile;
 }
 
-ostream & operator<<(ostream &out, Employee &e){
-    out<<e.emp_id<<endl;
-    out<<e.name<<endl;
-    out<<e.department<<endl;
-
+// Friend function to display Employee object
+ostream &operator<<(ostream &out, Employee &e) {
+    out << "Employee ID: " << e.emp_id << endl;
+    out << "Name: " << e.name << endl;
+    out << "Department: " << e.department << endl;
     return out;
+}
+
+int main() {
+    int id;
+    string name, dept;
+
+    cout << "Enter the employee id, name, and department: ";
+    cin >> id >> name >> dept;
+
+    // Create and write an Employee object to a file
+    ofstream outfile("emp.txt", ios::trunc);
+    Employee e1(id, name, dept);
+    outfile << e1;
+    outfile.close();
+
+    // Read the Employee object from the file and display it
+    Employee e2;
+    ifstream infile;
+    infile.open("emp.txt");
+    
+    if (!infile)
+        cout << "File does not exist" << endl;
+
+    infile >> e2;
+    cout << "Employee Details:" << endl;
+    cout << e2;
+
+    if (infile.eof())
+        infile.close();
+
+    return 0;
 }
