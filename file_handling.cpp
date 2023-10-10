@@ -263,8 +263,11 @@ int main(){
     cout<<"Enter the employee id, name and depaartment"<<endl;
     cin>>id>>name>>dept;
 
+    ofstream outfile("emp.txt", ios::trunc);
     Employee e1(id,name,dept);
-    
+    outfile<<e1;
+
+    outfile.close();
 
     return 0;
 }
@@ -275,6 +278,9 @@ Employee::Employee(int id,string name,string department){
     this->department=department;
 }
 
-ofstream & operator<<(ofstream &outfile, Employee e){
-    
+ofstream & operator<<(ofstream &outfile, Employee &e){
+    outfile<<e.emp_id<<endl;
+    outfile<<e.name<<endl;
+    outfile<<e.department<<endl;
+    return outfile;
 }
