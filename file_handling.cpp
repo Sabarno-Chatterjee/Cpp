@@ -260,16 +260,29 @@ class Employee{
 };
 
 int main(){
-    int id;
-    string name, dept;
-    cout<<"Enter the employee id, name and depaartment"<<endl;
-    cin>>id>>name>>dept;
+    // int id;
+    // string name, dept;
+    // cout<<"Enter the employee id, name and depaartment"<<endl;
+    // cin>>id>>name>>dept;
 
-    ofstream outfile("emp.txt", ios::trunc);
-    Employee e1(id,name,dept);
-    outfile<<e1;
+    // ofstream outfile("emp.txt", ios::trunc);
+    // Employee e1(id,name,dept);
+    // outfile<<e1;
 
-    outfile.close();
+    // outfile.close();
+
+    Employee e2;
+    ifstream infile;
+    infile.open("emp.txt");
+    if(!infile)
+        cout<<"File does not exist"<<endl;
+
+    infile>>e2;
+
+    cout<<e2;
+
+    if(infile.eof())
+        infile.close();
 
     return 0;
 }
