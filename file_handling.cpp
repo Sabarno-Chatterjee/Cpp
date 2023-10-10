@@ -252,8 +252,7 @@ public:
     string department;
 
     // Member functions
-    Employee() {} // Default constructor
-    Employee(int id, string name, string department);
+    Employee(int id=0, string name="abc", string department="xyz");
 
     // Friend functions for file operations
     friend ofstream &operator<<(ofstream &outfile, Employee &e);
