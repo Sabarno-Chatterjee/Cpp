@@ -251,7 +251,8 @@ class Employee{
     string department;
 
     //member functions
-    Employee(int id=0,string name="abc",string department="xyz");
+    Employee(){}
+    Employee(int id,string name,string department);
 
     friend ofstream & operator<<(ofstream &outfile,Employee &e);
     friend ifstream & operator>>(ifstream &infile, Employee &e);
@@ -260,16 +261,16 @@ class Employee{
 };
 
 int main(){
-    // int id;
-    // string name, dept;
-    // cout<<"Enter the employee id, name and depaartment"<<endl;
-    // cin>>id>>name>>dept;
+    int id;
+    string name, dept;
+    cout<<"Enter the employee id, name and department"<<endl;
+    cin>>id>>name>>dept;
 
-    // ofstream outfile("emp.txt", ios::trunc);
-    // Employee e1(id,name,dept);
-    // outfile<<e1;
+    ofstream outfile("emp.txt", ios::trunc);
+    Employee e1(id,name,dept);
+    outfile<<e1;
 
-    // outfile.close();
+    outfile.close();
 
     Employee e2;
     ifstream infile;
@@ -288,7 +289,7 @@ int main(){
 }
 
 Employee::Employee(int id,string name,string department){
-    this->emp_id;
+    this->emp_id=id;
     this->name=name;
     this->department=department;
 }
