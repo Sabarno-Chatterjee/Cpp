@@ -254,7 +254,7 @@ class Employee{
     Employee(int id=0,string name="abc",string department="xyz");
 
     friend ofstream & operator<<(ofstream &outfile,Employee &e);
-    friend ifstream &operator>>(ifstream &infile, Employee &e);
+    friend ifstream & operator>>(ifstream &infile, Employee &e);
 
 };
 
@@ -286,7 +286,7 @@ ofstream & operator<<(ofstream &outfile, Employee &e){
     return outfile;
 }
 
-ifstream & operator>>(istream &infile, Employee &e){
+ifstream & operator>>(ifstream &infile, Employee &e){
     infile>>e.emp_id;
     infile>>e.name;
     infile>>e.department;
