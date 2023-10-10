@@ -58,59 +58,59 @@
 
 // Writing objects into a file
 
-#include<iostream>
-#include<fstream>
+// #include<iostream>
+// #include<fstream>
 
-using namespace std;
+// using namespace std;
 
-class Student{
-public:
-    // Data members
-    string name;
-    int roll;
-    string branch;
+// class Student{
+// public:
+//     // Data members
+//     string name;
+//     int roll;
+//     string branch;
 
-    // Member functions
+//     // Member functions
 
-    // Parameterized constructor to initialize student data
-    Student(string name="abc", int roll=0, string branch="xyz");
+//     // Parameterized constructor to initialize student data
+//     Student(string name="abc", int roll=0, string branch="xyz");
 
-    // Friend function to overload the insertion operator for writing data to a file
-    friend ofstream & operator<<(ofstream &outfile, Student &s);
-};
+//     // Friend function to overload the insertion operator for writing data to a file
+//     friend ofstream & operator<<(ofstream &outfile, Student &s);
+// };
 
-Student::Student(string name, int roll, string branch)
-{
-        this->name = name;
-        this->roll = roll;
-        this->branch = branch;
-}
+// Student::Student(string name, int roll, string branch)
+// {
+//         this->name = name;
+//         this->roll = roll;
+//         this->branch = branch;
+// }
 
-// Overloaded insertion operator definition
-ofstream & operator<<(ofstream &outfile, Student &s){
-    outfile << s.name << endl;
-    outfile << s.roll << endl;
-    outfile << s.branch << endl;
-    return outfile;
-}
+// // Overloaded insertion operator definition
+// ofstream & operator<<(ofstream &outfile, Student &s){
+//     outfile << s.name << endl;
+//     outfile << s.roll << endl;
+//     outfile << s.branch << endl;
+//     return outfile;
+// }
 
-int main(){
-    Student s;
-    s.name = "Ron";
-    s.roll = 5;
-    s.branch = "Potion";
+// int main(){
+//     Student s;
+//     s.name = "Ron";
+//     s.roll = 5;
+//     s.branch = "Potion";
 
-    // Open the file "new.txt" for writing, truncating (clearing) its contents if it exists
-    ofstream outfile("new.txt", ios::trunc);
+//     // Open the file "new.txt" for writing, truncating (clearing) its contents if it exists
+//     ofstream outfile("new.txt", ios::trunc);
 
-    // Write student data to the file using the overloaded operator
-    outfile << s;
+//     // Write student data to the file using the overloaded operator
+//     outfile << s;
 
-    // Close the file
-    outfile.close();
+//     // Close the file
+//     outfile.close();
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 
@@ -234,3 +234,19 @@ int main(){
 // }
 
     
+// File input, output
+
+#include<iostream>
+
+using namespace std;
+
+class Student(){
+    public:
+    //data members
+    
+};
+
+int main(){
+
+    return 0;
+}
