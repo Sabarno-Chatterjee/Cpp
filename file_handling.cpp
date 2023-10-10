@@ -255,6 +255,7 @@ class Employee{
 
     friend ofstream & operator<<(ofstream &outfile,Employee &e);
     friend ifstream & operator>>(ifstream &infile, Employee &e);
+    friend ostream & operator<<(ostream &out, Employee &e);
 
 };
 
@@ -292,4 +293,12 @@ ifstream & operator>>(ifstream &infile, Employee &e){
     infile>>e.department;
 
     return infile;
+}
+
+ostream & operator<<(ostream &out, Employee &e){
+    out<<e.emp_id<<endl;
+    out<<e.name<<endl;
+    out<<e.department<<endl;
+
+    return out;
 }
