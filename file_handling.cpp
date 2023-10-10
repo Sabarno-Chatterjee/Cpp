@@ -58,57 +58,59 @@
 
 // Writing objects into a file
 
-// #include<iostream>
-// #include<fstream>
+#include<iostream>
+#include<fstream>
 
-// using namespace std;
+using namespace std;
 
-// class Student{
-// public:
-//     // Data members
-//     string name;
-//     int roll;
-//     string branch;
+class Student{
+public:
+    // Data members
+    string name;
+    int roll;
+    string branch;
 
-//     // Member functions
-//     Student(){}  // Default constructor
+    // Member functions
 
-//     // Parameterized constructor to initialize student data
-//     Student(string name, int roll, string branch){
-//         this->name = name;
-//         this->roll = roll;
-//         this->branch = branch;
-//     }
+    // Parameterized constructor to initialize student data
+    Student(string name="abc", int roll=0, string branch="xyz");
 
-//     // Friend function to overload the insertion operator for writing data to a file
-//     friend ofstream & operator<<(ofstream &outfile, Student &s);
-// };
+    // Friend function to overload the insertion operator for writing data to a file
+    friend ofstream & operator<<(ofstream &outfile, Student &s);
+};
 
-// // Overloaded insertion operator definition
-// ofstream & operator<<(ofstream &outfile, Student &s){
-//     outfile << s.name << endl;
-//     outfile << s.roll << endl;
-//     outfile << s.branch << endl;
-//     return outfile;
-// }
+Student::Student(string name, int roll, string branch)
+{
+        this->name = name;
+        this->roll = roll;
+        this->branch = branch;
+}
 
-// int main(){
-//     Student s;
-//     s.name = "Ron";
-//     s.roll = 5;
-//     s.branch = "Potion";
+// Overloaded insertion operator definition
+ofstream & operator<<(ofstream &outfile, Student &s){
+    outfile << s.name << endl;
+    outfile << s.roll << endl;
+    outfile << s.branch << endl;
+    return outfile;
+}
 
-//     // Open the file "new.txt" for writing, truncating (clearing) its contents if it exists
-//     ofstream outfile("new.txt", ios::trunc);
+int main(){
+    Student s;
+    s.name = "Ron";
+    s.roll = 5;
+    s.branch = "Potion";
 
-//     // Write student data to the file using the overloaded operator
-//     outfile << s;
+    // Open the file "new.txt" for writing, truncating (clearing) its contents if it exists
+    ofstream outfile("new.txt", ios::trunc);
 
-//     // Close the file
-//     outfile.close();
+    // Write student data to the file using the overloaded operator
+    outfile << s;
 
-//     return 0;
-// }
+    // Close the file
+    outfile.close();
+
+    return 0;
+}
 
 
 
@@ -161,74 +163,74 @@
 
 //Reading objects from a file
 
-#include<iostream>
-#include<fstream>
+// #include<iostream>
+// #include<fstream>
 
-using namespace std;
+// using namespace std;
 
-class Student{
-    public:
-    //data members
+// class Student{
+//     public:
+//     //data members
 
-    int roll;        // Student's roll number
-    string name;     // Student's name
-    string branch;   // Student's branch
+//     int roll;        // Student's roll number
+//     string name;     // Student's name
+//     string branch;   // Student's branch
 
-    //member functions
+//     //member functions
 
-    // Parameterized constructor to initialize student data
-    Student(string name="abc", int roll=0, string branch="xyz");
+//     // Parameterized constructor to initialize student data
+//     Student(string name="abc", int roll=0, string branch="xyz");
 
-    // Overloaded extraction operator to read student data from a file
-    friend ifstream & operator>>(ifstream &infile, Student &s);
+//     // Overloaded extraction operator to read student data from a file
+//     friend ifstream & operator>>(ifstream &infile, Student &s);
 
-    // Overloaded insertion operator to display student data
-    friend ostream & operator<<(ostream &out, Student &s);
-};
+//     // Overloaded insertion operator to display student data
+//     friend ostream & operator<<(ostream &out, Student &s);
+// };
 
-Student::Student(string name, int roll, string branch){
-    this->name=name;
-    this->roll=roll;
-    this->branch=branch;
-}
+// Student::Student(string name, int roll, string branch){
+//     this->name=name;
+//     this->roll=roll;
+//     this->branch=branch;
+// }
 
-// Overloaded extraction operator definition
-ifstream & operator>>(ifstream &infile, Student &s){
-    infile >> s.name;
-    infile >> s.roll;
-    infile >> s.branch;
-    return infile;
-}
+// // Overloaded extraction operator definition
+// ifstream & operator>>(ifstream &infile, Student &s){
+//     infile >> s.name;
+//     infile >> s.roll;
+//     infile >> s.branch;
+//     return infile;
+// }
 
-// Overloaded insertion operator definition
-ostream & operator<<(ostream &out, Student &s){
-    out << "Name: " << s.name << endl;
-    out << "Roll No: " << s.roll << endl;
-    out << "Branch: " << s.branch << endl;
-    return out;
-}
+// // Overloaded insertion operator definition
+// ostream & operator<<(ostream &out, Student &s){
+//     out << "Name: " << s.name << endl;
+//     out << "Roll No: " << s.roll << endl;
+//     out << "Branch: " << s.branch << endl;
+//     return out;
+// }
 
-int main(){
-    Student s;
+// int main(){
+//     Student s;
 
-    ifstream infile;
-    infile.open("new.txt");
+//     ifstream infile;
+//     infile.open("new.txt");
 
-    // Check if the file exists and can be opened
-    if(!infile)                                 
-        cout << "File does not exist" << endl;     
+//     // Check if the file exists and can be opened
+//     if(!infile)                                 
+//         cout << "File does not exist" << endl;     
 
-    // Read student data from the file
-    infile >> s;
+//     // Read student data from the file
+//     infile >> s;
 
-    // Display the student data
-    cout << s;
+//     // Display the student data
+//     cout << s;
 
-    // Check if the end of the file has been reached
-    if(infile.eof())
-        cout << "End of file" << endl;
-      infile.close();   // Close the file
-    return 0;
-}
+//     // Check if the end of the file has been reached
+//     if(infile.eof())
+//         cout << "End of file" << endl;
+//       infile.close();   // Close the file
+//     return 0;
+// }
 
     
