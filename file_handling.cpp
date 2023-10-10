@@ -237,16 +237,44 @@
 // File input, output
 
 #include<iostream>
+#include<fstream>
+#include<cstring>
+
 
 using namespace std;
 
-class Student(){
+class Employee{
     public:
     //data members
-    
+    int emp_id;
+    string name;
+    string department;
+
+    //member functions
+    Employee(int id=0,string name="abc",string department="xyz");
+
+    friend ofstream & operator<<(ofstream &outfile,Employee &e);
+
 };
 
 int main(){
+    int id;
+    string name, dept;
+    cout<<"Enter the employee id, name and depaartment"<<endl;
+    cin>>id>>name>>dept;
+
+    Employee e1(id,name,dept);
+    
 
     return 0;
+}
+
+Employee::Employee(int id,string name,string department){
+    this->emp_id;
+    this->name=name;
+    this->department=department;
+}
+
+ofstream & operator<<(ofstream &outfile, Employee e){
+    
 }
