@@ -438,14 +438,14 @@ Class items should have:
 2. price
 3. quantity*/
 
-#include<iostream>
-#include<fstream>
-#include<cstring>
-#include<vector>
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <vector>
 
 using namespace std;
 
-class Item{
+class Item {
 public:
     // Data members
     string name;
@@ -460,14 +460,14 @@ public:
 };
 
 // Constructor to initialize Item object
-Item::Item(string name, float price, int quantity){
+Item::Item(string name, float price, int quantity) {
     this->name = name;
     this->price = price;
     this->quantity = quantity;
 }
 
 // Friend function to write Item object to a file
-ofstream &operator<<(ofstream &outfile, Item &i){
+ofstream &operator<<(ofstream &outfile, Item &i) {
     outfile << i.name << endl;
     outfile << i.price << endl;
     outfile << i.quantity << endl;
@@ -475,7 +475,7 @@ ofstream &operator<<(ofstream &outfile, Item &i){
 }
 
 // Friend function to display Item object
-ostream &operator<<(ostream &out, Item &i){
+ostream &operator<<(ostream &out, Item &i) {
     out << "Name: " << i.name << endl;
     out << "Price: " << i.price << endl;
     out << "Quantity: " << i.quantity << endl;
@@ -483,14 +483,14 @@ ostream &operator<<(ostream &out, Item &i){
 }
 
 // Friend function to read Item object from a file
-ifstream &operator>>(ifstream &infile, Item &i){
+ifstream &operator>>(ifstream &infile, Item &i) {
     infile >> i.name;
     infile >> i.price;
     infile >> i.quantity;
     return infile;
 }
 
-int main(){
+int main() {
     int quantity, n;
     string name;
     float price;
@@ -498,38 +498,43 @@ int main(){
     cout << "Enter the number of items" << endl;
     cin >> n;
 
-    vector<Item*> list;
+    vector<Item*> list; // Create a vector to store pointers to Item objects
 
-    for(int i = 0; i < n; i++){
-        cout << "Enter the data for item " << i+1 << ":" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << "Enter the data for item " << i + 1 << ":" << endl;
         cin >> name;
         cin >> price;
         cin >> quantity;
-        list.push_back(new Item(name,price,quantity));
+        list.push_back(new Item(name, price, quantity)); // Create and add Item objects to the vector
     }
 
     ofstream outfile("item.txt"); // Open the output file
 
-    vector<Item *>::iterator itr;
-    for(itr=list.begin();itr!=list.end();itr++)
-        outfile <<**itr; // Write Item objects to the file
-    
+    for (vector<Item*>::iterator itr = list.begin(); itr != list.end(); itr++) {
+        outfile << **itr; // Write Item objects to the file
+    }
+
     outfile.close(); // Close the output file
 
     Item item;
     ifstream infile;
     infile.open("item.txt");
-    if(!infile)
+    if (!infile)
         cout << "File does not exist" << endl;
 
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         infile >> item; // Read Item objects from the file
         cout << "Item " << i + 1 << ":" << endl;
         cout << item << endl; // Display Item objects
     }
 
-    if(infile.eof())
+    if (infile.eof())
         infile.close(); // Close the input file
+
+    // Deallocate memory by deleting the Item objects
+    for (vector<Item*>::iterator itr = list.begin(); itr != list.end(); itr++) {
+        delete *itr;
+    }
 
     return 0;
 }
