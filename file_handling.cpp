@@ -402,7 +402,7 @@ int main(){
     ofstream outfile("item.txt");
     for(int i=0;i<n;i++)
         outfile<<*list[i];
-
+    outfile.close();
     Item item;
     ifstream infile;
     infile.open("item.txt");
@@ -415,6 +415,8 @@ int main(){
         cout<<item<<endl;
     }
 
+    if(infile.eof())
+        infile.close();
 
     return 0;
 }
