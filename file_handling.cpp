@@ -399,5 +399,9 @@ int main(){
         list[i]=new Item(name, price, quantity);
     }
 
+    ofstream outfile("item.txt");
+    for(int i=0;i<n;i++)
+        outfile<<*list[i];
+
     return 0;
 }
