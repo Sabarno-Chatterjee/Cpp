@@ -382,24 +382,22 @@ ifstream &operator>>(ifstream &infile, Item &i){
 }
 
 int main(){
-    // Create an Item object i1 and write it to a file
-    Item i1("Nirma", 30.0, 15);
-    ofstream outfile("item.txt");
-    outfile << i1;
-    outfile.close();
+    int quantity, n;
+    string name;
+    float price;
 
-    // Read an Item object i2 from the file and display it
-    Item i2;
-    ifstream infile("item.txt");
-    if (!infile)
-        cout << "File does not exist" << endl;
+    cout<<"Enter the number of items"<<endl;
+    cin>>n;
 
-    infile >> i2;
-    cout << "Item Details:" << endl;
-    cout << i2;
+    Item *list[n];
 
-    if (infile.eof())
-        infile.close();
+    for(int i=0;i<n;i++){
+        cout<<"Enter the data:"<<endl;
+        cin>>name;
+        cin>>price;
+        cin>>quantity;
+        list[i]=new Item(name, price, quantity);
+    }
 
     return 0;
 }
