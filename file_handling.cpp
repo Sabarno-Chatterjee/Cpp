@@ -514,28 +514,22 @@ int main(){
     for(itr=list.begin();itr!=list.end();itr++)
         outfile <<**itr; // Write Item objects to the file
     
+    outfile.close(); // Close the output file
 
-    // // Deallocate memory for each Item object
-    // for(int i = 0; i < n; i++)
-    //     delete list[i];
+    Item item;
+    ifstream infile;
+    infile.open("item.txt");
+    if(!infile)
+        cout << "File does not exist" << endl;
 
-    // delete []list; // Deallocate memory for the array of pointers
-    // outfile.close(); // Close the output file
+    for(int i = 0; i < n; i++){
+        infile >> item; // Read Item objects from the file
+        cout << "Item " << i + 1 << ":" << endl;
+        cout << item << endl; // Display Item objects
+    }
 
-    // Item item;
-    // ifstream infile;
-    // infile.open("item.txt");
-    // if(!infile)
-    //     cout << "File does not exist" << endl;
-
-    // for(int i = 0; i < n; i++){
-    //     infile >> item; // Read Item objects from the file
-    //     cout << "Item " << i + 1 << ":" << endl;
-    //     cout << item << endl; // Display Item objects
-    // }
-
-    // if(infile.eof())
-    //     infile.close(); // Close the input file
+    if(infile.eof())
+        infile.close(); // Close the input file
 
     return 0;
 }
