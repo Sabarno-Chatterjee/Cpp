@@ -403,5 +403,18 @@ int main(){
     for(int i=0;i<n;i++)
         outfile<<*list[i];
 
+    Item item;
+    ifstream infile;
+    infile.open("item.txt");
+    if(!infile)
+        cout<<"File does not exist"<<endl;
+
+    for(int i=0; i<n;i++){
+        infile>>item;
+        cout<<"Item "<<i+1<<endl;
+        cout<<item<<endl;
+    }
+
+
     return 0;
 }
