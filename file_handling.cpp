@@ -330,9 +330,118 @@ Class items should have:
 2. price
 3. quantity*/
 
+// #include<iostream>
+// #include<fstream>
+// #include<cstring>
+
+// using namespace std;
+
+// class Item{
+// public:
+//     // Data members
+//     string name;
+//     float price;
+//     int quantity;
+
+//     // Member functions
+//     Item(string name = "abc", float price = 0, int quantity = 0); // Constructor
+//     friend ofstream &operator<<(ofstream &outfile, Item &i);     // Friend function to write Item object to a file
+//     friend ifstream &operator>>(ifstream &infile, Item &i);       // Friend function to read Item object from a file
+//     friend ostream &operator<<(ostream &out, Item &i);            // Friend function to display Item object
+// };
+
+// // Constructor to initialize Item object
+// Item::Item(string name, float price, int quantity){
+//     this->name = name;
+//     this->price = price;
+//     this->quantity = quantity;
+// }
+
+// // Friend function to write Item object to a file
+// ofstream &operator<<(ofstream &outfile, Item &i){
+//     outfile << i.name << endl;
+//     outfile << i.price << endl;
+//     outfile << i.quantity << endl;
+//     return outfile;
+// }
+
+// // Friend function to display Item object
+// ostream &operator<<(ostream &out, Item &i){
+//     out << "Name: " << i.name << endl;
+//     out << "Price: " << i.price << endl;
+//     out << "Quantity: " << i.quantity << endl;
+//     return out;
+// }
+
+// // Friend function to read Item object from a file
+// ifstream &operator>>(ifstream &infile, Item &i){
+//     infile >> i.name;
+//     infile >> i.price;
+//     infile >> i.quantity;
+//     return infile;
+// }
+
+// int main(){
+//     int quantity, n;
+//     string name;
+//     float price;
+
+//     cout << "Enter the number of items" << endl;
+//     cin >> n;
+
+//     Item *list[n]; // Array of pointers to Item objects
+
+//     for(int i = 0; i < n; i++){
+//         cout << "Enter the data for item " << i+1 << ":" << endl;
+//         cin >> name;
+//         cin >> price;
+//         cin >> quantity;
+//         list[i] = new Item(name, price, quantity); // Create and store Item objects
+//     }
+
+//     ofstream outfile("item.txt"); // Open the output file
+
+//     for(int i = 0; i < n; i++){
+//         outfile << *list[i]; // Write Item objects to the file
+//     }
+
+//     // Deallocate memory for each Item object
+//     for(int i = 0; i < n; i++)
+//         delete list[i];
+
+//     delete []list; // Deallocate memory for the array of pointers
+//     outfile.close(); // Close the output file
+
+//     Item item;
+//     ifstream infile;
+//     infile.open("item.txt");
+//     if(!infile)
+//         cout << "File does not exist" << endl;
+
+//     for(int i = 0; i < n; i++){
+//         infile >> item; // Read Item objects from the file
+//         cout << "Item " << i + 1 << ":" << endl;
+//         cout << item << endl; // Display Item objects
+//     }
+
+//     if(infile.eof())
+//         infile.close(); // Close the input file
+
+//     return 0;
+// }
+
+
+
+/*Write a program to store and retrieve a list of item in a file using serialization and vector
+Class items should have:
+1. name 
+2. price
+3. quantity*/
+
 #include<iostream>
 #include<fstream>
 #include<cstring>
+#include<vector>
 
 using namespace std;
 
@@ -389,43 +498,44 @@ int main(){
     cout << "Enter the number of items" << endl;
     cin >> n;
 
-    Item *list[n]; // Array of pointers to Item objects
+    vector<Item*> list;
 
     for(int i = 0; i < n; i++){
         cout << "Enter the data for item " << i+1 << ":" << endl;
         cin >> name;
         cin >> price;
         cin >> quantity;
-        list[i] = new Item(name, price, quantity); // Create and store Item objects
+        list.push_back(new Item(name,price,quantity));
     }
 
     ofstream outfile("item.txt"); // Open the output file
 
-    for(int i = 0; i < n; i++){
-        outfile << *list[i]; // Write Item objects to the file
-    }
+    vector<Item *>::iterator itr;
+    for(itr=list.begin();itr!=list.end();itr++)
+        outfile <<**itr; // Write Item objects to the file
+    
 
-    // Deallocate memory for each Item object
-    for(int i = 0; i < n; i++)
-        delete list[i];
+    // // Deallocate memory for each Item object
+    // for(int i = 0; i < n; i++)
+    //     delete list[i];
 
-    delete []list; // Deallocate memory for the array of pointers
-    outfile.close(); // Close the output file
+    // delete []list; // Deallocate memory for the array of pointers
+    // outfile.close(); // Close the output file
 
-    Item item;
-    ifstream infile;
-    infile.open("item.txt");
-    if(!infile)
-        cout << "File does not exist" << endl;
+    // Item item;
+    // ifstream infile;
+    // infile.open("item.txt");
+    // if(!infile)
+    //     cout << "File does not exist" << endl;
 
-    for(int i = 0; i < n; i++){
-        infile >> item; // Read Item objects from the file
-        cout << "Item " << i + 1 << ":" << endl;
-        cout << item << endl; // Display Item objects
-    }
+    // for(int i = 0; i < n; i++){
+    //     infile >> item; // Read Item objects from the file
+    //     cout << "Item " << i + 1 << ":" << endl;
+    //     cout << item << endl; // Display Item objects
+    // }
 
-    if(infile.eof())
-        infile.close(); // Close the input file
+    // if(infile.eof())
+    //     infile.close(); // Close the input file
 
     return 0;
 }
