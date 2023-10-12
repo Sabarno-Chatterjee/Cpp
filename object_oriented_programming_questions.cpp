@@ -143,7 +143,9 @@ class BankAccount{
 };
 
 int main(){
-
+    BankAccount b(5000);
+    cout<<b.getBalance();
+    
     return 0;
 }
 
@@ -153,11 +155,11 @@ BankAccount::BankAccount(float balance=0){
 }
 
 void BankAccount::Deposit(float amt){
-    this->balance = this->balance+amt;
+    this->balance += amt;
 }
 
 void BankAccount::Withdraw(float amt){
-    this->balance = this->balance-amt;
+    this->balance -= amt;
 }
 
 
