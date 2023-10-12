@@ -124,44 +124,86 @@
 
 /*Write a C++ program to implement a class called BankAccount that has private member variables for account number and balance. Include member functions to deposit and withdraw money from the account.*/
 
+// #include<iostream>
+
+// using namespace std;
+
+// class BankAccount{
+//     //data members
+//     private:
+//     int account_number;
+//     float balance=0;
+
+//     //member functions
+//     public:
+//     BankAccount(float balance);
+//     float getBalance(){return balance;}
+//     void Deposit(float amt);
+//     void Withdraw(float amt);
+// };
+
+// int main(){
+//     BankAccount b(5000);
+//     cout<<b.getBalance();
+//     b.Deposit(700);
+//     cout<<b.getBalance();
+    
+//     return 0;
+// }
+
+// BankAccount::BankAccount(float balance=0){
+//     this->account_number=453646356;
+//     this->balance=balance;
+// }
+
+// void BankAccount::Deposit(float amt){
+//     this->balance += amt;
+// }
+
+// void BankAccount::Withdraw(float amt){
+//     this->balance -= amt;
+// }
+
+
+/*Write a C++ program to create a class called Triangle that has private member variables for the lengths of its three sides. Implement member functions to determine if the triangle is equilateral, isosceles, or scalene.*/
+
 #include<iostream>
 
 using namespace std;
 
-class BankAccount{
+class Triangle{
     //data members
     private:
-    int account_number;
-    float balance=0;
+    float side1, side2, side3;
 
     //member functions
     public:
-    BankAccount(float balance);
-    float getBalance(){return balance;}
-    void Deposit(float amt);
-    void Withdraw(float amt);
+    Triangle(float a=0, float b=0, float c=0);
+    float getSide1(){return side1;}
+    float getSide2(){return side2;}
+    float getSide3(){return side3;}
+    void setSide1(float s);
+    void setSide2(float s);
+    void setSide3(float s);
 };
 
 int main(){
-    BankAccount b(5000);
-    cout<<b.getBalance();
-    b.Deposit(700);
-    cout<<b.getBalance();
-    
+
     return 0;
 }
 
-BankAccount::BankAccount(float balance=0){
-    this->account_number=453646356;
-    this->balance=balance;
+Triangle::Triangle(float a=0, float b=0, float c=0){
+    this->side1=a;
+    this->side2=b;
+    this->side3=c;
 }
 
-void BankAccount::Deposit(float amt){
-    this->balance += amt;
+void Triangle::setSide1(float s){
+    this->side1=s;
 }
-
-void BankAccount::Withdraw(float amt){
-    this->balance -= amt;
+void Triangle::setSide2(float s){
+    this->side2=s;
 }
-
-
+void Triangle::setSide3(float s){
+    this->side3=s;
+}
