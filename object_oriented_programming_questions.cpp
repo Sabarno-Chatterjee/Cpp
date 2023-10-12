@@ -75,9 +75,18 @@ class Car{
     string model;
     int year;
 
-    //member functions;
+    //member functions
     public:
     Car(string company="abc", string model="xyz",int year=0);
+    //accessor methods
+    string getCompany(){return company;}
+    string getModel(){return model;}
+    int getYear(){return year;}
+
+    //mutator methods
+    void setCompany(string company);
+    void setModel(string model);
+    void setYear(string year);
 };
 
 int main(){
@@ -89,4 +98,16 @@ Car::Car(string company, string model,int year){
     this->company=company;
     this->model=model;
     this->year=year;
+}
+
+void Car::setCompany(string company){
+    this->company=c 
+}
+
+void Car::setModel(string model){
+
+}
+
+void Car::setYear(string year){
+
 }
