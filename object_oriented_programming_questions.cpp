@@ -1,6 +1,7 @@
 /*Write a C++ program to create a class called Person that has private member variables for name, age and country. Implement member functions to set and get the values of these variables.*/
 
 #include<iostream>
+#include<cstring>
 
 using namespace std;
 
@@ -24,6 +25,8 @@ class Person{
     void setAge(int age);
     void setCountry(string country);
 
+    friend ostream & operator<<(ostream &out, Person &p);
+
 };
 
 Person::Person(string name, int age, string country){
@@ -44,7 +47,16 @@ void Person::setCountry(string country){
     this->country=country;
 }
 
-int main(){
+ostream & operator<<(ostream &out, Person &p){
+    out<<"Name: "<<p.name<<endl;
+    out<<"Age: "<<p.age<<endl;
+    out<<"Country: "<<p.country<<endl;
 
+    return out;
+}
+
+int main(){
+    Person p("Hamilton", 38, "Monaco");
+    cout<<p;
     return 0;
 }
