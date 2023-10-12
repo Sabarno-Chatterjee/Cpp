@@ -132,12 +132,24 @@ class BankAccount{
     //data members
     private:
     int account_number;
-    float balance;
+    float balance=0;
+
+    //member functions
+    public:
+    BankAccount(float balance);
+    float getBalance(){return balance;}
+    void Deposit(float amt);
+    void Withdraw(float amt);
 };
 
 int main(){
 
     return 0;
+}
+
+BankAccount::BankAccount(float balance=0){
+    this->account_number=453646356;
+    this->balance=balance;
 }
 
 
