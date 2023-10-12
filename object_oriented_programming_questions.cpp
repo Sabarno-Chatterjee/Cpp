@@ -145,6 +145,8 @@ class BankAccount{
 int main(){
     BankAccount b(5000);
     cout<<b.getBalance();
+    b.Deposit(700);
+    cout<<b.getBalance();
     
     return 0;
 }
