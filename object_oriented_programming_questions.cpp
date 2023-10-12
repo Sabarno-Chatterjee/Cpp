@@ -155,6 +155,9 @@ BankAccount::BankAccount(float balance=0){
 void BankAccount::Deposit(float amt){
     this->balance = this->balance+amt;
 }
-void BankAccount::Withdraw(float amt);
+
+void BankAccount::Withdraw(float amt){
+    this->balance = this->balance-amt;
+}
 
 
