@@ -87,10 +87,12 @@ class Car{
     void setCompany(string company);
     void setModel(string model);
     void setYear(int year);
+    friend ostream & operator<<(ostream &out, Car &c);
 };
 
 int main(){
-
+    Car c("Toyota","Innova",2009);
+    cout<<c;
     return 0;
 }
 
@@ -110,4 +112,12 @@ void Car::setModel(string model){
 
 void Car::setYear(int year){
     this->year=year;
+}
+
+ostream & operator<<(ostream &out, Car &c){
+    out<<"Company: "<<c.company<<endl;
+    out<<"Model: "<<c.model<<endl;
+    out<<"Year: "<<c.year<<endl;
+
+    return out;
 }
