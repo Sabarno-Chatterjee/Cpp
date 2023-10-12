@@ -86,7 +86,7 @@ class Car{
     //mutator methods
     void setCompany(string company);
     void setModel(string model);
-    void setYear(string year);
+    void setYear(int year);
 };
 
 int main(){
@@ -101,13 +101,13 @@ Car::Car(string company, string model,int year){
 }
 
 void Car::setCompany(string company){
-    this->company=c 
+    this->company=company;
 }
 
 void Car::setModel(string model){
-
+    this->model=model;
 }
 
-void Car::setYear(string year){
-
+void Car::setYear(int year){
+    this->year=year;
 }
