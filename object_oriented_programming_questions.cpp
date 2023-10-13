@@ -124,100 +124,108 @@
 
 /*Write a C++ program to implement a class called BankAccount that has private member variables for account number and balance. Include member functions to deposit and withdraw money from the account.*/
 
-// #include<iostream>
-
-// using namespace std;
-
-// class BankAccount{
-//     //data members
-//     private:
-//     int account_number;
-//     float balance=0;
-
-//     //member functions
-//     public:
-//     BankAccount(float balance);
-//     float getBalance(){return balance;}
-//     void Deposit(float amt);
-//     void Withdraw(float amt);
-// };
-
-// int main(){
-//     BankAccount b(5000);
-//     cout<<b.getBalance();
-//     b.Deposit(700);
-//     cout<<b.getBalance();
-    
-//     return 0;
-// }
-
-// BankAccount::BankAccount(float balance=0){
-//     this->account_number=453646356;
-//     this->balance=balance;
-// }
-
-// void BankAccount::Deposit(float amt){
-//     this->balance += amt;
-// }
-
-// void BankAccount::Withdraw(float amt){
-//     this->balance -= amt;
-// }
-
-
-/*Write a C++ program to create a class called Triangle that has private member variables for the lengths of its three sides. Implement member functions to determine if the triangle is equilateral, isosceles, or scalene.*/
-
 #include<iostream>
 
 using namespace std;
 
-class Triangle{
+class BankAccount{
     //data members
     private:
-    float side1, side2, side3;
+    int account_number;
+    float balance=0;
 
     //member functions
     public:
-    Triangle(float a=0, float b=0, float c=0);
-    float getSide1(){return side1;}
-    float getSide2(){return side2;}
-    float getSide3(){return side3;}
-    void setSide1(float s);
-    void setSide2(float s);
-    void setSide3(float s);
-    string isEquilateral();
-    string isIsosceles();
-    string isScalene();
+    BankAccount(float balance=0);
+    float getBalance(){return balance;}
+    void Deposit(float amt);
+    void Withdraw(float amt);
+    friend ostream & operator<<(ostream &out, BankAccount &b);
 };
 
 int main(){
-    Triangle t(3,2,4);
-    cout<<t.isScalene();
+    BankAccount b(5000);
+    cout<<b;
+    b.Deposit(700);
+    cout<<b;
+    b.Withdraw(1000);
+    cout<<b;
+    
     return 0;
 }
 
-Triangle::Triangle(float a, float b, float c){
-    this->side1=a;
-    this->side2=b;
-    this->side3=c;
+BankAccount::BankAccount(float balance){
+    this->account_number=453646356;
+    this->balance=balance;
 }
 
-void Triangle::setSide1(float s){
-    this->side1=s;
-}
-void Triangle::setSide2(float s){
-    this->side2=s;
-}
-void Triangle::setSide3(float s){
-    this->side3=s;
+void BankAccount::Deposit(float amt){
+    this->balance += amt;
 }
 
-string Triangle::isEquilateral(){
-    return (side1==side2 && side2==side3)?"Yes":"No";
+void BankAccount::Withdraw(float amt){
+    this->balance -= amt;
 }
-string Triangle::isIsosceles(){ 
-    return ((side1==side2 || side2==side3 || side3==side1) && (side1!=side2 || side2!=side3 || side3!=side1))?"Yes":"No";        
+
+ostream & operator<<(ostream &out, BankAccount &b){
+    out<<"Balance: "<<b.balance<<endl;
+    return out;
 }
-string Triangle::isScalene(){
-    return (side1!=side2 && side2!=side3)?"Yes":"No";
-}
+
+
+/*Write a C++ program to create a class called Triangle that has private member variables for the lengths of its three sides. Implement member functions to determine if the triangle is equilateral, isosceles, or scalene.*/
+
+// #include<iostream>
+
+// using namespace std;
+
+// class Triangle{
+//     //data members
+//     private:
+//     float side1, side2, side3;
+
+//     //member functions
+//     public:
+//     Triangle(float a=0, float b=0, float c=0);
+//     float getSide1(){return side1;}
+//     float getSide2(){return side2;}
+//     float getSide3(){return side3;}
+//     void setSide1(float s);
+//     void setSide2(float s);
+//     void setSide3(float s);
+//     string isEquilateral();
+//     string isIsosceles();
+//     string isScalene();
+// };
+
+// int main(){
+//     Triangle t(3,2,4);
+//     cout<<t.isScalene();
+//     return 0;
+// }
+
+// Triangle::Triangle(float a, float b, float c){
+//     this->side1=a;
+//     this->side2=b;
+//     this->side3=c;
+// }
+
+// void Triangle::setSide1(float s){
+//     this->side1=s;
+// }
+// void Triangle::setSide2(float s){
+//     this->side2=s;
+// }
+// void Triangle::setSide3(float s){
+//     this->side3=s;
+// }
+
+// string Triangle::isEquilateral(){
+//     return (side1==side2 && side2==side3)?"Yes":"No";
+// }
+// string Triangle::isIsosceles(){ 
+//     return ((side1==side2 || side2==side3 || side3==side1) && (side1!=side2 || side2!=side3 || side3!=side1))?"Yes":"No";        
+// }
+// string Triangle::isScalene(){
+//     return (side1!=side2 && side2!=side3)?"Yes":"No";
+// }
