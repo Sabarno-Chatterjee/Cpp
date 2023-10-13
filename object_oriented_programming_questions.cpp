@@ -234,56 +234,85 @@
 /*Write a C++ program to implement a class called Employee that has private member variables for name, employee ID, and salary. Include member functions to calculate and set salary based on employee performance.*/
 
 
-#include<iostream>
-#include<cstring>
+#include <iostream>
+#include <cstring>
 
 using namespace std;
 
-class Employee{
-    //data members
+class Employee {
+    // Data members
     private:
     std::string EmpName;
     int EmpId;
     double salary;
 
     public:
+    // Constructor
     Employee(const std::string EmpName, const int EmpId, double salary);
 
+    // Member functions
     void CalculateSalary(double performance_rating);
-    double setSalary(double salary);
-    int getEmpId() const{
+    void setSalary(double salary);
+    int getEmpId() const {
         return EmpId;
     }
 
-    std::string getEmpName() const{
+    std::string getEmpName() const {
         return EmpName;
     }
 
-    double getEmpSalary() const{
+    double getEmpSalary() const {
         return salary;
     }
+
+    // Friend function to overload the << operator for displaying Employee details
+    friend ostream & operator<<(ostream &, Employee &e);
 };
 
-int main(){
+int main() {
+    // Create an Employee object
+    Employee e1("Harry", 45, 8000);
+    
+    // Display Employee details
+    cout << e1;
+
+    // Calculate and update salary based on performance rating
+    e1.CalculateSalary(0.5);
+
+    // Display updated Employee details
+    cout << e1;
 
     return 0;
 }
 
-Employee::Employee(const std::string name, const int id, double salary){
-    this->EmpName=name;
-    this->EmpId=id;
-    this->salary=salary;
+Employee::Employee(const std::string name, const int id, double salary) {
+    // Initialize Employee object's data members
+    this->EmpName = name;
+    this->EmpId = id;
+    this->salary = salary;
 }
 
-void Employee::CalculateSalary(double performance_rating){
-    if(performance_rating>=0.0 && performance_rating<=1.5){
-        this->salary = this->salary + this->salary*performance_rating;
+void Employee::CalculateSalary(double performance_rating) {
+    // Calculate salary based on performance rating
+    if (performance_rating >= 0.0 && performance_rating <= 1.5) {
+        this->salary = this->salary + this->salary * performance_rating;
     }
-    else{
-        cout<<"Invalid performance rating"<<endl;
+    else {
+        cout << "Invalid performance rating" << endl;
     }
 }
 
-double Employee::setSalary(double salary){
-    this->salary=salary;
+void Employee::setSalary(double salary) {
+    // Set the salary of the Employee
+    this->salary = salary;
+}
+
+ostream & operator<<(ostream &out, Employee &e) {
+    // Overloaded << operator to display Employee details
+    out << endl << "***Employee Records***" << endl;
+    out << "Employee Name: " << e.EmpName << endl;
+    out << "Employee Id: " << e.EmpId << endl;
+    out << "Employee Salary: " << e.salary << endl;
+
+    return out;
 }
