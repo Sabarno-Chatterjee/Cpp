@@ -251,7 +251,7 @@ class Employee {
     Employee(const std::string EmpName, const int EmpId, double salary);
 
     // Member functions
-    void CalculateSalary(double performance_rating);
+    void CalculateSalary(float performance_rating);
     void setSalary(double salary);
     int getEmpId() const {
         return EmpId;
@@ -270,14 +270,29 @@ class Employee {
 };
 
 int main() {
-    // Create an Employee object
-    Employee e1("Harry", 45, 8000);
-    
+    string name;
+    int id;
+    double salary;
+    float rating;
+
+    // Input Employee details from the user
+    cout << "Enter the employee name." << endl;
+    cin >> name;
+    cout << "Enter the employee id." << endl;
+    cin >> id;
+    cout << "Enter salary." << endl;
+    cin >> salary;
+
+    // Create an Employee object with the provided details
+    Employee e1(name, id, salary);
+
     // Display Employee details
     cout << e1;
 
     // Calculate and update salary based on performance rating
-    e1.CalculateSalary(0.5);
+    cout << "Enter rating." << endl;
+    cin >> rating;
+    e1.CalculateSalary(rating);
 
     // Display updated Employee details
     cout << e1;
@@ -286,18 +301,17 @@ int main() {
 }
 
 Employee::Employee(const std::string name, const int id, double salary) {
-    // Initialize Employee object's data members
+    // Initialize Employee object's data members in the constructor
     this->EmpName = name;
     this->EmpId = id;
     this->salary = salary;
 }
 
-void Employee::CalculateSalary(double performance_rating) {
+void Employee::CalculateSalary(float performance_rating) {
     // Calculate salary based on performance rating
     if (performance_rating >= 0.0 && performance_rating <= 1.5) {
         this->salary = this->salary + this->salary * performance_rating;
-    }
-    else {
+    } else {
         cout << "Invalid performance rating" << endl;
     }
 }
@@ -316,3 +330,4 @@ ostream & operator<<(ostream &out, Employee &e) {
 
     return out;
 }
+
