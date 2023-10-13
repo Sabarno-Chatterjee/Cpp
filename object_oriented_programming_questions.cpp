@@ -336,92 +336,105 @@
 /*Write a C++ program to implement a class called Date that has private member variables for day, month, and year. Include member functions to set and get these variables, as well as to validate if the date is valid.*/
 
 
-#include<iostream>
+#include <iostream>
 
-class Date{
-    //data members
+class Date {
+    // Data members
     private:
-    int day,month,year;
+    int day, month, year;
 
-    //member functions
     public:
-    Date(int d=0, int m=0, int y=0):day(d),month(m),year(y){}
-    
-    //mutator methods
+    // Constructor with default values (0, 0, 0)
+    Date(int d = 0, int m = 0, int y = 0) : day(d), month(m), year(y) {}
+
+    // Mutator method to set the date
     void setDate(int d, int m, int y);
-    int getDay() const{
+
+    // Accessor methods to retrieve date components
+    int getDay() const {
         return day;
     }
 
-    int getMonth() const{
+    int getMonth() const {
         return month;
     }
 
-    int getYear() const{
+    int getYear() const {
         return year;
     }
 
+    // Member function to check if it's a leap year
     bool isLeapYear() const {
-        if((year%4==0 && year%100!=0)||year%400==0)
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
             return true;
         return false;
     }
 
+    // Member function to check if the date is valid
     bool isValidDate() const {
-        if(month<1 || month>12)
-            return false;
-        
-        if(day<1 || day>31)
+        if (month < 1 || month > 12)
             return false;
 
-        if((month==4 || month==6 || month==9 || month==11 )&&day>30)
+        if (day < 1 || day > 31)
             return false;
 
-        if(month==2){
-            if(isLeapYear()){
-                if(day>29)
+        if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+            return false;
+
+        if (month == 2) {
+            if (isLeapYear()) {
+                if (day > 29)
                     return false;
-            } else{
-                if(day>28)
+            } else {
+                if (day > 28)
                     return false;
-            }   
+            }
         }
         return true;
     }
 
-    friend std::ostream & operator<<(std::ostream &out, Date &d);
-  
+    // Friend function to overload the << operator for displaying Date
+    friend std::ostream& operator<<(std::ostream& out, Date& d);
 };
 
-int main(){
-
-    Date d(0,0,0);
+int main() {
+    
+    Date d;
 
     int day, year, month;
-    std::cout<<"Enter the year"<<std::endl;
-    std::cin>>year;
-    std::cout<<"Enter the month"<<std::endl;
-    std::cin>>month;
-    std::cout<<"Enter the day"<<std::endl;
-    std::cin>>day;
+    std::cout << "Enter the year" << std::endl;
+    std::cin >> year;
+    std::cout << "Enter the month" << std::endl;
+    std::cin >> month;
+    std::cout << "Enter the day" << std::endl;
+    std::cin >> day;
 
-    d.setDate(day,month,year);
+    // Set the date using the setDate method
+    d.setDate(day, month, year);
 
-    if(d.isValidDate())
-        std::cout<<"Valid"<<std::endl;
-    else 
-        std::cout<<"Invalid"<<std::endl;
-    
+    // Display the date using the overloaded << operator
+    std::cout << d;
+
+    // Check if the date is valid and display the result
+    if (d.isValidDate())
+        std::cout << "Valid" << std::endl;
+    else
+        std::cout << "Invalid" << std::endl;
+
     return 0;
 }
 
-void Date::setDate(int d, int m, int y){
-    this->day=d;
-    this->month=m;
-    this->year=y;
+// Implementation of the setDate method
+void Date::setDate(int d, int m, int y) {
+    this->day = d;
+    this->month = m;
+    this->year = y;
 }
 
-std::ostream & operator<<(std::ostream &out, Date &d){
-    
+// Overloaded << operator to display Date
+std::ostream& operator<<(std::ostream& out, Date& d) {
+    out << d.day << "/" << d.month << "/" << d.year << std::endl;
+    return out;
 }
+
 
