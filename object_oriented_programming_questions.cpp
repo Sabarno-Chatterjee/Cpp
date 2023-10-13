@@ -361,9 +361,10 @@ class Date{
         return year;
     }
 
-    bool isLeapYear() const{
+    bool isLeapYear() const {
         if((year%4==0 && year%100!=0)||year%400==0)
             return true;
+        return false;
     }
 
     bool isValidDate() const {
@@ -377,7 +378,7 @@ class Date{
             return false;
 
         if(month==2){
-            if(isLeapYear){
+            if(isLeapYear()){
                 if(day>29)
                     return false;
             } else{
@@ -391,6 +392,9 @@ class Date{
 };
 
 int main(){
+
+    Date d(0,0,0);
+
     int day, year, month;
     std::cout<<"Enter the year"<<std::endl;
     std::cin>>year;
@@ -399,6 +403,12 @@ int main(){
     std::cout<<"Enter the day"<<std::endl;
     std::cin>>day;
 
+    d.setDate(day,month,year);
+
+    if(d.isValidDate())
+        std::cout<<"Valid"<<std::endl;
+    else 
+        std::cout<<"Invalid"<<std::endl;
     
     return 0;
 }
