@@ -336,105 +336,128 @@
 /*Write a C++ program to implement a class called Date that has private member variables for day, month, and year. Include member functions to set and get these variables, as well as to validate if the date is valid.*/
 
 
-#include <iostream>
+// #include <iostream>
 
-class Date {
-    // Data members
-    private:
-    int day, month, year;
+// class Date {
+//     // Data members
+//     private:
+//     int day, month, year;
 
-    public:
-    // Constructor with default values (0, 0, 0)
-    Date(int d = 0, int m = 0, int y = 0) : day(d), month(m), year(y) {}
+//     public:
+//     // Constructor with default values (0, 0, 0)
+//     Date(int d = 0, int m = 0, int y = 0) : day(d), month(m), year(y) {}
 
-    // Mutator method to set the date
-    void setDate(int d, int m, int y);
+//     // Mutator method to set the date
+//     void setDate(int d, int m, int y);
 
-    // Accessor methods to retrieve date components
-    int getDay() const {
-        return day;
-    }
+//     // Accessor methods to retrieve date components
+//     int getDay() const {
+//         return day;
+//     }
 
-    int getMonth() const {
-        return month;
-    }
+//     int getMonth() const {
+//         return month;
+//     }
 
-    int getYear() const {
-        return year;
-    }
+//     int getYear() const {
+//         return year;
+//     }
 
-    // Member function to check if it's a leap year
-    bool isLeapYear() const {
-        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
-            return true;
-        return false;
-    }
+//     // Member function to check if it's a leap year
+//     bool isLeapYear() const {
+//         if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+//             return true;
+//         return false;
+//     }
 
-    // Member function to check if the date is valid
-    bool isValidDate() const {
-        if (month < 1 || month > 12)
-            return false;
+//     // Member function to check if the date is valid
+//     bool isValidDate() const {
+//         if (month < 1 || month > 12)
+//             return false;
 
-        if (day < 1 || day > 31)
-            return false;
+//         if (day < 1 || day > 31)
+//             return false;
 
-        if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
-            return false;
+//         if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+//             return false;
 
-        if (month == 2) {
-            if (isLeapYear()) {
-                if (day > 29)
-                    return false;
-            } else {
-                if (day > 28)
-                    return false;
-            }
-        }
-        return true;
-    }
+//         if (month == 2) {
+//             if (isLeapYear()) {
+//                 if (day > 29)
+//                     return false;
+//             } else {
+//                 if (day > 28)
+//                     return false;
+//             }
+//         }
+//         return true;
+//     }
 
-    // Friend function to overload the << operator for displaying Date
-    friend std::ostream& operator<<(std::ostream& out, Date& d);
-};
+//     // Friend function to overload the << operator for displaying Date
+//     friend std::ostream& operator<<(std::ostream& out, Date& d);
+// };
 
-int main() {
+// int main() {
     
-    Date d;
+//     Date d;
 
-    int day, year, month;
-    std::cout << "Enter the year" << std::endl;
-    std::cin >> year;
-    std::cout << "Enter the month" << std::endl;
-    std::cin >> month;
-    std::cout << "Enter the day" << std::endl;
-    std::cin >> day;
+//     int day, year, month;
+//     std::cout << "Enter the year" << std::endl;
+//     std::cin >> year;
+//     std::cout << "Enter the month" << std::endl;
+//     std::cin >> month;
+//     std::cout << "Enter the day" << std::endl;
+//     std::cin >> day;
 
-    // Set the date using the setDate method
-    d.setDate(day, month, year);
+//     // Set the date using the setDate method
+//     d.setDate(day, month, year);
 
-    // Display the date using the overloaded << operator
-    std::cout << d;
+//     // Display the date using the overloaded << operator
+//     std::cout << d;
 
-    // Check if the date is valid and display the result
-    if (d.isValidDate())
-        std::cout << "Valid" << std::endl;
-    else
-        std::cout << "Invalid" << std::endl;
+//     // Check if the date is valid and display the result
+//     if (d.isValidDate())
+//         std::cout << "Valid" << std::endl;
+//     else
+//         std::cout << "Invalid" << std::endl;
 
+//     return 0;
+// }
+
+// // Implementation of the setDate method
+// void Date::setDate(int d, int m, int y) {
+//     this->day = d;
+//     this->month = m;
+//     this->year = y;
+// }
+
+// // Overloaded << operator to display Date
+// std::ostream& operator<<(std::ostream& out, Date& d) {
+//     out << d.day << "/" << d.month << "/" << d.year << std::endl;
+//     return out;
+// }
+
+
+/* Write a C++ program to implement a class called Student that has private member variables for name, class, roll number, and marks. Include member functions to calculate the grade based on the marks and display the student's information.*/
+
+#include<iostream>
+#include<cstring>
+
+int main(){
+    int std, roll_num;
+    int marks;
+    std::string name;
+
+    std::cout<<"Input name"<<std::endl;
+    std::cin>>name;
+    std::cout<<"Input roll number"<<std::endl;
+    std::cin>>roll_num;
+    std::cout<<"Input class"<<std::endl;
+    std::cin>>std;
+    std::cout<<"Input marks"<<std::endl;
+    std::cin>>marks;
+
+
+    
     return 0;
 }
-
-// Implementation of the setDate method
-void Date::setDate(int d, int m, int y) {
-    this->day = d;
-    this->month = m;
-    this->year = y;
-}
-
-// Overloaded << operator to display Date
-std::ostream& operator<<(std::ostream& out, Date& d) {
-    out << d.day << "/" << d.month << "/" << d.year << std::endl;
-    return out;
-}
-
-
