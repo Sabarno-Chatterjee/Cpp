@@ -249,6 +249,19 @@ class Employee{
     public:
     Employee(const std::string EmpName, const int EmpId, double salary);
 
+    void CalculateSalary(double performance_rating);
+    double setSalary(double salary);
+    int getEmpId() const{
+        return EmpId;
+    }
+
+    std::string getEmpName() const{
+        return EmpName;
+    }
+
+    double getEmpSalary() const{
+        return salary;
+    }
 };
 
 int main(){
@@ -259,5 +272,18 @@ int main(){
 Employee::Employee(const std::string name, const int id, double salary){
     this->EmpName=name;
     this->EmpId=id;
+    this->salary=salary;
+}
+
+void Employee::CalculateSalary(double performance_rating){
+    if(performance_rating>=0.0 && performance_rating<=1.5){
+        this->salary = this->salary + this->salary*performance_rating;
+    }
+    else{
+        cout<<"Invalid performance rating"<<endl;
+    }
+}
+
+double Employee::setSalary(double salary){
     this->salary=salary;
 }
