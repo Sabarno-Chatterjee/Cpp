@@ -388,6 +388,8 @@ class Date{
         }
         return true;
     }
+
+    friend std::ostream & operator<<(std::ostream &out, Date &d);
   
 };
 
@@ -419,5 +421,7 @@ void Date::setDate(int d, int m, int y){
     this->year=y;
 }
 
-
+std::ostream & operator<<(std::ostream &out, Date &d){
+    
+}
 
