@@ -443,9 +443,53 @@
 #include<iostream>
 #include<cstring>
 
+class Student{
+    //data members
+    private:
+    std::string name;
+    int standard, roll_number;
+    float marks;
+
+    //member functions
+    public:
+    Student(std::string name="abc",int std=0, int roll=0, float m=0):
+    name(name),
+    standard(std),
+    roll_number(roll),
+    marks(m){}
+
+    void setName(int name);
+    void setStandard(int std);
+    void setRollNo(int roll);
+    void setMarks(float m);
+
+    std::string getName(){return name;}
+    int getStandard(){return standard;}
+    int getRollNo(){return roll_number;}
+    float getMarks(){return marks;}
+
+    std::string calculateGrade(){
+        if(marks>=90)
+            return "A";
+        else if(marks>=80)
+            return "B";
+        else if(marks>=70)
+            return "C";
+        else if(marks>=60)
+            return "D";
+        else
+            return "E";
+    }
+
+    void displayInformation();   
+};
+
 int main(){
+
+    Student s;
+
     int std, roll_num;
-    int marks;
+    float marks;
     std::string name;
 
     std::cout<<"Input name"<<std::endl;
@@ -457,7 +501,32 @@ int main(){
     std::cout<<"Input marks"<<std::endl;
     std::cin>>marks;
 
-
+    s.displayInformation();
     
     return 0;
+}
+
+
+void Student::setName(int name){
+    this->name=name;
+}
+
+void Student::setStandard(int std){
+    this->standard=std;
+}
+
+void Student::setRollNo(int roll){
+    this->roll_number=roll;
+}
+
+void Student::setMarks(float m){
+    this->marks=m;
+}
+
+void Student::displayInformation(){
+    std::cout<<"Name: "<<name<<std::endl;
+    std::cout<<"Standard: "<<standard<<std::endl;
+    std::cout<<"Roll Number: "<<roll_number<<std::endl;
+    std::cout<<"Marks: "<<marks<<std::endl;
+    std::cout<<"Grade: "<<calculateGrade()<<std::endl;
 }
