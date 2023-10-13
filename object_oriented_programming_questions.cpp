@@ -234,100 +234,134 @@
 /*Write a C++ program to implement a class called Employee that has private member variables for name, employee ID, and salary. Include member functions to calculate and set salary based on employee performance.*/
 
 
-#include <iostream>
-#include <cstring>
+// #include <iostream>
+// #include <cstring>
 
-using namespace std;
+// using namespace std;
 
-class Employee {
-    // Data members
+// class Employee {
+//     // Data members
+//     private:
+//     std::string EmpName;
+//     int EmpId;
+//     double salary;
+
+//     public:
+//     // Constructor
+//     Employee(const std::string EmpName, const int EmpId, double salary);
+
+//     // Member functions
+//     void CalculateSalary(float performance_rating);
+//     void setSalary(double salary);
+//     int getEmpId() const {
+//         return EmpId;
+//     }
+
+//     std::string getEmpName() const {
+//         return EmpName;
+//     }
+
+//     double getEmpSalary() const {
+//         return salary;
+//     }
+
+//     // Friend function to overload the << operator for displaying Employee details
+//     friend ostream & operator<<(ostream &, Employee &e);
+// };
+
+// int main() {
+//     string name;
+//     int id;
+//     double salary;
+//     float rating;
+
+//     // Input Employee details from the user
+//     cout << "Enter the employee name." << endl;
+//     cin >> name;
+//     cout << "Enter the employee id." << endl;
+//     cin >> id;
+//     cout << "Enter salary." << endl;
+//     cin >> salary;
+
+//     // Create an Employee object with the provided details
+//     Employee e1(name, id, salary);
+
+//     // Display Employee details
+//     cout << e1;
+
+//     // Calculate and update salary based on performance rating
+//     cout << "Enter rating." << endl;
+//     cin >> rating;
+//     e1.CalculateSalary(rating);
+
+//     // Display updated Employee details
+//     cout << e1;
+
+//     return 0;
+// }
+
+// Employee::Employee(const std::string name, const int id, double salary) {
+//     // Initialize Employee object's data members in the constructor
+//     this->EmpName = name;
+//     this->EmpId = id;
+//     this->salary = salary;
+// }
+
+// void Employee::CalculateSalary(float performance_rating) {
+//     // Calculate salary based on performance rating
+//     if (performance_rating >= 0.0 && performance_rating <= 1.5) {
+//         this->salary = this->salary + this->salary * performance_rating;
+//     } else {
+//         cout << "Invalid performance rating" << endl;
+//     }
+// }
+
+// void Employee::setSalary(double salary) {
+//     // Set the salary of the Employee
+//     this->salary = salary;
+// }
+
+// ostream & operator<<(ostream &out, Employee &e) {
+//     // Overloaded << operator to display Employee details
+//     out << endl << "***Employee Records***" << endl;
+//     out << "Employee Name: " << e.EmpName << endl;
+//     out << "Employee Id: " << e.EmpId << endl;
+//     out << "Employee Salary: " << e.salary << endl;
+
+//     return out;
+// }
+
+
+
+/*Write a C++ program to implement a class called Date that has private member variables for day, month, and year. Include member functions to set and get these variables, as well as to validate if the date is valid.*/
+
+
+#include<iostream>
+
+class Date{
+    //data members
     private:
-    std::string EmpName;
-    int EmpId;
-    double salary;
+    int day,month,year;
 
+    //member functions
     public:
-    // Constructor
-    Employee(const std::string EmpName, const int EmpId, double salary);
-
-    // Member functions
-    void CalculateSalary(float performance_rating);
-    void setSalary(double salary);
-    int getEmpId() const {
-        return EmpId;
-    }
-
-    std::string getEmpName() const {
-        return EmpName;
-    }
-
-    double getEmpSalary() const {
-        return salary;
-    }
-
-    // Friend function to overload the << operator for displaying Employee details
-    friend ostream & operator<<(ostream &, Employee &e);
+    Date(int day=0, int month=0, int year=0);
 };
 
-int main() {
-    string name;
-    int id;
-    double salary;
-    float rating;
-
-    // Input Employee details from the user
-    cout << "Enter the employee name." << endl;
-    cin >> name;
-    cout << "Enter the employee id." << endl;
-    cin >> id;
-    cout << "Enter salary." << endl;
-    cin >> salary;
-
-    // Create an Employee object with the provided details
-    Employee e1(name, id, salary);
-
-    // Display Employee details
-    cout << e1;
-
-    // Calculate and update salary based on performance rating
-    cout << "Enter rating." << endl;
-    cin >> rating;
-    e1.CalculateSalary(rating);
-
-    // Display updated Employee details
-    cout << e1;
-
+int main(){
+    int day, year, month;
+    std::cout<<"Enter the year"<<std::endl;
+    std::cin>>year;
+    std::cout<<"Enter the month"<<std::endl;
+    std::cin>>month;
+    std::cout<<"Enter the day"<<std::endl;
+    std::cin>>day;
     return 0;
 }
 
-Employee::Employee(const std::string name, const int id, double salary) {
-    // Initialize Employee object's data members in the constructor
-    this->EmpName = name;
-    this->EmpId = id;
-    this->salary = salary;
-}
-
-void Employee::CalculateSalary(float performance_rating) {
-    // Calculate salary based on performance rating
-    if (performance_rating >= 0.0 && performance_rating <= 1.5) {
-        this->salary = this->salary + this->salary * performance_rating;
-    } else {
-        cout << "Invalid performance rating" << endl;
-    }
-}
-
-void Employee::setSalary(double salary) {
-    // Set the salary of the Employee
-    this->salary = salary;
-}
-
-ostream & operator<<(ostream &out, Employee &e) {
-    // Overloaded << operator to display Employee details
-    out << endl << "***Employee Records***" << endl;
-    out << "Employee Name: " << e.EmpName << endl;
-    out << "Employee Id: " << e.EmpId << endl;
-    out << "Employee Salary: " << e.salary << endl;
-
-    return out;
+Date::Date(int day, int month, int year){
+    this->day=day;
+    this->month=month;
+    this->year=year;
 }
 
