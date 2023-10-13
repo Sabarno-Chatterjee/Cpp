@@ -345,7 +345,21 @@ class Date{
 
     //member functions
     public:
-    Date(int day=0, int month=0, int year=0);
+    Date(int d=0, int m=0, int y=0):day(d),month(m),year(y){}
+    
+    //mutator methods
+    void setDate(int d, int m, int y);
+    int getDay() const{
+        return day;
+    }
+
+    int getMonth() const{
+        return month;
+    }
+
+    int getYear() const{
+        return year;
+    }
 };
 
 int main(){
@@ -359,9 +373,11 @@ int main(){
     return 0;
 }
 
-Date::Date(int day, int month, int year){
-    this->day=day;
-    this->month=month;
-    this->year=year;
+void Date::setDate(int d, int m, int y){
+    this->day=d;
+    this->month=m;
+    this->year=y;
 }
+
+
 
