@@ -485,23 +485,22 @@ class Student{
 };
 
 int main(){
-
-    Student s;
-
     int std, roll_num;
     float marks;
     std::string name;
 
     std::cout<<"Input name"<<std::endl;
-    std::cin>>name;
+    std::getline(std::cin,name);
     std::cout<<"Input roll number"<<std::endl;
     std::cin>>roll_num;
     std::cout<<"Input class"<<std::endl;
     std::cin>>std;
     std::cout<<"Input marks"<<std::endl;
     std::cin>>marks;
+    
+    Student student(name,std,roll_num,marks);
 
-    s.displayInformation();
+    student.displayInformation();
     
     return 0;
 }
