@@ -185,14 +185,18 @@ class Triangle{
     void setSide1(float s);
     void setSide2(float s);
     void setSide3(float s);
+    string isEquilateral();
+    string isIsosceles();
+    string isScalene();
 };
 
 int main(){
-
+    Triangle t(3,2,4);
+    cout<<t.isScalene();
     return 0;
 }
 
-Triangle::Triangle(float a=0, float b=0, float c=0){
+Triangle::Triangle(float a, float b, float c){
     this->side1=a;
     this->side2=b;
     this->side3=c;
@@ -206,4 +210,14 @@ void Triangle::setSide2(float s){
 }
 void Triangle::setSide3(float s){
     this->side3=s;
+}
+
+string Triangle::isEquilateral(){
+    return (side1==side2 && side2==side3)?"Yes":"No";
+}
+string Triangle::isIsosceles(){ 
+    return ((side1==side2 || side2==side3 || side3==side1) && (side1!=side2 || side2!=side3 || side3!=side1))?"Yes":"No";        
+}
+string Triangle::isScalene(){
+    return (side1!=side2 && side2!=side3)?"Yes":"No";
 }
