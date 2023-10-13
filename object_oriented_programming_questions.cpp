@@ -124,53 +124,53 @@
 
 /*Write a C++ program to implement a class called BankAccount that has private member variables for account number and balance. Include member functions to deposit and withdraw money from the account.*/
 
-#include<iostream>
+// #include<iostream>
 
-using namespace std;
+// using namespace std;
 
-class BankAccount{
-    //data members
-    private:
-    int account_number;
-    float balance=0;
+// class BankAccount{
+//     //data members
+//     private:
+//     int account_number;
+//     float balance=0;
 
-    //member functions
-    public:
-    BankAccount(float balance=0);
-    float getBalance(){return balance;}
-    void Deposit(float amt);
-    void Withdraw(float amt);
-    friend ostream & operator<<(ostream &out, BankAccount &b);
-};
+//     //member functions
+//     public:
+//     BankAccount(float balance=0);
+//     float getBalance(){return balance;}
+//     void Deposit(float amt);
+//     void Withdraw(float amt);
+//     friend ostream & operator<<(ostream &out, BankAccount &b);
+// };
 
-int main(){
-    BankAccount b(5000);
-    cout<<b;
-    b.Deposit(700);
-    cout<<b;
-    b.Withdraw(1000);
-    cout<<b;
+// int main(){
+//     BankAccount b(5000);
+//     cout<<b;
+//     b.Deposit(700);
+//     cout<<b;
+//     b.Withdraw(1000);
+//     cout<<b;
     
-    return 0;
-}
+//     return 0;
+// }
 
-BankAccount::BankAccount(float balance){
-    this->account_number=453646356;
-    this->balance=balance;
-}
+// BankAccount::BankAccount(float balance){
+//     this->account_number=453646356;
+//     this->balance=balance;
+// }
 
-void BankAccount::Deposit(float amt){
-    this->balance += amt;
-}
+// void BankAccount::Deposit(float amt){
+//     this->balance += amt;
+// }
 
-void BankAccount::Withdraw(float amt){
-    this->balance -= amt;
-}
+// void BankAccount::Withdraw(float amt){
+//     this->balance -= amt;
+// }
 
-ostream & operator<<(ostream &out, BankAccount &b){
-    out<<"Balance: "<<b.balance<<endl;
-    return out;
-}
+// ostream & operator<<(ostream &out, BankAccount &b){
+//     out<<"Balance: "<<b.balance<<endl;
+//     return out;
+// }
 
 
 /*Write a C++ program to create a class called Triangle that has private member variables for the lengths of its three sides. Implement member functions to determine if the triangle is equilateral, isosceles, or scalene.*/
@@ -229,3 +229,35 @@ ostream & operator<<(ostream &out, BankAccount &b){
 // string Triangle::isScalene(){
 //     return (side1!=side2 && side2!=side3)?"Yes":"No";
 // }
+
+
+/*Write a C++ program to implement a class called Employee that has private member variables for name, employee ID, and salary. Include member functions to calculate and set salary based on employee performance.*/
+
+
+#include<iostream>
+#include<cstring>
+
+using namespace std;
+
+class Employee{
+    //data members
+    private:
+    std::string EmpName;
+    int EmpId;
+    double salary;
+
+    public:
+    Employee(const std::string EmpName, const int EmpId, double salary);
+
+};
+
+int main(){
+
+    return 0;
+}
+
+Employee::Employee(const std::string name, const int id, double salary){
+    this->EmpName=name;
+    this->EmpId=id;
+    this->salary=salary;
+}
