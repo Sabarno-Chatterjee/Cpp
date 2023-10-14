@@ -440,92 +440,142 @@
 
 /* Write a C++ program to implement a class called Student that has private member variables for name, class, roll number, and marks. Include member functions to calculate the grade based on the marks and display the student's information.*/
 
-#include<iostream>
-#include<cstring>
+// #include<iostream>
+// #include<cstring>
 
-class Student{
+// class Student{
+//     //data members
+//     private:
+//     std::string name;
+//     int standard, roll_number;
+//     float marks;
+
+//     //member functions
+//     public:
+//     Student(std::string name="abc",int std=0, int roll=0, float m=0):
+//     name(name),
+//     standard(std),
+//     roll_number(roll),
+//     marks(m){}
+
+//     void setName(int name);
+//     void setStandard(int std);
+//     void setRollNo(int roll);
+//     void setMarks(float m);
+
+//     std::string getName(){return name;}
+//     int getStandard(){return standard;}
+//     int getRollNo(){return roll_number;}
+//     float getMarks(){return marks;}
+
+//     std::string calculateGrade(){
+//         if(marks>=90)
+//             return "A";
+//         else if(marks>=80)
+//             return "B";
+//         else if(marks>=70)
+//             return "C";
+//         else if(marks>=60)
+//             return "D";
+//         else
+//             return "E";
+//     }
+
+//     void displayInformation();   
+// };
+
+// int main(){
+//     int std, roll_num;
+//     float marks;
+//     std::string name;
+
+//     std::cout<<"Input name"<<std::endl;
+//     std::getline(std::cin,name);
+//     std::cout<<"Input roll number"<<std::endl;
+//     std::cin>>roll_num;
+//     std::cout<<"Input class"<<std::endl;
+//     std::cin>>std;
+//     std::cout<<"Input marks"<<std::endl;
+//     std::cin>>marks;
+    
+//     Student student(name,std,roll_num,marks);
+
+//     student.displayInformation();
+    
+//     return 0;
+// }
+
+
+// void Student::setName(int name){
+//     this->name=name;
+// }
+
+// void Student::setStandard(int std){
+//     this->standard=std;
+// }
+
+// void Student::setRollNo(int roll){
+//     this->roll_number=roll;
+// }
+
+// void Student::setMarks(float m){
+//     this->marks=m;
+// }
+
+// void Student::displayInformation(){
+//     std::cout<<"Name: "<<name<<std::endl;
+//     std::cout<<"Standard: "<<standard<<std::endl;
+//     std::cout<<"Roll Number: "<<roll_number<<std::endl;
+//     std::cout<<"Marks: "<<marks<<std::endl;
+//     std::cout<<"Grade: "<<calculateGrade()<<std::endl;
+// }
+
+
+
+/*Write a C++ program to implement a class called Shape with virtual member functions for calculating area and perimeter. Derive classes such as Circle, Rectangle, and Triangle from the Shape class and override virtual functions accordingly.*/
+
+
+#include<iostream>
+#include<cmath>
+
+const double PI=3.14159;
+
+class Shape{
+    //member functions
+    public:
+        virtual double area() const=0;
+        virtual double perimeter() const=0;
+};
+
+class Circle:public Shape{
     //data members
     private:
-    std::string name;
-    int standard, roll_number;
-    float marks;
+        double radius;
 
     //member functions
     public:
-    Student(std::string name="abc",int std=0, int roll=0, float m=0):
-    name(name),
-    standard(std),
-    roll_number(roll),
-    marks(m){}
-
-    void setName(int name);
-    void setStandard(int std);
-    void setRollNo(int roll);
-    void setMarks(float m);
-
-    std::string getName(){return name;}
-    int getStandard(){return standard;}
-    int getRollNo(){return roll_number;}
-    float getMarks(){return marks;}
-
-    std::string calculateGrade(){
-        if(marks>=90)
-            return "A";
-        else if(marks>=80)
-            return "B";
-        else if(marks>=70)
-            return "C";
-        else if(marks>=60)
-            return "D";
-        else
-            return "E";
-    }
-
-    void displayInformation();   
+        Circle(double r=0): radius(r){}
+        
+        double getRadius(){return radius;}
+        void setRadius(double r);
+        double area();
+        double perimeter();
 };
 
 int main(){
-    int std, roll_num;
-    float marks;
-    std::string name;
 
-    std::cout<<"Input name"<<std::endl;
-    std::getline(std::cin,name);
-    std::cout<<"Input roll number"<<std::endl;
-    std::cin>>roll_num;
-    std::cout<<"Input class"<<std::endl;
-    std::cin>>std;
-    std::cout<<"Input marks"<<std::endl;
-    std::cin>>marks;
-    
-    Student student(name,std,roll_num,marks);
-
-    student.displayInformation();
-    
     return 0;
 }
 
 
-void Student::setName(int name){
-    this->name=name;
+void Circle::setRadius(double r){
+    this->radius=r;
 }
 
-void Student::setStandard(int std){
-    this->standard=std;
+double Circle::area(){
+    return PI*pow(radius,2);
 }
 
-void Student::setRollNo(int roll){
-    this->roll_number=roll;
-}
-
-void Student::setMarks(float m){
-    this->marks=m;
-}
-
-void Student::displayInformation(){
-    std::cout<<"Name: "<<name<<std::endl;
-    std::cout<<"Standard: "<<standard<<std::endl;
-    std::cout<<"Roll Number: "<<roll_number<<std::endl;
-    std::cout<<"Marks: "<<marks<<std::endl;
-    std::cout<<"Grade: "<<calculateGrade()<<std::endl;
+double Circle::perimeter(){
+    return 2*PI*radius;
 }
