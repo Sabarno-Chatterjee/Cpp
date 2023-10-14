@@ -558,12 +558,38 @@ class Circle:public Shape{
         
         double getRadius(){return radius;}
         void setRadius(double r);
-        double area();
-        double perimeter();
+
+        double area() const;
+        double perimeter() const;
+};
+
+class Rectangle:public Shape{
+    //data members
+    private:
+        double length;
+        double breadth;
+
+    //members functions
+    public:
+        Rectangle(double l=0, double b=0): length(l), breadth(b){}
+
+        double getLength(){return length;}
+        double getBreadth(){return breadth;}
+
+        void setLength(double l);
+        void setBreadth(double b);
+
+        double area() const;
+        double perimeter() const;
+};
+
+class Triangle:public Shape{
+
 };
 
 int main(){
-
+    Rectangle r(5,3);
+    std::cout<<r.area();
     return 0;
 }
 
@@ -572,10 +598,27 @@ void Circle::setRadius(double r){
     this->radius=r;
 }
 
-double Circle::area(){
+double Circle::area() const{
     return PI*pow(radius,2);
 }
 
-double Circle::perimeter(){
+double Circle::perimeter() const{
     return 2*PI*radius;
 }
+
+void Rectangle::setLength(double l){
+    this->length=l;
+}
+
+void Rectangle::setBreadth(double b){
+    this->breadth=b;
+}
+
+double Rectangle::area() const{
+    return length*breadth;
+}
+
+double Rectangle::perimeter() const{
+    return 2*(length+breadth);
+}
+
