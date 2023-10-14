@@ -600,28 +600,74 @@ Class items should have:
 
 /*Write a C++ program to count the number of lines in a text file.*/
 
+// #include<iostream>
+// #include<fstream>
+
+
+// int main(){
+//     std::ifstream   infile;
+//     infile.open("file_handling.txt");
+//     if(!infile)
+//         std::cout<<"File does not exist"<<std::endl;
+
+//     if(infile.is_open()){
+//         int count=0;
+//         std::string line;
+//         while(std::getline(infile,line)){
+//             count++;
+//         }
+//         std::cout<<"Lines: "<<count<<std::endl;
+
+//         if(infile.eof())
+//             infile.close();
+//     } else{
+//         std::cout<<"Failed to open the file"<<std::endl;
+//     }
+//     return 0;
+// }
+
+
+
+
+
+
+
+/*Write a C++ program to count the number of words in a text file.*/
+
+
 #include<iostream>
 #include<fstream>
+#include<cstring>
+#include<sstream>
 
 
 int main(){
-    std::ifstream   infile;
-    infile.open("file_handling.txt");
+
+    std::ifstream infile("file_handling.txt");
     if(!infile)
         std::cout<<"File does not exist"<<std::endl;
 
     if(infile.is_open()){
-        int count=0;
         std::string line;
+        int count=0;
         while(std::getline(infile,line)){
-            count++;
+            std::stringstream ss(line);
+            std::string word;
+            while(ss>>word){
+                count++;
+            }
         }
-        std::cout<<"Lines: "<<count<<std::endl;
-
         if(infile.eof())
             infile.close();
-    } else{
-        std::cout<<"Failed to open the file"<<std::endl;
-    }
+
+        std::cout<<"Number of words: "<<count<<std::endl;
+
+        } else{
+            std::cout<<"Failed to open file."<<std::endl;
+        }
+
     return 0;
 }
+
+
+
