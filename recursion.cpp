@@ -20,18 +20,40 @@
 
 /*Write a C++ program to calculate the factorial of a given number using recursion.*/
 
+// #include<iostream>
+
+// int factorial(int num){
+//     return (num==1||num==0)?1:num*factorial(num-1);
+// }
+
+// int main(){ 
+//     int num;
+    
+//     std::cout<<"Enter a num"<<std::endl;
+//     std::cin>>num;
+//     std::cout<<"Factorial: "<<factorial(num)<<std::endl;
+
+//     return 0;
+// }
+
+
+/*Write a C++ program to implement a recursive function to get the nth Fibonacci number.*/
+
+
 #include<iostream>
 
-int factorial(int num){
-    return (num==1||num==0)?1:num*factorial(num-1);
+int fib(int n){
+    if(n==0||n==1)
+        return n;
+    return fib(n-1)+fib(n-2);
 }
 
-int main(){ 
-    int num;
-    
-    std::cout<<"Enter a num"<<std::endl;
-    std::cin>>num;
-    std::cout<<"Factorial: "<<factorial(num)<<std::endl;
+int main(){
+    int n;
+    std::cout<<"Enter the nth term"<<std::endl;
+    std::cin>>n;
+
+    std::cout<<fib(n)<<std::endl;
 
     return 0;
 }
