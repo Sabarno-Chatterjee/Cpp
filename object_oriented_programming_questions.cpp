@@ -545,6 +545,7 @@ class Shape{
     public:
         virtual double area() const=0;
         virtual double perimeter() const=0;
+        virtual void display() const=0;
 };
 
 class Circle:public Shape{
@@ -561,6 +562,8 @@ class Circle:public Shape{
 
         double area() const;
         double perimeter() const;
+
+        void display() const;
 };
 
 class Rectangle:public Shape{
@@ -581,15 +584,46 @@ class Rectangle:public Shape{
 
         double area() const;
         double perimeter() const;
+
+        void display() const;
 };
 
 class Triangle:public Shape{
+    //data members
+    private:
+        double side1, side2, side3;
 
+    //member functions
+    public:
+        Triangle(double s1=0, double s2=0, double s3=0):
+        side1(s1),
+        side2(s2),
+        side3(s3){}
+
+        double getSide1(){return side1;}
+        double getSide2(){return side2;}
+        double getSide3(){return side3;}
+
+        void setSide1(double s1);
+        void setSide2(double s2);
+        void setSide3(double s3);
+
+        double area() const;
+        double perimeter() const;
+
+        void display() const;
 };
 
 int main(){
-    Rectangle r(5,3);
-    std::cout<<r.area();
+    Rectangle rectangle(5,4);
+    rectangle.display();
+
+    Circle circle(4);
+    circle.display();
+
+    Triangle triangle(5,4,3);
+    triangle.display();
+
     return 0;
 }
 
@@ -606,6 +640,12 @@ double Circle::perimeter() const{
     return 2*PI*radius;
 }
 
+void Circle::display() const{
+    std::cout<<"\nCircle:"<<std::endl;
+    std::cout<<"Area: "<<area()<<std::endl;
+    std::cout<<"Perimeter: "<<perimeter()<<std::endl;
+}
+
 void Rectangle::setLength(double l){
     this->length=l;
 }
@@ -620,5 +660,39 @@ double Rectangle::area() const{
 
 double Rectangle::perimeter() const{
     return 2*(length+breadth);
+}
+
+void Rectangle::display() const{
+    std::cout<<"\nRectangle:"<<std::endl;
+    std::cout<<"Area: "<<area()<<std::endl;
+    std::cout<<"Perimeter: "<<perimeter()<<std::endl;
+}
+
+
+void Triangle::setSide1(double s1){
+    this->side1=s1;
+}
+
+void Triangle::setSide2(double s2){
+    this->side2=s2;
+}
+
+void Triangle::setSide3(double s3){
+    this->side3=s3;
+}
+
+double Triangle::area() const{
+    double s = (side1 + side2 + side3) / 2;
+    return sqrt(s * (s - side1) * (s - side2) * (s - side3)); 
+}
+
+double Triangle::perimeter() const{
+    return side1 + side2 + side3;
+}
+
+void Triangle::display() const{
+    std::cout<<"\nTriangle:"<<std::endl;
+    std::cout<<"Area: "<<area()<<std::endl;
+    std::cout<<"Perimeter: "<<perimeter()<<std::endl;
 }
 
