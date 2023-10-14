@@ -544,29 +544,55 @@ Class items should have:
 /*Write a C++ program to create a new text file and write some text into it.*/
 
 
+// #include<iostream>
+// #include<fstream>
+
+
+// int main(){
+//     std::ofstream outfile("file_handling.txt",std::ios::trunc);
+//     if(outfile.is_open()){
+//         outfile<<"C++ is a high-level, general-purpose programming language created by Danish computer scientist Bjarne Stroustrup. \n";
+//         outfile<<"First released in 1985 as an extension of the C programming language, it has since expanded significantly over time. \n";
+//         outfile << "Modern C++ currently has object-oriented, generic, and functional features, in addition to facilities for low-level memory manipulation.\n";
+//         outfile << "It is almost always implemented in a compiled language.\n";
+//         outfile << "Many vendors provide C++ compilers, including the Free Software Foundation, LLVM, Microsoft, Intel, Embarcadero, Oracle, and IBM.";
+
+//         outfile.close();
+
+//         std::cout<<"Input processed successfully"<<std::endl;
+//     }
+
+//     else
+//         std::cout<<"Failed to create new file"<<std::endl;
+    
+//     return 0;
+// }
+
+
+/*Write a C++ program to open an existing text file and display its contents on the console.*/
+
 #include<iostream>
 #include<fstream>
 
-
 int main(){
-    std::ofstream outfile("file_handling.txt",std::ios::trunc);
-    if(outfile.is_open()){
-        outfile<<"C++ is a high-level, general-purpose programming language created by Danish computer scientist Bjarne Stroustrup. \n";
-        outfile<<"First released in 1985 as an extension of the C programming language, it has since expanded significantly over time. \n";
-        outfile << "Modern C++ currently has object-oriented, generic, and functional features, in addition to facilities for low-level memory manipulation.\n";
-        outfile << "It is almost always implemented in a compiled language.\n";
-        outfile << "Many vendors provide C++ compilers, including the Free Software Foundation, LLVM, Microsoft, Intel, Embarcadero, Oracle, and IBM.";
+    std::ifstream infile;
+    infile.open("file_handling.txt");
 
-        outfile.close();
+    if(!infile)
+        std::cout<<"File does not exist"<<std::endl;
 
-        std::cout<<"Input processed successfully"<<std::endl;
+    if(infile.is_open()){
+        std::string line;
+        while(std::getline(infile,line)){
+            std::cout<<line<<std::endl;
+        }
+
+        infile.close();
     }
 
     else
-        std::cout<<"Failed to create new file"<<std::endl;
-    
+        std::cout<<"Failed to open the file"<<std::endl;
+
+
     return 0;
 }
-
-
-/**/
