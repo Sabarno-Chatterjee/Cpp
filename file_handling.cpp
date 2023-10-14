@@ -546,17 +546,27 @@ Class items should have:
 
 #include<iostream>
 #include<fstream>
-#include<cstring>
+
 
 int main(){
-    std::string text;
-    std::cout<<"Enter some text"<<std::endl;
-    std::getline(std::cin,text);
-    
-    std::ofstream outfile("file_handling.txt");
-    outfile<<text;
-    
-    outfile.close();
+    std::ofstream outfile("file_handling.txt",std::ios::trunc);
+    if(outfile.is_open()){
+        outfile<<"C++ is a high-level, general-purpose programming language created by Danish computer scientist Bjarne Stroustrup. \n";
+        outfile<<"First released in 1985 as an extension of the C programming language, it has since expanded significantly over time. \n";
+        outfile << "Modern C++ currently has object-oriented, generic, and functional features, in addition to facilities for low-level memory manipulation.\n";
+        outfile << "It is almost always implemented in a compiled language.\n";
+        outfile << "Many vendors provide C++ compilers, including the Free Software Foundation, LLVM, Microsoft, Intel, Embarcadero, Oracle, and IBM.";
 
+        outfile.close();
+
+        std::cout<<"Input processed successfully"<<std::endl;
+    }
+
+    else
+        std::cout<<"Failed to create new file"<<std::endl;
+    
     return 0;
 }
+
+
+/**/
