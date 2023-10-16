@@ -11,13 +11,14 @@ class Bank{
 
 int main(){
     int choice;
-    cout<<"Welcome to ABC Banking Services"<<endl;
-    cout<<"Which service would you like to access:"<<endl;
-    cout<<"1. Open new account"<<endl;
-    cout<<"2. Deposit"<<endl;
-    cout<<"3. Withdraw"<<endl;
-    cout<<"4. Balance enquiry"<<endl;
-    cout<<"5. Exit"<<endl;
+    std::cout<<"Welcome to ABC Banking Services"<<std::endl;
+    std::cout<<"Which service would you like to access:"<<std::endl;
+    std::cout<<"1. Open new account"<<std::endl;
+    std::cout<<"2. Deposit"<<std::endl;
+    std::cout<<"3. Withdraw"<<std::endl;
+    std::cout<<"4. Balance enquiry"<<std::endl;
+    std::cout<<"5. Exit"<<std::endl;
+    std::cin>>choice;
     
 
     return 0;
