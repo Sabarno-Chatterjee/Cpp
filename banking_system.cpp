@@ -19,6 +19,26 @@ int main(){
     std::cout<<"4. Balance enquiry"<<std::endl;
     std::cout<<"5. Exit"<<std::endl;
     std::cin>>choice;
+
+    switch(choice){
+        case 1:
+
+            break;
+        case 2:
+
+            break;
+        case 3:
+
+            break;
+        case 4:
+
+            break;
+        case 5:
+
+            break;
+        default:
+        
+    }
     
 
     return 0;
