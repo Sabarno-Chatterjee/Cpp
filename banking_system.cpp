@@ -6,7 +6,7 @@ class Account{
 };
 
 class Bank{
-
+    int initial_bal;
 };
 
 int main(){
