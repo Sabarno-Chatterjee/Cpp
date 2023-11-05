@@ -182,43 +182,85 @@ Visiting - Doctor and implement function
 salary in it.
 */
 
+// #include<iostream>
+// #include<cstring>
+
+// class Doctor{
+//     public:
+//         virtual double salary() const{
+//             return 0.0;
+//         }
+// };
+
+// class Visiting:public Doctor{
+//     //data members
+//     private: 
+//         int number_of_visits;
+//         double visiting_fee;
+
+//     public:
+//         //member functions
+//         Visiting(int n, double f);
+//         double salary() const override;
+
+// };
+
+// Visiting::Visiting(int n, double f){
+//     this->number_of_visits=n;
+//     this->visiting_fee=f;
+// }
+
+// double Visiting::salary() const{
+//     return number_of_visits*visiting_fee;
+// }
+
+
+// int main(){
+//     Visiting v1(5, 7.0);
+//     std::cout<<v1.salary()<<std::endl;
+//     return 0;
+// }
+
+/*Q. Write a C++ program to implement simple 
+calculator to perform '+, —, *, /' on two
+integer operands. Your program should
+have methods for reading data and for
+performing arithmetical operations.
+*/
+
+
 #include<iostream>
-#include<cstring>
 
-class Doctor{
+class Calculator{
     public:
-        virtual double salary() const{
-            return 0.0;
-        }
+        double add(int a, int b);
+        double sub(int a, int b);
+        double multiply(int a, int b);
+        double divide(int a, int b);
 };
 
-class Visiting:public Doctor{
-    //data members
-    private: 
-        int number_of_visits;
-        double visiting_fee;
-
-    public:
-        //member functions
-        Visiting(int n, double f);
-        double salary() const override;
-
-};
-
-Visiting::Visiting(int n, double f){
-    this->number_of_visits=n;
-    this->visiting_fee=f;
+double add(int a, int b){
+    return a+b;
 }
-
-double Visiting::salary() const{
-    return number_of_visits*visiting_fee;
+double sub(int a, int b){
+    return a-b;
 }
-
+double multiply(int a, int b){
+    return a*b;
+}
+double divide(int a, int b){
+    if(b==0){
+        std::cout<<"Division by zero not allowed"<<std::endl;
+        return 0;
+    }    
+     return a/b;   
+}
 
 int main(){
-    Visiting v1(5, 7.0);
-    std::cout<<v1.salary()<<std::endl;
+    double operand1, operand2;
+    std::cout<<"Enter the first "
     return 0;
 }
+
 
 // Write a program in C++, which take two 3 x 3 matrices as input and find sum of them. Implement suitable constructor and destructor for this program.
