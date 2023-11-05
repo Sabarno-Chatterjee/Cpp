@@ -258,7 +258,17 @@ double divide(int a, int b){
 
 int main(){
     double operand1, operand2;
-    std::cout<<"Enter the first "
+    char operation;
+    std::cout<<"Enter the first operand"<<std::endl;
+    std::cin>>operand1;
+
+    std::cout<<"Enter the operator"<<std::endl;
+    std::cin>>operation;
+
+    std::cout<<"Enter the first operand"<<std::endl;
+    std::cin>>operand2;
+
+    
     return 0;
 }
 
