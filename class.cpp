@@ -145,34 +145,79 @@ data.
 */
 
 
+// #include<iostream>
+
+// class NUMBER{
+//     //data members
+//     private:
+//         int num1,num2,num3;
+
+//     public:
+//     //constructor
+//     NUMBER(int num1=0, int num2=0, int num3=0);
+
+//     int largest_number();
+// };
+
+// NUMBER::NUMBER(int n1, int n2, int n3){
+//     this->num1=n1;
+//     this->num2=n2;
+//     this->num3=n3;
+// }
+
+// int NUMBER::largest_number(){
+//     return (num1>num2 && num1>num3) ? num1 : (num2>num3) ? num2:num3;
+// }
+
+// int main(){
+//     NUMBER n(676,233,78);
+//     std::cout<<n.largest_number()<<std::endl;
+
+//     return 0;
+// }
+
+/*Write a program in C++ to create class Doctor with
+a virtual function salary. Derive class
+Visiting - Doctor and implement function
+salary in it.
+*/
+
 #include<iostream>
+#include<cstring>
 
-class NUMBER{
-    //data members
-    private:
-        int num1,num2,num3;
-
+class Doctor{
     public:
-    //constructor
-    NUMBER(int num1=0, int num2=0, int num3=0);
-
-    int largest_number();
+        virtual double salary() const{
+            return 0.0;
+        }
 };
 
-NUMBER::NUMBER(int n1, int n2, int n3){
-    this->num1=n1;
-    this->num2=n2;
-    this->num3=n3;
+class Visiting:public Doctor{
+    //data members
+    private: 
+        int number_of_visits;
+        double visiting_fee;
+
+    public:
+        //member functions
+        Visiting(int n, double f);
+        double salary() const override;
+
+};
+
+Visiting::Visiting(int n, double f){
+    this->number_of_visits=n;
+    this->visiting_fee=f;
 }
 
-int NUMBER::largest_number(){
-    return (num1>num2 && num1>num3) ? num1 : (num2>num3) ? num2:num3;
+double Visiting::salary() const{
+    return number_of_visits*visiting_fee;
 }
+
 
 int main(){
-    NUMBER n(676,233,78);
-    std::cout<<n.largest_number()<<std::endl;
-    
+    Visiting v1(5, 7.0);
+    std::cout<<v1.salary()<<std::endl;
     return 0;
 }
 
