@@ -69,71 +69,111 @@ and price etc. of the books. Make necessary
 assumptions where ever required.
 */
 
+// #include<iostream>
+// #include<cstring>
+
+// using namespace std;
+
+// class Book{
+//     private:
+//     //data members
+//     string title, publisher, author;
+//     double price;
+
+//     public:
+//     //constructor
+//     Book(string title="abc", string publisher="xyz", string author="pqr", float price=0);
+//     //member functions
+//     //accessor methods
+//     string getTitle(){return title;}
+//     string getPublisher(){return publisher;}
+//     string getAuthor(){return author;}
+//     double getPrice(){return price;}
+
+//     //mutator methods
+//     void setTitle(string title);
+//     void setPublisher(string publisher);
+//     void setAuthor(string author);
+//     void setPrice(double price);
+
+//     friend ostream & operator<<(ostream &out, Book &b); 
+// };
+
+// Book::Book(string title, string publisher, string author, float price){
+//     this->title=title;
+//     this->publisher=publisher;
+//     this->author=author;
+//     this->price=price;
+// }
+
+// void Book::setTitle(string title){
+//     this->title=title;
+// }
+// void Book::setPublisher(string publisher){
+//     this->publisher=publisher;  
+// }
+// void Book::setAuthor(string author){
+//     this->author=author;
+// }
+// void Book::setPrice(double price){
+//     this->price=price;
+// }
+
+// ostream & operator<<(ostream &out, Book &b){
+//     out<<"Title: "<<b.title<<endl;
+//     out<<"Author: "<<b.author<<endl;
+//     out<<"Publisher: "<<b.publisher<<endl;
+//     out<<"Price: "<<b.price<<endl;
+
+//     return out; 
+// }
+
+// int main(){
+//     Book b("The Count of Monte Cristo","Alexandre Dumas","Penguin Classics", 1000);
+//     cout<<b;
+
+//     return 0;
+// }
+
+
+/*Write a C++ program to create a class 
+NUMBER with a constructor to initialize
+object of NUMBER class with three integer
+data values. Define a function largest to find
+the largest number among the three member
+data.
+*/
+
+
 #include<iostream>
-#include<cstring>
 
-using namespace std;
-
-class Book{
-    private:
+class NUMBER{
     //data members
-    string title, publisher, author;
-    double price;
+    private:
+        int num1,num2,num3;
 
     public:
     //constructor
-    Book(string title="abc", string publisher="xyz", string author="pqr", float price=0);
-    //member functions
-    //accessor methods
-    string getTitle(){return title;}
-    string getPublisher(){return publisher;}
-    string getAuthor(){return author;}
-    double getPrice(){return price;}
+    NUMBER(int num1=0, int num2=0, int num3=0);
 
-    //mutator methods
-    void setTitle(string title);
-    void setPublisher(string publisher);
-    void setAuthor(string author);
-    void setPrice(double price);
-
-    friend ostream & operator<<(ostream &out, Book &b); 
+    int largest_number();
 };
 
-Book::Book(string title, string publisher, string author, float price){
-    this->title=title;
-    this->publisher=publisher;
-    this->author=author;
-    this->price=price;
+NUMBER::NUMBER(int n1, int n2, int n3){
+    this->num1=n1;
+    this->num2=n2;
+    this->num3=n3;
 }
 
-void Book::setTitle(string title){
-    this->title=title;
-}
-void Book::setPublisher(string publisher){
-    this->publisher=publisher;  
-}
-void Book::setAuthor(string author){
-    this->author=author;
-}
-void Book::setPrice(double price){
-    this->price=price;
-}
-
-ostream & operator<<(ostream &out, Book &b){
-    out<<"Title: "<<b.title<<endl;
-    out<<"Author: "<<b.author<<endl;
-    out<<"Publisher: "<<b.publisher<<endl;
-    out<<"Price: "<<b.price<<endl;
-
-    return out; 
+int NUMBER::largest_number(){
+    return (num1>num2 && num1>num3) ? num1 : (num2>num3) ? num2:num3;
 }
 
 int main(){
-    Book b("The Count of Monte Cristo","Alexandre Dumas","Penguin Classics", 1000);
-    cout<<b;
-
+    NUMBER n(676,233,78);
+    std::cout<<n.largest_number()<<std::endl;
+    
     return 0;
 }
-
 
 // Write a program in C++, which take two 3 x 3 matrices as input and find sum of them. Implement suitable constructor and destructor for this program.
