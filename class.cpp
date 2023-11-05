@@ -239,16 +239,16 @@ class Calculator{
         double divide(int a, int b);
 };
 
-double add(int a, int b){
+double Calculator::add(int a, int b){
     return a+b;
 }
-double sub(int a, int b){
+double Calculator::sub(int a, int b){
     return a-b;
 }
-double multiply(int a, int b){
+double Calculator::multiply(int a, int b){
     return a*b;
 }
-double divide(int a, int b){
+double Calculator::divide(int a, int b){
     if(b==0){
         std::cout<<"Division by zero not allowed"<<std::endl;
         return 0;
@@ -257,7 +257,8 @@ double divide(int a, int b){
 }
 
 int main(){
-    double operand1, operand2;
+    Calculator calculator;
+    double operand1, operand2, result;
     char operation;
     std::cout<<"Enter the first operand"<<std::endl;
     std::cin>>operand1;
@@ -268,7 +269,24 @@ int main(){
     std::cout<<"Enter the first operand"<<std::endl;
     std::cin>>operand2;
 
-    
+    switch(operation){
+        case '+':
+            result=calculator.add(operand1,operand2);
+            break;
+        case '-':
+            result=calculator.sub(operand1,operand2);
+            break;
+        case '*':
+            result=calculator.multiply(operand1,operand2);
+            break;
+        case '/':
+            result=calculator.divide(operand1,operand2);
+            break;
+        default:
+            std::cout<<"Invalid operation"<<std::endl;
+            return 1;
+    }
+    std::cout<<"Result: "<<result<<std::endl;
     return 0;
 }
 
