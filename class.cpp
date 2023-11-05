@@ -94,7 +94,9 @@ class Book{
     void setTitle(string title);
     void setPublisher(string publisher);
     void setAuthor(string author);
-    void setPrice(double price); 
+    void setPrice(double price);
+
+    friend ostream & operator<<(ostream &out, Book &b); 
 };
 
 Book::Book(string title, string publisher, string author, float price){
@@ -117,7 +119,18 @@ void Book::setPrice(double price){
     this->price=price;
 }
 
+ostream & operator<<(ostream &out, Book &b){
+    out<<"Title: "<<b.title<<endl;
+    out<<"Author: "<<b.author<<endl;
+    out<<"Publisher: "<<b.publisher<<endl;
+    out<<"Price: "<<b.price<<endl;
+
+    return out; 
+}
+
 int main(){
+    Book b("The Count of Monte Cristo","Alexandre Dumas","Penguin Classics", 1000);
+    cout<<b;
 
     return 0;
 }
