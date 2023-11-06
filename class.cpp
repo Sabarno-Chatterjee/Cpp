@@ -229,66 +229,108 @@ performing arithmetical operations.
 */
 
 
-#include<iostream>
+// #include<iostream>
 
-class Calculator{
+// class Calculator{
+//     public:
+//         double add(int a, int b);
+//         double sub(int a, int b);
+//         double multiply(int a, int b);
+//         double divide(int a, int b);
+// };
+
+// double Calculator::add(int a, int b){
+//     return a+b;
+// }
+// double Calculator::sub(int a, int b){
+//     return a-b;
+// }
+// double Calculator::multiply(int a, int b){
+//     return a*b;
+// }
+// double Calculator::divide(int a, int b){
+//     if(b==0){
+//         std::cout<<"Division by zero not allowed"<<std::endl;
+//         return 0;
+//     }    
+//      return a/b;   
+// }
+
+// int main(){
+//     Calculator calculator;
+//     double operand1, operand2, result;
+//     char operation;
+//     std::cout<<"Enter the first operand"<<std::endl;
+//     std::cin>>operand1;
+
+//     std::cout<<"Enter the operator"<<std::endl;
+//     std::cin>>operation;
+
+//     std::cout<<"Enter the first operand"<<std::endl;
+//     std::cin>>operand2;
+
+//     switch(operation){
+//         case '+':
+//             result=calculator.add(operand1,operand2);
+//             break;
+//         case '-':
+//             result=calculator.sub(operand1,operand2);
+//             break;
+//         case '*':
+//             result=calculator.multiply(operand1,operand2);
+//             break;
+//         case '/':
+//             result=calculator.divide(operand1,operand2);
+//             break;
+//         default:
+//             std::cout<<"Invalid operation"<<std::endl;
+//             return 1;
+//     }
+//     std::cout<<"Result: "<<result<<std::endl;
+//     return 0;
+// }
+
+
+/*Write a C++ program to create a class student, with basic data members such as name, address, age.Create a class PG_student by inheriting from student class. PG_student class should have a function to display, name, address subject of the student.
+*/
+
+#include<iostream>
+#include<string>
+
+
+class Student{
+    //data members
     public:
-        double add(int a, int b);
-        double sub(int a, int b);
-        double multiply(int a, int b);
-        double divide(int a, int b);
+        std::string name, address;
+        int age;
 };
 
-double Calculator::add(int a, int b){
-    return a+b;
+class PG_student:public Student{
+    
+    public:
+        //constructor
+        PG_student(std::string name="abc", std::string address="xyz", int age=0);
+
+        //member function for display
+        void display();
+};
+
+PG_student::PG_student(std::string name, std::string address, int age){
+    this->name=name;
+    this->address=address;
+    this->age=age;
 }
-double Calculator::sub(int a, int b){
-    return a-b;
-}
-double Calculator::multiply(int a, int b){
-    return a*b;
-}
-double Calculator::divide(int a, int b){
-    if(b==0){
-        std::cout<<"Division by zero not allowed"<<std::endl;
-        return 0;
-    }    
-     return a/b;   
+
+void PG_student::display(){
+    std::cout<<"Student data: "<<std::endl;
+    std::cout<<"Name: "<<name<<std::endl;
+    std::cout<<"Address: "<<address<<std::endl;
+    std::cout<<"Age: "<<age<<std::endl;
 }
 
 int main(){
-    Calculator calculator;
-    double operand1, operand2, result;
-    char operation;
-    std::cout<<"Enter the first operand"<<std::endl;
-    std::cin>>operand1;
 
-    std::cout<<"Enter the operator"<<std::endl;
-    std::cin>>operation;
-
-    std::cout<<"Enter the first operand"<<std::endl;
-    std::cin>>operand2;
-
-    switch(operation){
-        case '+':
-            result=calculator.add(operand1,operand2);
-            break;
-        case '-':
-            result=calculator.sub(operand1,operand2);
-            break;
-        case '*':
-            result=calculator.multiply(operand1,operand2);
-            break;
-        case '/':
-            result=calculator.divide(operand1,operand2);
-            break;
-        default:
-            std::cout<<"Invalid operation"<<std::endl;
-            return 1;
-    }
-    std::cout<<"Result: "<<result<<std::endl;
     return 0;
 }
-
 
 // Write a program in C++, which take two 3 x 3 matrices as input and find sum of them. Implement suitable constructor and destructor for this program.
