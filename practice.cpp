@@ -800,31 +800,58 @@ end of it.
 
 /*Write a C++ program to handle divide by zero exception.*/
 
+// #include<iostream>
+
+// double divide(double operand1,double operand2){
+//     if(operand2==0)
+//         throw -1;
+    
+//     return operand1/operand2;
+// }
+
+// int main(){
+//     double operand1, operand2, result;
+
+//     std::cout<<"Enter operand 1"<<std::endl;
+//     std::cin>>operand1;
+
+//     std::cout<<"Enter operand 2"<<std::endl;
+//     std::cin>>operand2;
+
+//     try{
+//         result=divide(operand1,operand2);
+//         std::cout<<"Result: "<<result<<std::endl;
+//     } catch(int x){
+//         std::cout<<"Division by zero not allowed"<<std::endl;
+//     }
+    
+
+//     return 0;
+// }
+
+
+/*Write a program to input an integer and print the sum of all it's even digits and odd digits.
+Eg n= 123456
+Output: 12 9
+*/
+
+
 #include<iostream>
+using namespace std;
 
-double divide(double operand1,double operand2){
-    if(operand2==0)
-        throw -1;
-    
-    return operand1/operand2;
-}
+int main() {
+	// Write your code here
+	int n,even_sum=0,odd_sum=0;
+	cin>>n;
+	while(n){
+		int digit=n%10;
+		if(digit%2==0)
+			even_sum+=digit;
+		else
+			odd_sum+=digit;
+		n/=10;
+	}
+	cout<<even_sum<<" "<<odd_sum<<endl;
 
-int main(){
-    double operand1, operand2, result;
-
-    std::cout<<"Enter operand 1"<<std::endl;
-    std::cin>>operand1;
-
-    std::cout<<"Enter operand 2"<<std::endl;
-    std::cin>>operand2;
-
-    try{
-        result=divide(operand1,operand2);
-        std::cout<<"Result: "<<result<<std::endl;
-    } catch(int x){
-        std::cout<<"Division by zero not allowed"<<std::endl;
-    }
-    
-
-    return 0;
+	return 0;
 }
