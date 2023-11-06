@@ -329,7 +329,20 @@ void PG_student::display(){
 }
 
 int main(){
+    std::string name,address;
+    int age;
 
+    std::cout<<"Enter student name"<<std::endl;
+    std::getline(std::cin,name);
+    std::cout<<"Enter student address"<<std::endl;
+    std::getline(std::cin,address);
+    std::cout<<"Enter student age"<<std::endl;
+    std::cin>>age;
+
+    PG_student pg1(name,address,age);
+
+    pg1.display();
+    
     return 0;
 }
 
