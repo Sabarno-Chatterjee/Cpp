@@ -755,12 +755,42 @@ numbers and its cubes from 1 to 10 by using
 if-then-else and for loop.
 */
 
+// #include<iostream>
+
+// int main(){
+
+//     for(int i=1; i<=10; i++){
+//         std::cout<<i<<" cube= "<<i*i*i<<std::endl;
+//     }
+
+//     return 0;
+// }
+
+
+
+/*Q. Write a C++ program to open an existing 
+file and insert the text "My C++ File" at the
+end of it.
+*/
+
+
 #include<iostream>
+#include<fstream>
+#include<string>
 
 int main(){
+    std::string str="My C++ File";
 
-    for(int i=1; i<=10; i++){
-        std::cout<<i<<" cube= "<<i*i*i<<std::endl;
+    std::ofstream outfile;
+    outfile.open("file_handling.txt", std::ios::app);
+
+    if(outfile.is_open()){
+        outfile<<str<<std::endl;
+        outfile.close();
+        std::cout<<"Text appended successfully"<<std::endl;
+    } 
+    else{
+        std::cerr<<"Failed to append text"<<std::endl;
     }
 
     return 0;
