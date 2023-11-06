@@ -748,7 +748,24 @@
 // }
 
 
-// function overloading
+
+
+/*Write a program in C++ that prints 
+numbers and its cubes from 1 to 10 by using
+if-then-else and for loop.
+*/
+
+#include<iostream>
+
+int main(){
+
+    for(int i=1; i<=10; i++){
+        std::cout<<i<<" cube= "<<i*i*i<<std::endl;
+    }
+
+    return 0;
+}
+
 
 
 
