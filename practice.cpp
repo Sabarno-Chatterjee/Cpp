@@ -774,28 +774,57 @@ end of it.
 */
 
 
+// #include<iostream>
+// #include<fstream>
+// #include<string>
+
+// int main(){
+//     std::string str="My C++ File";
+
+//     std::ofstream outfile;
+//     outfile.open("file_handling.txt", std::ios::app);
+
+//     if(outfile.is_open()){
+//         outfile<<str<<std::endl;
+//         outfile.close();
+//         std::cout<<"Text appended successfully"<<std::endl;
+//     } 
+//     else{
+//         std::cerr<<"Failed to append text"<<std::endl;
+//     }
+
+//     return 0;
+// }
+
+
+
+/*Write a C++ program to handle divide by zero exception.*/
+
 #include<iostream>
-#include<fstream>
-#include<string>
+
+double divide(double operand1,double operand2){
+    if(operand2==0)
+        throw -1;
+    
+    return operand1/operand2;
+}
 
 int main(){
-    std::string str="My C++ File";
+    double operand1, operand2, result;
 
-    std::ofstream outfile;
-    outfile.open("file_handling.txt", std::ios::app);
+    std::cout<<"Enter operand 1"<<std::endl;
+    std::cin>>operand1;
 
-    if(outfile.is_open()){
-        outfile<<str<<std::endl;
-        outfile.close();
-        std::cout<<"Text appended successfully"<<std::endl;
-    } 
-    else{
-        std::cerr<<"Failed to append text"<<std::endl;
+    std::cout<<"Enter operand 2"<<std::endl;
+    std::cin>>operand2;
+
+    try{
+        result=divide(operand1,operand2);
+        std::cout<<"Result: "<<result<<std::endl;
+    } catch(int x){
+        std::cout<<"Division by zero not allowed"<<std::endl;
     }
+    
 
     return 0;
 }
-
-
-
-
