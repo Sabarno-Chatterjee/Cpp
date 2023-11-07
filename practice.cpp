@@ -836,22 +836,47 @@ Output: 12 9
 */
 
 
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
-int main() {
-	// Write your code here
-	int n,even_sum=0,odd_sum=0;
-	cin>>n;
-	while(n){
-		int digit=n%10;
-		if(digit%2==0)
-			even_sum+=digit;
-		else
-			odd_sum+=digit;
-		n/=10;
-	}
-	cout<<even_sum<<" "<<odd_sum<<endl;
+// int main() {
+// 	// Write your code here
+// 	int n,even_sum=0,odd_sum=0;
+// 	cin>>n;
+// 	while(n){
+// 		int digit=n%10;
+// 		if(digit%2==0)
+// 			even_sum+=digit;
+// 		else
+// 			odd_sum+=digit;
+// 		n/=10;
+// 	}
+// 	cout<<even_sum<<" "<<odd_sum<<endl;
+
+// 	return 0;
+// }
+
+
+/* Write a in C++ program to find the size of fundamental data types.
+Sample Output:*/
+
+#include<iostream>
+
+void data_types(){
+	std::cout<<"\t\tFundamental data types"<<std::endl;
+	std::cout<<"The sizeof(char) is :        "<<sizeof(char)<<std::endl;
+	std::cout<<"The sizeof(short) is :       "<<sizeof(short)<<std::endl;
+	std::cout<<"The sizeof(int) is :         "<<sizeof(int)<<std::endl;
+	std::cout<<"The sizeof(long) is :        "<<sizeof(long)<<std::endl;
+	std::cout<<"The sizeof(long long) is :          "<<sizeof(long long)<<std::endl;
+	std::cout<<"The sizeof(float) is :       "<<sizeof(float)<<std::endl;
+	std::cout<<"The sizeof(bool) is :        "<<sizeof(bool)<<std::endl;
+	std::cout<<"The sizeof(double) is :      "<<sizeof(double)<<std::endl;
+	std::cout<<"The sizeof(long double) is : "<<sizeof(long double)<<std::endl;
+}
+
+int main(){
+	data_types();
 
 	return 0;
 }
