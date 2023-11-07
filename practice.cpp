@@ -860,23 +860,58 @@ Output: 12 9
 /* Write a in C++ program to find the size of fundamental data types.
 Sample Output:*/
 
-#include<iostream>
+// #include<iostream>
 
-void data_types(){
-	std::cout<<"\t\tFundamental data types"<<std::endl;
-	std::cout<<"The sizeof(char) is :        "<<sizeof(char)<<std::endl;
-	std::cout<<"The sizeof(short) is :       "<<sizeof(short)<<std::endl;
-	std::cout<<"The sizeof(int) is :         "<<sizeof(int)<<std::endl;
-	std::cout<<"The sizeof(long) is :        "<<sizeof(long)<<std::endl;
-	std::cout<<"The sizeof(long long) is :          "<<sizeof(long long)<<std::endl;
-	std::cout<<"The sizeof(float) is :       "<<sizeof(float)<<std::endl;
-	std::cout<<"The sizeof(bool) is :        "<<sizeof(bool)<<std::endl;
-	std::cout<<"The sizeof(double) is :      "<<sizeof(double)<<std::endl;
-	std::cout<<"The sizeof(long double) is : "<<sizeof(long double)<<std::endl;
+// void data_types(){
+// 	std::cout<<"\t\tFundamental data types"<<std::endl;
+// 	std::cout<<"The sizeof(char) is :        "<<sizeof(char)<<std::endl;
+// 	std::cout<<"The sizeof(short) is :       "<<sizeof(short)<<std::endl;
+// 	std::cout<<"The sizeof(int) is :         "<<sizeof(int)<<std::endl;
+// 	std::cout<<"The sizeof(long) is :        "<<sizeof(long)<<std::endl;
+// 	std::cout<<"The sizeof(long long) is :          "<<sizeof(long long)<<std::endl;
+// 	std::cout<<"The sizeof(float) is :       "<<sizeof(float)<<std::endl;
+// 	std::cout<<"The sizeof(bool) is :        "<<sizeof(bool)<<std::endl;
+// 	std::cout<<"The sizeof(double) is :      "<<sizeof(double)<<std::endl;
+// 	std::cout<<"The sizeof(long double) is : "<<sizeof(long double)<<std::endl;
+// }
+
+// int main(){
+// 	data_types();
+
+// 	return 0;
+// }
+
+
+//Write a in C++ program to check the upper and lower limits of integers.
+
+
+#include<iostream>
+#include<climits> //integer limits header
+
+
+void digit_limit(){
+
+	std::cout<<"\t\tDigit upper and lower limit"<<std::endl;
+	std::cout<<"The maximum limit of int data type:				"<<INT_MAX<<std::endl;
+	std::cout<<"The minimum limit of int data type:				"<<INT_MIN<<std::endl;
+	std::cout<<"The maximum limit of unsigned int data type:	"<<UINT_MAX<<std::endl;
+	std::cout<<"The maximum limit of long long data type:		"<<LLONG_MAX<<std::endl;
+	std::cout<<"The minimum limit of long long data type:		"<<LLONG_MIN<<std::endl;
+	std::cout<<"The maximum limit of unsigned long long data type:"<<ULLONG_MAX<<std::endl;
+	std::cout<<"The Bits contain in char data type :			"<<CHAR_BIT<<std::endl;
+	std::cout<<"The maximum limit of char data type:			"<<CHAR_MAX<<std::endl;
+	std::cout<<"The minimum limit of char data type:			"<<CHAR_MIN<<std::endl;
+	std::cout<<"The maximum limit of signed int char type:		"<<SCHAR_MAX<<std::endl;
+	std::cout<<"The minimum limit of signed int char type:		"<<SCHAR_MIN<<std::endl;
+	std::cout<<"The maximum limit of unsigned char data type:	"<<UCHAR_MAX<<std::endl;
+	std::cout<<"The maximum limit of short data type:			"<<SHRT_MAX<<std::endl;
+	std::cout<<"The minimum limit of short data type:			"<<SHRT_MIN<<std::endl;
+	std::cout<<"The maximum limit of unsigned short data type:	"<<USHRT_MAX<<std::endl;
+
 }
 
 int main(){
-	data_types();
+	digit_limit();
 
 	return 0;
 }
