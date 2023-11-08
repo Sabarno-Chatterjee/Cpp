@@ -885,33 +885,158 @@ Sample Output:*/
 //Write a in C++ program to check the upper and lower limits of integers.
 
 
+// #include<iostream>
+// #include<climits> //integer limits header
+
+
+// void digit_limit(){
+
+// 	std::cout<<"\t\tDigit upper and lower limit"<<std::endl;
+// 	std::cout<<"The maximum limit of int data type:				"<<INT_MAX<<std::endl;
+// 	std::cout<<"The minimum limit of int data type:				"<<INT_MIN<<std::endl;
+// 	std::cout<<"The maximum limit of unsigned int data type:	"<<UINT_MAX<<std::endl;
+// 	std::cout<<"The maximum limit of long long data type:		"<<LLONG_MAX<<std::endl;
+// 	std::cout<<"The minimum limit of long long data type:		"<<LLONG_MIN<<std::endl;
+// 	std::cout<<"The maximum limit of unsigned long long data type:"<<ULLONG_MAX<<std::endl;
+// 	std::cout<<"The Bits contain in char data type :			"<<CHAR_BIT<<std::endl;
+// 	std::cout<<"The maximum limit of char data type:			"<<CHAR_MAX<<std::endl;
+// 	std::cout<<"The minimum limit of char data type:			"<<CHAR_MIN<<std::endl;
+// 	std::cout<<"The maximum limit of signed int char type:		"<<SCHAR_MAX<<std::endl;
+// 	std::cout<<"The minimum limit of signed int char type:		"<<SCHAR_MIN<<std::endl;
+// 	std::cout<<"The maximum limit of unsigned char data type:	"<<UCHAR_MAX<<std::endl;
+// 	std::cout<<"The maximum limit of short data type:			"<<SHRT_MAX<<std::endl;
+// 	std::cout<<"The minimum limit of short data type:			"<<SHRT_MIN<<std::endl;
+// 	std::cout<<"The maximum limit of unsigned short data type:	"<<USHRT_MAX<<std::endl;
+
+// }
+
+// int main(){
+// 	digit_limit();
+
+// 	return 0;
+// }
+
+
+//Write a C++ program to check overflow/underflow during various arithmetic operations.
+
+// #include<iostream>
+
+// void overflow_underflow(){
+// 	int n1=2147483647, n2=-2147483648;
+
+// 	std::cout<<"\t\tOverflow"<<std::endl;
+
+// 	std::cout<<"Overflow the integer range and set in minimum range :"<<n1+1<<std::endl;
+// 	std::cout<<"Increasing from its minimum range : "<<n1+2<<std::endl;
+// 	std::cout<<"Product is : "<<n1*n1<<std::endl;
+
+// 	std::cout<<"\t\tUnderflow"<<std::endl;
+
+// 	std::cout<<"Underflow the integer range and set in minimum range :"<<n2-1<<std::endl;
+// 	std::cout<<"Decreasing from its minimum range : "<<n2-2<<std::endl;
+// 	std::cout<<"Product is : "<<n2*n2<<std::endl;
+// }
+
+// int main(){
+// 	overflow_underflow();
+
+// 	return 0;
+// }
+
+
+//Prime number
+
+// #include<iostream>
+// #include<math.h>
+
+// bool prime(int n){
+// 	if(n==1)
+// 		return false;
+// 	if(n==2)
+// 		return true;
+// 	if(n%2==0)
+// 		return false;
+
+// 	int sqrtN=sqrt(n);
+
+// 	for(int i=3;i<=sqrtN;i+=2)   //for odd numbers
+// 	{
+// 		if(n%i==0)
+// 			return false;
+// 	}
+// 	return true;
+// }
+
+// int main(){
+// 	int n;
+
+// 	std::cout<<"Enter a num"<<std::endl;
+// 	std::cin>>n;
+// 	if(prime(n))
+// 		std::cout<<"YES"<<std::endl;
+// 	else
+// 		std::cout<<"NO"<<std::endl;
+
+// 	return 0;
+// }
+
+/*Alpha-Triangle Pattern
+Problem Statement: Given an integer N, print the following pattern : 
+
+E
+D E
+C D E
+B C D E
+A B C D E
+*/
+
 #include<iostream>
-#include<climits> //integer limits header
 
+using namespace std;
 
-void digit_limit(){
-
-	std::cout<<"\t\tDigit upper and lower limit"<<std::endl;
-	std::cout<<"The maximum limit of int data type:				"<<INT_MAX<<std::endl;
-	std::cout<<"The minimum limit of int data type:				"<<INT_MIN<<std::endl;
-	std::cout<<"The maximum limit of unsigned int data type:	"<<UINT_MAX<<std::endl;
-	std::cout<<"The maximum limit of long long data type:		"<<LLONG_MAX<<std::endl;
-	std::cout<<"The minimum limit of long long data type:		"<<LLONG_MIN<<std::endl;
-	std::cout<<"The maximum limit of unsigned long long data type:"<<ULLONG_MAX<<std::endl;
-	std::cout<<"The Bits contain in char data type :			"<<CHAR_BIT<<std::endl;
-	std::cout<<"The maximum limit of char data type:			"<<CHAR_MAX<<std::endl;
-	std::cout<<"The minimum limit of char data type:			"<<CHAR_MIN<<std::endl;
-	std::cout<<"The maximum limit of signed int char type:		"<<SCHAR_MAX<<std::endl;
-	std::cout<<"The minimum limit of signed int char type:		"<<SCHAR_MIN<<std::endl;
-	std::cout<<"The maximum limit of unsigned char data type:	"<<UCHAR_MAX<<std::endl;
-	std::cout<<"The maximum limit of short data type:			"<<SHRT_MAX<<std::endl;
-	std::cout<<"The minimum limit of short data type:			"<<SHRT_MIN<<std::endl;
-	std::cout<<"The maximum limit of unsigned short data type:	"<<USHRT_MAX<<std::endl;
-
+void pattern(int n){
+	for(int i=0;i<n;i++){
+		for(char j=('A'+(n-1))-i;j<=('A'+(n-1));j++){
+			cout<<j<<" ";
+		}
+		cout<<endl;
+	}
 }
 
 int main(){
-	digit_limit();
+	int n;
+	cin>>n;
+	pattern(n);
 
 	return 0;
 }
+
+/*Write a C++ program to swap the first and last digits of any number.
+Sample Output:
+Input any number: 12345
+The number after swapping the first and last digits are: 52341*/
+
+// #include<iostream>
+
+// void swap(int &n){
+	
+	
+// }
+
+// int main(){
+// 	int num;
+// 	std::cin>>num;
+
+// 	swap(num);
+
+// 	return 0;
+// }
+
+
+/*Write a C++ program to add two binary numbers.
+Sample Output:
+Addition of two binary numbers:
+-----------------------------------
+Input the 1st binary number: 1010
+Input the 2nd binary number: 0011
+The sum of two binary numbers is: 1101*/
