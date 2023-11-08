@@ -1011,6 +1011,37 @@ int main(){
 	return 0;
 }
 
+/*Alpha-Triangle Pattern
+Problem Statement: Given an integer N, print the following pattern : 
+
+E
+E D
+E D C
+E D C B
+E D C B A
+*/
+
+#include<iostream>
+
+using namespace std;
+
+void pattern(int n){
+	for(int i=0;i<n;i++){
+		for(char ch=('A'+(n-1));ch>=('A'+(n-1))-i;ch--){
+			cout<<ch<<" ";
+		}
+		cout<<endl;
+	}
+}
+
+int main(){
+	int n;
+	cin>>n;
+	pattern(n);
+
+	return 0;
+} 
+
 /*Write a C++ program to swap the first and last digits of any number.
 Sample Output:
 Input any number: 12345
