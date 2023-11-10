@@ -990,26 +990,26 @@ B C D E
 A B C D E
 */
 
-#include<iostream>
+// #include<iostream>
 
-using namespace std;
+// using namespace std;
 
-void pattern(int n){
-	for(int i=0;i<n;i++){
-		for(char j=('A'+(n-1))-i;j<=('A'+(n-1));j++){
-			cout<<j<<" ";
-		}
-		cout<<endl;
-	}
-}
+// void pattern(int n){
+// 	for(int i=0;i<n;i++){
+// 		for(char j=('A'+(n-1))-i;j<=('A'+(n-1));j++){
+// 			cout<<j<<" ";
+// 		}
+// 		cout<<endl;
+// 	}
+// }
 
-int main(){
-	int n;
-	cin>>n;
-	pattern(n);
+// int main(){
+// 	int n;
+// 	cin>>n;
+// 	pattern(n);
 
-	return 0;
-}
+// 	return 0;
+// }
 
 /*Alpha-Triangle Pattern
 Problem Statement: Given an integer N, print the following pattern : 
@@ -1108,18 +1108,59 @@ EEEEE*/
 4 5 6
 7 8 9 10*/
 
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int n){
+//     int ch=1;
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=i;j++){
+//             cout<<ch<<" ";
+//             ch++;
+//         }
+//         cout<<endl;
+//     }
+// }
+
+// int main(){
+// 	int n;
+// 	cin>>n;
+// 	pattern(n);
+
+// 	return 0;
+// } 
+
+
+/*Pattern:
+1
+0 1
+1 0 1
+0 1 0 1
+1 0 1 0 1*/
+
 #include<iostream>
 
 using namespace std;
 
 void pattern(int n){
-    int ch=1;
+    int ch=0;
     for(int i=1;i<=n;i++){
-        for(int j=1;j<=i;j++){
-            cout<<ch<<" ";
-            ch++;
+        if(i%2!=0){
+            ch=!ch;
+            for(int j=1;j<=i;j++){
+                cout<<ch<<" ";
+                ch=!ch;
+            }
+            cout<<endl;
         }
-        cout<<endl;
+        else{
+            for(int j=1;j<=i;j++){
+                cout<<ch<<" ";
+                ch=!ch;
+            }
+            cout<<endl;
+        }
     }
 }
 
