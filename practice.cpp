@@ -1078,18 +1078,48 @@ CCC
 DDDD
 EEEEE*/
 
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int n){
+//     char ch='A';
+//     for(int i=1;i<=n;i++){
+//         for(int k=1;k<=i;k++){
+//                 cout<<ch<<" ";
+//         }
+//         cout<<endl;
+//         ch++;
+//     }
+// }
+
+// int main(){
+// 	int n;
+// 	cin>>n;
+// 	pattern(n);
+
+// 	return 0;
+// } 
+
+
+/*Pattern:
+1
+2 3
+4 5 6
+7 8 9 10*/
+
 #include<iostream>
 
 using namespace std;
 
 void pattern(int n){
-    char ch='A';
+    int ch=1;
     for(int i=1;i<=n;i++){
-        for(int k=1;k<=i;k++){
-                cout<<ch<<" ";
+        for(int j=1;j<=i;j++){
+            cout<<ch<<" ";
+            ch++;
         }
         cout<<endl;
-        ch++;
     }
 }
 
