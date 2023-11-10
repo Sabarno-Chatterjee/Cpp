@@ -1050,16 +1050,46 @@ ABC
 AB
 A*/
 
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int n){
+//     for(int i=1;i<=n;i++){
+//         for(char ch='A';ch<='A'+n-i;ch++){
+//             cout<<ch;
+//         }
+//         cout<<endl;
+//     }
+// }
+
+// int main(){
+// 	int n;
+// 	cin>>n;
+// 	pattern(n);
+
+// 	return 0;
+// } 
+
+/*Pattern:
+A
+BB
+CCC
+DDDD
+EEEEE*/
+
 #include<iostream>
 
 using namespace std;
 
 void pattern(int n){
+    char ch='A';
     for(int i=1;i<=n;i++){
-        for(char ch='A';ch<='A'+n-i;ch++){
-            cout<<ch;
+        for(int k=1;k<=i;k++){
+                cout<<ch<<" ";
         }
         cout<<endl;
+        ch++;
     }
 }
 
