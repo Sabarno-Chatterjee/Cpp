@@ -43,17 +43,42 @@
 //Given two pairs, determine which one is greater based on their first elements.
 
 
+// #include<iostream>
+
+// int main(){
+//     std::pair<int,int> p1(4,5);
+//     std::pair<int,int> p2(2,3);
+
+//     if(p1.first>p2.first)
+//         std::cout<<"P1 is greater"<<std::endl;
+//     else    
+//         std::cout<<"P2 is greater"<<std::endl;
+
+//     return 0;
+// }
+
+
+/*Write a function that takes two integers as input and returns a pair of their sum and difference. Call the function and display the results.*/
+
 #include<iostream>
 
-int main(){
-    std::pair<int,int> p1(4,5);
-    std::pair<int,int> p2(2,3);
+std::pair<int,int> fun1(int n1,int n2){
+    std::pair<int,int> p1(n1+n2,n1-n2);
+    return p1;
+}
 
-    if(p1.first>p2.first)
-        std::cout<<"P1 is greater"<<std::endl;
-    else    
-        std::cout<<"P2 is greater"<<std::endl;
+int main(){
+    int n1,n2;
+
+    std::cout<<"Enter the first integer"<<std::endl;
+    std::cin>>n1;
+
+    std::cout<<"Enter the second integer"<<std::endl;
+    std::cin>>n2;
+
+    std::pair<int,int> result=fun1(n1,n2);
+    
+    std::cout<<"The sum and difference are: "<<result.first<<" : "<<result.second<<std::endl;
 
     return 0;
 }
-
