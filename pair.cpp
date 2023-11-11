@@ -116,13 +116,34 @@
 
 //Handle the case where the second element of a pair is not initialized.
 
+// #include<iostream>
+
+// int main(){
+//     std::pair<int,int> p1;
+//     p1.first=5;
+//     if(!p1.second)
+//         std::cout<<"Second element not initialized"<<std::endl;
+
+//     return 0;
+// }
+
+
+//Write a function to check if a pair is valid (both elements are initialized).
+
 #include<iostream>
+
+bool check_valid(int p1,int p2){
+    return (!p1 || !p2) ? false:true;
+}
 
 int main(){
     std::pair<int,int> p1;
-    p1.first=5;
-    if(!p1.second)
-        std::cout<<"Second element not initialized"<<std::endl;
+    p1.first=4;
+    p1.second=5;
+    if(check_valid(p1.first,p1.second))
+        std::cout<<"Valid"<<std::endl;
+    else
+        std::cout<<"Invalid"<<std::endl;
 
     return 0;
 }
