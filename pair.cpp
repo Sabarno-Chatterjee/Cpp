@@ -60,25 +60,55 @@
 
 /*Write a function that takes two integers as input and returns a pair of their sum and difference. Call the function and display the results.*/
 
-#include<iostream>
+// #include<iostream>
 
-std::pair<int,int> fun1(int n1,int n2){
-    std::pair<int,int> p1(n1+n2,n1-n2);
-    return p1;
+// std::pair<int,int> fun1(int n1,int n2){
+//     std::pair<int,int> p1(n1+n2,n1-n2);
+//     return p1;
+// }
+
+// int main(){
+//     int n1,n2;
+
+//     std::cout<<"Enter the first integer"<<std::endl;
+//     std::cin>>n1;
+
+//     std::cout<<"Enter the second integer"<<std::endl;
+//     std::cin>>n2;
+
+//     std::pair<int,int> result=fun1(n1,n2);
+
+//     std::cout<<"The sum and difference are: "<<result.first<<" : "<<result.second<<std::endl;
+
+//     return 0;
+// }
+
+
+
+//Write a function to calculate the distance between two points.
+
+
+#include<iostream>
+#include<cmath>
+
+double distance(int x1,int y1,int x2,int y2){
+    double d= sqrt(pow(x2-x1,2)+pow(y2-y1,2));
+    return d;
 }
 
 int main(){
-    int n1,n2;
+    int x1,x2,y1,y2;
+    std::cout<<"Co-ordinates for point A:"<<std::endl;
+    std::cin>>x1>>y1;
 
-    std::cout<<"Enter the first integer"<<std::endl;
-    std::cin>>n1;
+    std::cout<<"Co-ordinates for point B:"<<std::endl;
+    std::cin>>x2>>y2;
 
-    std::cout<<"Enter the second integer"<<std::endl;
-    std::cin>>n2;
+    std::pair<int,int> A(x1,y1);
+    std::pair<int,int> B(x2,y2);
 
-    std::pair<int,int> result=fun1(n1,n2);
+    double result=distance(A.first,A.second,B.first,B.second); 
+    std::cout<<"Distance: "<<result<<std::endl;
     
-    std::cout<<"The sum and difference are: "<<result.first<<" : "<<result.second<<std::endl;
-
     return 0;
 }
