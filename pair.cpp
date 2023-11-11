@@ -23,16 +23,36 @@
 
 // Write a function to compare two pairs of integers for equality.
 
+// #include<iostream>
+
+// int main(){
+//     std::pair<int,int> p1(3,4);
+//     std::pair<int,int> p2(4,5);
+
+//     if(p1.first==p2.first && p1.second==p2.second)
+//         std::cout<<"The pairs are equal"<<std::endl;
+//     else
+//         std::cout<<"The pairs are not equal"<<std::endl;
+
+//     return 0;
+// }
+
+
+
+
+//Given two pairs, determine which one is greater based on their first elements.
+
+
 #include<iostream>
 
 int main(){
-    std::pair<int,int> p1(3,4);
-    std::pair<int,int> p2(4,5);
+    std::pair<int,int> p1(4,5);
+    std::pair<int,int> p2(2,3);
 
-    if(p1.first==p2.first && p1.second==p2.second)
-        std::cout<<"The pairs are equal"<<std::endl;
-    else
-        std::cout<<"The pairs are not equal"<<std::endl;
+    if(p1.first>p2.first)
+        std::cout<<"P1 is greater"<<std::endl;
+    else    
+        std::cout<<"P2 is greater"<<std::endl;
 
     return 0;
 }
