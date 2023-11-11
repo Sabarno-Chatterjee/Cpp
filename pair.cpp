@@ -88,27 +88,41 @@
 //Write a function to calculate the distance between two points.
 
 
-#include<iostream>
-#include<cmath>
+// #include<iostream>
+// #include<cmath>
 
-double distance(int x1,int y1,int x2,int y2){
-    double d= sqrt(pow(x2-x1,2)+pow(y2-y1,2));
-    return d;
-}
+// double distance(int x1,int y1,int x2,int y2){
+//     double d= sqrt(pow(x2-x1,2)+pow(y2-y1,2));
+//     return d;
+// }
+
+// int main(){
+//     int x1,x2,y1,y2;
+//     std::cout<<"Co-ordinates for point A:"<<std::endl;
+//     std::cin>>x1>>y1;
+
+//     std::cout<<"Co-ordinates for point B:"<<std::endl;
+//     std::cin>>x2>>y2;
+
+//     std::pair<int,int> A(x1,y1);
+//     std::pair<int,int> B(x2,y2);
+
+//     double result=distance(A.first,A.second,B.first,B.second); 
+//     std::cout<<"Distance: "<<result<<std::endl;
+
+//     return 0;
+// }
+
+
+//Handle the case where the second element of a pair is not initialized.
+
+#include<iostream>
 
 int main(){
-    int x1,x2,y1,y2;
-    std::cout<<"Co-ordinates for point A:"<<std::endl;
-    std::cin>>x1>>y1;
+    std::pair<int,int> p1;
+    p1.first=5;
+    if(!p1.second)
+        std::cout<<"Second element not initialized"<<std::endl;
 
-    std::cout<<"Co-ordinates for point B:"<<std::endl;
-    std::cin>>x2>>y2;
-
-    std::pair<int,int> A(x1,y1);
-    std::pair<int,int> B(x2,y2);
-
-    double result=distance(A.first,A.second,B.first,B.second); 
-    std::cout<<"Distance: "<<result<<std::endl;
-    
     return 0;
 }
