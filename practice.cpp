@@ -1139,38 +1139,69 @@ EEEEE*/
 0 1 0 1
 1 0 1 0 1*/
 
+// #include<iostream>
+
+// using namespace std;
+
+// void pattern(int n){
+//     int ch=0;
+//     for(int i=1;i<=n;i++){
+//         if(i%2!=0){
+//             ch=!ch;
+//             for(int j=1;j<=i;j++){
+//                 cout<<ch<<" ";
+//                 ch=!ch;
+//             }
+//             cout<<endl;
+//         }
+//         else{
+//             for(int j=1;j<=i;j++){
+//                 cout<<ch<<" ";
+//                 ch=!ch;
+//             }
+//             cout<<endl;
+//         }
+//     }
+// }
+
+// int main(){
+// 	int n;
+// 	cin>>n;
+// 	pattern(n);
+
+// 	return 0;
+// } 
+
+
+//Write a C++ program to find the sum of an A.P. series.
+
 #include<iostream>
 
 using namespace std;
 
-void pattern(int n){
-    int ch=0;
-    for(int i=1;i<=n;i++){
-        if(i%2!=0){
-            ch=!ch;
-            for(int j=1;j<=i;j++){
-                cout<<ch<<" ";
-                ch=!ch;
-            }
-            cout<<endl;
-        }
-        else{
-            for(int j=1;j<=i;j++){
-                cout<<ch<<" ";
-                ch=!ch;
-            }
-            cout<<endl;
-        }
-    }
+double calc(int a,int d,int n){
+    return (n/2)*(2*a+(n-1)*d);
 }
 
 int main(){
-	int n;
-	cin>>n;
-	pattern(n);
+    int a, d, n;
+    double sum;
+    cout<<"Enter the first term"<<endl;
+    cin>>a;
+    cout<<"Enter the difference"<<endl;
+    cin>>d;
+    cout<<"Enter the number of terms"<<endl;
+    cin>>n;
+    
+    sum=calc(a,d,n);
+    cout<<"Sum: "<<sum<<endl;
+    
+    return 0;
+}
 
-	return 0;
-} 
+
+
+
 
 /*Write a C++ program to swap the first and last digits of any number.
 Sample Output:
