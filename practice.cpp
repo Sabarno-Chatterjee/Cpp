@@ -1202,26 +1202,56 @@ EEEEE*/
 
 //Write a C++ program to find the nth term of an A.P. series.
 
+// #include<iostream>
+
+// using namespace std;
+
+// int calc(int a,int d,int n){
+//     return a+(n-1)*d;
+// }
+
+// int main(){
+//     int a, d, n;
+//     int term;
+//     cout<<"Enter the first term"<<endl;
+//     cin>>a;
+//     cout<<"Enter the difference"<<endl;
+//     cin>>d;
+//     cout<<"Enter the number of terms"<<endl;
+//     cin>>n;
+    
+//     term=calc(a,d,n);
+//     cout<<term<<endl;
+    
+//     return 0;
+// }
+
+
+// Write a C++ program to check the additive persistence of a given number.
+
 #include<iostream>
 
 using namespace std;
 
-int calc(int a,int d,int n){
-    return a+(n-1)*d;
+int additive_persistence(int n){
+    int count=0;
+    while(n>9){
+        int sum=0;
+        while(n){
+            sum+=n%10;
+            n/=10;
+        }
+        count++;
+        n=sum;
+    }
+    return count;
 }
 
 int main(){
-    int a, d, n;
-    int term;
-    cout<<"Enter the first term"<<endl;
-    cin>>a;
-    cout<<"Enter the difference"<<endl;
-    cin>>d;
-    cout<<"Enter the number of terms"<<endl;
+    int n;
+    cout<<"Enter a number"<<endl;
     cin>>n;
-    
-    term=calc(a,d,n);
-    cout<<term<<endl;
+    cout<<"The additive persistence of "<<n<<" is "<<additive_persistence(n)<<endl;
     
     return 0;
 }
