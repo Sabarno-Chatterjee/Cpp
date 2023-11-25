@@ -1175,17 +1175,44 @@ EEEEE*/
 
 //Write a C++ program to find the sum of an A.P. series.
 
+// #include<iostream>
+
+// using namespace std;
+
+// double calc(int a,int d,int n){
+//     return (n/2)*(2*a+(n-1)*d);
+// }
+
+// int main(){
+//     int a, d, n;
+//     double sum;
+//     cout<<"Enter the first term"<<endl;
+//     cin>>a;
+//     cout<<"Enter the difference"<<endl;
+//     cin>>d;
+//     cout<<"Enter the number of terms"<<endl;
+//     cin>>n;
+    
+//     sum=calc(a,d,n);
+//     cout<<"Sum: "<<sum<<endl;
+    
+//     return 0;
+// }
+
+
+//Write a C++ program to find the nth term of an A.P. series.
+
 #include<iostream>
 
 using namespace std;
 
-double calc(int a,int d,int n){
-    return (n/2)*(2*a+(n-1)*d);
+int calc(int a,int d,int n){
+    return a+(n-1)*d;
 }
 
 int main(){
     int a, d, n;
-    double sum;
+    int term;
     cout<<"Enter the first term"<<endl;
     cin>>a;
     cout<<"Enter the difference"<<endl;
@@ -1193,12 +1220,11 @@ int main(){
     cout<<"Enter the number of terms"<<endl;
     cin>>n;
     
-    sum=calc(a,d,n);
-    cout<<"Sum: "<<sum<<endl;
+    term=calc(a,d,n);
+    cout<<term<<endl;
     
     return 0;
 }
-
 
 
 
