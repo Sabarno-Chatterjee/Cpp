@@ -1229,32 +1229,79 @@ EEEEE*/
 
 // Write a C++ program to check the additive persistence of a given number.
 
-#include<iostream>
+// #include<iostream>
+
+// using namespace std;
+
+// int additive_persistence(int n){
+//     int count=0;
+//     while(n>9){
+//         int sum=0;
+//         while(n){
+//             sum+=n%10;
+//             n/=10;
+//         }
+//         count++;
+//         n=sum;
+//     }
+//     return count;
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter a number"<<endl;
+//     cin>>n;
+//     cout<<"The additive persistence of "<<n<<" is "<<additive_persistence(n)<<endl;
+    
+//     return 0;
+// }
+
+
+/*Write a C++ program that defines a function name which, when given an integer n, returns a string consisting of "Hello World " repeated n times. The program should take an input integer n from the user and output the result of the name function. Ensure the proper concatenation of strings in the recursive call.*/
+
+#include <iostream>
+#include<cstring>
 
 using namespace std;
 
-int additive_persistence(int n){
-    int count=0;
-    while(n>9){
-        int sum=0;
-        while(n){
-            sum+=n%10;
-            n/=10;
-        }
-        count++;
-        n=sum;
-    }
-    return count;
+string name(int n){
+    if(n==1)
+        return "Hello World ";
+    return "Hello World " + name(n-1);
 }
 
-int main(){
+
+int main()
+{
     int n;
-    cout<<"Enter a number"<<endl;
     cin>>n;
-    cout<<"The additive persistence of "<<n<<" is "<<additive_persistence(n)<<endl;
-    
+    cout<<name(n);
+
     return 0;
 }
+
+
+// Write a C++ program to get the Excel column title that corresponds to a given column number (integer value).
+
+// #include<iostream>
+// #include<cstring>
+
+// using namespace std;
+
+// string title(int n){
+    
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter a column number"<<endl;
+//     cin>>n;
+    
+//     cout<<"Column title: "<<title(n)<<endl;
+    
+    
+//     return 0;
+// }
 
 
 
