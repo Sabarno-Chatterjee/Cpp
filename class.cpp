@@ -362,12 +362,14 @@ class YouTubeChannel{
         list<string> PublishedVideoTitles;
     protected:
         string OwnerName;
+        int contentQuality;
     public:
     //member functions
         YouTubeChannel(string name,string ownerName){
             Name=name;
             OwnerName=ownerName;
             SubscriberCount=0;
+            contentQuality=0;
         }
         
         //getter method or accessor methods
@@ -411,6 +413,15 @@ class YouTubeChannel{
             }
             cout<<endl;
         }
+
+        void checkAnalytics(){
+            if(contentQuality<5){
+                cout<<Name<<" has bad quality content."<<endl;
+            }
+            else{
+                cout<<Name<<" has great content."<<endl;
+            }
+        }
 };
 
 class CookingYoutubeChannel:public YouTubeChannel{
@@ -419,6 +430,17 @@ class CookingYoutubeChannel:public YouTubeChannel{
         
         void practice(){
             cout<<OwnerName<<" is practicing cooking, learning new recipes, experimenting with spices..."<<endl;
+            contentQuality++;
+        }
+};
+
+class SingingYoutubeChannel:public YouTubeChannel{
+    public:
+        SingingYoutubeChannel(string name, string ownerName):YouTubeChannel(name,ownerName){}
+        
+        void practice(){
+            cout<<OwnerName<<" is taking singing classes, learning new songs, learning how to dance..."<<endl;
+            contentQuality++;
         }
 };
 
@@ -430,6 +452,8 @@ int main(){
     
     CookingYoutubeChannel cook1("HarryCooks","Harry");
     CookingYoutubeChannel cook2("JennyCooks","Jenny");
+
+    SingingYoutubeChannel singer1("Justin","Bieber");
     
     cook1.PublishVideo("Seared King Fish");
     cook1.PublishVideo("Coconut Prawn Curry");
@@ -445,6 +469,18 @@ int main(){
     cook1.getInfo();
     cook1.practice();
     cook2.practice();
+    singer1.practice();
+    singer1.practice();
+    singer1.practice();
+    singer1.practice();
+    singer1.practice();
+    singer1.practice();
+
+    YouTubeChannel* yt1=&cook1;
+    YouTubeChannel* yt2=&cook2;
+
+    yt1->checkAnalytics();
+    yt2->checkAnalytics();
     
     
     
