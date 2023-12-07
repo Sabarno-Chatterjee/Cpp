@@ -358,9 +358,10 @@ class YouTubeChannel{
     //data members
     private:
         string Name;
-        string OwnerName;
         int SubscriberCount;
         list<string> PublishedVideoTitles;
+    protected:
+        string OwnerName;
     public:
     //member functions
         YouTubeChannel(string name,string ownerName){
@@ -415,6 +416,10 @@ class YouTubeChannel{
 class CookingYoutubeChannel:public YouTubeChannel{
     public:
         CookingYoutubeChannel(string name, string ownerName):YouTubeChannel(name,ownerName){}
+        
+        void practice(){
+            cout<<OwnerName<<" is practicing cooking, learning new recipes, experimenting with spices..."<<endl;
+        }
 };
 
 int main(){
@@ -423,10 +428,11 @@ int main(){
     ytChannel.PublishVideo("Wealth");
     ytChannel.PublishVideo("Success");
     
-    CookingYoutubeChannel cooking("HarryCooks","Harry");
+    CookingYoutubeChannel cook1("HarryCooks","Harry");
+    CookingYoutubeChannel cook2("JennyCooks","Jenny");
     
-    cooking.PublishVideo("Seared King Fish");
-    cooking.PublishVideo("Coconut Prawn Curry");
+    cook1.PublishVideo("Seared King Fish");
+    cook1.PublishVideo("Coconut Prawn Curry");
     
     
     ytChannel.Subscribe();
@@ -436,7 +442,9 @@ int main(){
     
     
     ytChannel.getInfo();
-    cooking.getInfo();
+    cook1.getInfo();
+    cook1.practice();
+    cook2.practice();
     
     
     
