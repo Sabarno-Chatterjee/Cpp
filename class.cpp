@@ -477,7 +477,7 @@ int main(){
     singer1.practice();
 
     YouTubeChannel* yt1=&cook1;
-    YouTubeChannel* yt2=&cook2;
+    YouTubeChannel* yt2=&singer1;
 
     yt1->checkAnalytics();
     yt2->checkAnalytics();
