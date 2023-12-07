@@ -294,56 +294,153 @@ performing arithmetical operations.
 /*Write a C++ program to create a class student, with basic data members such as name, address, age.Create a class PG_student by inheriting from student class. PG_student class should have a function to display, name, address subject of the student.
 */
 
-#include<iostream>
-#include<string>
+// #include<iostream>
+// #include<string>
 
 
-class Student{
-    //data members
-    public:
-        std::string name, address;
-        int age;
-};
+// class Student{
+//     //data members
+//     public:
+//         std::string name, address;
+//         int age;
+// };
 
-class PG_student:public Student{
+// class PG_student:public Student{
     
+//     public:
+//         //constructor
+//         PG_student(std::string name="abc", std::string address="xyz", int age=0);
+
+//         //member function for display
+//         void display();
+// };
+
+// PG_student::PG_student(std::string name, std::string address, int age){
+//     this->name=name;
+//     this->address=address;
+//     this->age=age;
+// }
+
+// void PG_student::display(){
+//     std::cout<<"Student data: "<<std::endl;
+//     std::cout<<"Name: "<<name<<std::endl;
+//     std::cout<<"Address: "<<address<<std::endl;
+//     std::cout<<"Age: "<<age<<std::endl;
+// }
+
+// int main(){
+//     std::string name,address;
+//     int age;
+
+//     std::cout<<"Enter student name"<<std::endl;
+//     std::getline(std::cin,name);
+//     std::cout<<"Enter student address"<<std::endl;
+//     std::getline(std::cin,address);
+//     std::cout<<"Enter student age"<<std::endl;
+//     std::cin>>age;
+
+//     PG_student pg1(name,address,age);
+
+//     pg1.display();
+
+//     return 0;
+// }
+
+
+// Youtube channel class
+
+#include<iostream>
+#include<list>
+
+using namespace std;
+
+class YouTubeChannel{
+    //data members
+    private:
+        string Name;
+        string OwnerName;
+        int SubscriberCount;
+        list<string> PublishedVideoTitles;
     public:
-        //constructor
-        PG_student(std::string name="abc", std::string address="xyz", int age=0);
-
-        //member function for display
-        void display();
+    //member functions
+        YouTubeChannel(string name,string ownerName){
+            Name=name;
+            OwnerName=ownerName;
+            SubscriberCount=0;
+        }
+        
+        //getter method or accessor methods
+        string getName(){
+            return Name;
+        }
+        
+        string getOwnerName(){
+            return OwnerName;
+        }
+        
+        //setter method or mutator methods
+        void setName(string name){
+            Name=name;
+        }
+        
+        void setOwnerName(string ownerName){
+            OwnerName=ownerName;
+        }
+        
+        void Subscribe(){
+            SubscriberCount++;
+        }
+        
+        void UnSubscribe(){
+            if (SubscriberCount>0)
+                SubscriberCount--;
+        }
+        
+        void PublishVideo(string title){
+            PublishedVideoTitles.push_back(title);            
+        }
+        
+        void getInfo(){
+            cout<<"Channel Name:"<<Name<<endl;
+            cout<<"Owner Name:"<<OwnerName<<endl;
+            cout<<"Subs count:"<<SubscriberCount<<endl;
+            cout<<"Published videos:"<<endl;
+            for(string videoTitle : PublishedVideoTitles){
+                cout<<videoTitle<<endl;
+            }
+            cout<<endl;
+        }
 };
-
-PG_student::PG_student(std::string name, std::string address, int age){
-    this->name=name;
-    this->address=address;
-    this->age=age;
-}
-
-void PG_student::display(){
-    std::cout<<"Student data: "<<std::endl;
-    std::cout<<"Name: "<<name<<std::endl;
-    std::cout<<"Address: "<<address<<std::endl;
-    std::cout<<"Age: "<<age<<std::endl;
-}
 
 int main(){
-    std::string name,address;
-    int age;
-
-    std::cout<<"Enter student name"<<std::endl;
-    std::getline(std::cin,name);
-    std::cout<<"Enter student address"<<std::endl;
-    std::getline(std::cin,address);
-    std::cout<<"Enter student age"<<std::endl;
-    std::cin>>age;
-
-    PG_student pg1(name,address,age);
-
-    pg1.display();
+    YouTubeChannel ytChannel("SunnyRocks","Sabarno");
+    YouTubeChannel ytChannel2("BikiniBaes","Jenny");
+    ytChannel.PublishVideo("Health");
+    ytChannel.PublishVideo("Wealth");
+    ytChannel.PublishVideo("Success");
+    
+    
+    ytChannel2.PublishVideo("Detox");
+    ytChannel2.PublishVideo("Shades");
+    
+    ytChannel.Subscribe();
+    ytChannel.Subscribe();
+    ytChannel.Subscribe();
+    ytChannel.UnSubscribe();
+    
+    ytChannel2.Subscribe();
+    
+    
+    
+    ytChannel.getInfo();
+    ytChannel2.getInfo();
+    
     
     return 0;
 }
 
+
 // Write a program in C++, which take two 3 x 3 matrices as input and find sum of them. Implement suitable constructor and destructor for this program.
+
+/*Create a custom class that mimics the functionality of std::pair.
+Include methods to get and set the values of the pair elements.*/
