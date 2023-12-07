@@ -412,33 +412,36 @@ class YouTubeChannel{
         }
 };
 
+class CookingYoutubeChannel:public YouTubeChannel{
+    public:
+        CookingYoutubeChannel(string name, string ownerName):YouTubeChannel(name,ownerName){}
+};
+
 int main(){
     YouTubeChannel ytChannel("SunnyRocks","Sabarno");
-    YouTubeChannel ytChannel2("BikiniBaes","Jenny");
     ytChannel.PublishVideo("Health");
     ytChannel.PublishVideo("Wealth");
     ytChannel.PublishVideo("Success");
     
+    CookingYoutubeChannel cooking("HarryCooks","Harry");
     
-    ytChannel2.PublishVideo("Detox");
-    ytChannel2.PublishVideo("Shades");
+    cooking.PublishVideo("Seared King Fish");
+    cooking.PublishVideo("Coconut Prawn Curry");
+    
     
     ytChannel.Subscribe();
     ytChannel.Subscribe();
     ytChannel.Subscribe();
     ytChannel.UnSubscribe();
     
-    ytChannel2.Subscribe();
-    
-    
     
     ytChannel.getInfo();
-    ytChannel2.getInfo();
+    cooking.getInfo();
+    
     
     
     return 0;
 }
-
 
 // Write a program in C++, which take two 3 x 3 matrices as input and find sum of them. Implement suitable constructor and destructor for this program.
 
