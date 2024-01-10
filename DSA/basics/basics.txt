@@ -87,6 +87,8 @@ C++ Standard Template Library
                 v.insert(it,5); //inserting 5 at the beginning
                 v.insert(v.begin()+1,2,5); //inserting 2 instances of 5 after the first element
 
+                [insert() is costly in a vector compared to a list]
+
         * pop_back() – it deletes the last element and returns it to the    calling function.
 
                 v1.pop_back();
@@ -109,6 +111,8 @@ C++ Standard Template Library
                 v1.size();                    
 
 -> Iterators
+
+
 
     Iterators are used to point at the memory addresses of STL containers. They are primarily used in sequences of numbers, characters etc. They reduce the complexity and execution time of the program.
 
@@ -147,3 +151,23 @@ C++ Standard Template Library
                 cout<<it<<" ";
 
             [Here auto directly assigns the datatype of the element present in the vector and hence we do not have to derefernce "it" while printing]
+
+
+    # Lists
+
+     Key functions:
+
+        *push_back() – to insert an element at the end of the list.
+            list<int> li;
+            li.push_back(110);
+            li.push_back(220);
+        
+        *push_front() – to insert an element at the front of the list.
+            list<int> li;
+            li.push_front(110);
+            li.push_front(220);
+
+        *sort() – sorts the list in ascending order.
+            li.sort();
+
+        [Rest of the functions are same in functionality as vectors]
