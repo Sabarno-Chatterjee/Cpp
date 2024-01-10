@@ -1,5 +1,6 @@
 C++ Standard Template Library 
 
+
 -> <bits/stdc++.h> : Master library for competitive programming.
 
 -> Components of STL:
@@ -36,7 +37,7 @@ C++ Standard Template Library
     # Vectors
         Vector is a container which is dynamic in nature and hence we can increase it's size as per our need. In case we are unsure about the size requirements, vector is a safe bet. It stores elements in a similar fashion as an array.
 
-        Declaration: vector<data_type> data_type name; 
+        Declaration: vector<data_type> data_type_name; 
                      [Creates an empty container]
 
                 Eg 1: vector<int> v;
@@ -56,4 +57,37 @@ C++ Standard Template Library
                 Eg 4: vector<int> v3(v2); [Will copy vector v2 into v3]
 
         We can access the elements in a similar fashion as we access elements from an array. Eg: cout<<v[0];
+
+        Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container.
+
+        * vector::at()
+                
+                at() function is used reference the element present at the position given as the parameter to the function. 
+
+                Eg: cout << v.at(3);
+
+-> Iterators
+
+    Iterators are used to point at the memory addresses of STL containers. They are primarily used in sequences of numbers, characters etc. They reduce the complexity and execution time of the program.
+
+    Operations of iterators :-
+
+        1. begin() :- This function is used to return the beginning position of the container.
+
+        2. end() :- This function is used to return the after end position of the container.
+
+    Syntax:
+        vector<data_type>::iterator iterator_name = vector_name.begin()
+        
+        Eg: vector<int>::iterator it= v.begin();
+            cout<<*(it)<<" ";
+            it++;
+
+            [As iterator points to the memory address we need to dereference it in order to access the element present in that memory address. In the above example we are first printing the element present in the it iterator and then incrementing it so that next time we can access the next value present in the vector]
+
+    # Printing a vector using iterators
+        
+        Eg:
+            for(vector<int>::iterator it=v.begin();it!=v.end();it++)
+                cout<<*(it)<<" ";
     
