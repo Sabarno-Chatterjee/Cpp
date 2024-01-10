@@ -66,6 +66,48 @@ C++ Standard Template Library
 
                 Eg: cout << v.at(3);
 
+        * vector::erase()
+                
+                erase() function is used to remove elements from a container from the specified position or range.
+
+            Syntax:
+                vector_name.erase(position);    
+                [for deletion at specific position]
+                Eg: v.erase(v.begin()+1);
+
+
+                vector_name.erase(starting_position, ending_position);    
+                [for deletion in range, here the starting position is inclusive but the ending is not]
+                Eg: v.erase(v.begin()+1,v.begin()+4);
+
+        * insert() – it is used to insert an element at a specified position.
+
+                Eg:
+                auto it= v.begin();
+                v.insert(it,5); //inserting 5 at the beginning
+                v.insert(v.begin()+1,2,5); //inserting 2 instances of 5 after the first element
+
+        * pop_back() – it deletes the last element and returns it to the    calling function.
+
+                v1.pop_back();
+
+        * front() – it returns a reference to the first element of the vector.
+                
+                v1.front();
+
+        * back() – it returns a reference to the last element of the vector.
+                
+                v1.back();
+        * clear() – deletes all the elements from the vector.
+                
+                v1.clear();
+        * empty() – to check if the vector is empty or not.
+                
+                v1.empty();
+        * size() – returns the size of the vector
+                
+                v1.size();                    
+
 -> Iterators
 
     Iterators are used to point at the memory addresses of STL containers. They are primarily used in sequences of numbers, characters etc. They reduce the complexity and execution time of the program.
@@ -90,4 +132,18 @@ C++ Standard Template Library
         Eg:
             for(vector<int>::iterator it=v.begin();it!=v.end();it++)
                 cout<<*(it)<<" ";
-    
+
+        *auto keyword:
+
+            for(auto it=v.begin();it!=v.end();it++)
+                cout<<*(it)<<" ";
+
+            [It automatically assigns the data type saves us the hassle of mentioning it everytime we use an iterator]
+
+
+        *for each loop:
+
+            for(auto it : v)
+                cout<<it<<" ";
+
+            [Here auto directly assigns the datatype of the element present in the vector and hence we do not have to derefernce "it" while printing]
