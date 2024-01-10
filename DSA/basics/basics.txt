@@ -153,9 +153,11 @@ C++ Standard Template Library
             [Here auto directly assigns the datatype of the element present in the vector and hence we do not have to derefernce "it" while printing]
 
 
-    # Lists
+    # List
 
-     Key functions:
+        A list in STL is a contiguous container that allows the inserting and erasing of elements in constant time and iterating in both directions.
+
+    Key functions:
 
         *push_back() – to insert an element at the end of the list.
             list<int> li;
@@ -171,3 +173,10 @@ C++ Standard Template Library
             li.sort();
 
         [Rest of the functions are same in functionality as vectors]
+
+
+    # Deque
+
+        Double Ended Queue which is also called Deque is a type of queue data structure in which the insertion and deletion of elements can be either in front or rear. 
+
+        [Functionality is same as list and vector]
