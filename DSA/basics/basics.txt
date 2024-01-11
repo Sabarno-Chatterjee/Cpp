@@ -188,4 +188,64 @@ C++ Standard Template Library
 
         [Trying to access data using index values is not permitted. Three main functions are "push","pop","top".]
 
+        * push() – to insert an element in the stack.
+           
+            stack<int> s;
+            s.push(110);
+            s.push(220);
+
+        * pop() – deletes the last element of the stack.
+           
+            s.pop();
+
+        * top() – returns the element at the top of the stack.
+            
+            s.top();
+
+
+    # Queue
+
+        A queue is a linear list of elements in which deletions can take place only at one end called the front, and insertions can take place only at the end called the rear. The queue is a First In First Out type of data structure (FIFO), the terms FRONT and REAR are used in describing a linear list only when it is implemented as a queue.
+
+        * pop() – deletes the first element of the queue.
+            
+            q.pop();
+
+        * front() – returns a reference to the first element of the queue.
+            
+            q.front();
         
+        * back() – returns a reference to the last element of the queue.
+            
+            q.back();
+
+
+    # Priority Queue
+
+        In the case of the max heap, priority queues are a type of container adaptors, specifically designed such that its first element is always the greatest of the elements it contains and the rest elements are in decreasing order.
+
+        In the case of the min heap, priority queues are a type of container adaptors, specifically designed such that its first element is always the smallest of the elements it contains and the rest elements are in increasing order.
+        
+
+        * Syntax(Max heap):
+            
+            priority_queue<object_type> variable_name;
+            
+            Eg: priority_queue<int> pq;
+
+        * Syntax(Min-heap):
+
+            priority_queue<object_type,vector<object_type>,greater<object_type>> variable_name;
+            
+            Eg: priority_queue<int,vector<int>,greater<int>> pq;
+
+        [Main functions push,pop,top]
+
+        * push() – to insert an element in the priority queue.
+            pq.push(110);
+        
+        * pop() – deletes the top element of the priority queue.
+            pq.pop();
+        
+        * top() – returns the element at the top of the priority queue.
+            pq.top();
