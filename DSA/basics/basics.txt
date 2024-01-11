@@ -180,3 +180,12 @@ C++ Standard Template Library
         Double Ended Queue which is also called Deque is a type of queue data structure in which the insertion and deletion of elements can be either in front or rear. 
 
         [Functionality is same as list and vector]
+
+    
+    # Stack
+
+        A stack is a non-primitive linear data structure. it is an ordered list in which the addition of a new data item and deletion of the already existing data item is done from only one end known as the top of the stack (TOS). The element which is added in last will be first to be removed and the element which is inserted first will be removed in last. As all the deletion and insertion in a stack are done from the top of the stack, the last added element will be the first to be removed from the stack. That is the reason why stack is also called Last-in-First-out (LIFO).
+
+        [Trying to access data using index values is not permitted. Three main functions are "push","pop","top".]
+
+        
