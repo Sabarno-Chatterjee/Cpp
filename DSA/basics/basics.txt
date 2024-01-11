@@ -249,3 +249,74 @@ C++ Standard Template Library
         
         * top() – returns the element at the top of the priority queue.
             pq.top();
+
+
+    # Set
+
+        A set in STL is a container that stores unique elements in a particular order. Every operation on a set takes O(1) complexity in the average case and takes O(n) in the worst case.
+
+        [For upper bound and lower bound check: https://www.youtube.com/watch?v=edJ19qIL8WQ]
+
+
+        * find() – to search an element in the set.
+
+            set<int> s;
+            s.insert(1);
+            s.insert(2);
+            if(s.find(2)!=s.end())
+            cout<<"true"<<endl;
+
+        * count() – returns true or false based on whether the element is   present in the set or not.
+            
+            set<int> s;
+            s.insert(1);
+            s.insert(2);
+            s.count(2); //returns true
+
+        * find() – to search an element in the set.
+
+            set<int> s;
+            s.insert(1);
+            s.insert(2);
+            if(s.find(2)!=s.end())
+            cout<<"true"<<endl;
+
+
+    # Multi Set
+
+        A multiset in STL is an associative container just like a set the only difference is it can store duplicate elements in it.
+
+        [Functionality is same as set except taht it can store duplicate elements]
+
+        * erase(): to delete a single element or elements between a particular range.
+
+            Eg: ms.erase(1) // all occurences of 1 are deleted
+            Eg: ms.erase(ms.find(1)) //only the first occurence of 1 is deleted
+            Eg: ms.erase(ms.find(1),ms.find(1)+2) // two occurences of 1 is deleted [that is we delete in a range]
+
+
+    # Unordered set
+
+        An unordered set in STL is a container that stores unique elements in no particular order. Every operation on an unordered set takes O(1) complexity in the average case and takes O(n) in the worst case.
+
+        [lower_bound and upper_bound do not work, except that all the functionalities are same as set]
+
+    # Map 
+
+        Map in STL are associative containers where each element consists of a key value and a mapped value. Two mapped values cannot have the same key value. [The elements could be of any data type. Map stores unique keys in sorted order.]
+
+        Syntax:
+            map<object_type,object_type> variable_name;
+
+            Eg:
+            map<int,int> mpp;
+            map<string,int> mpp;
+
+    # Multi Map
+
+        Multimap in STL are associative containers like maps where each element consists of a key value and a mapped value, the only difference is multimaps can store duplicate elements[i.e keys]. 
+
+
+    # Unordered map
+
+        Unordered_map in STL are associative containers where each element consists of a key value and a mapped value. Two mapped values cannot have the same key value. The elements can be in any order.
