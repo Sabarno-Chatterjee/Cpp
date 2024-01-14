@@ -320,3 +320,11 @@ C++ Standard Template Library
     # Unordered map
 
         Unordered_map in STL are associative containers where each element consists of a key value and a mapped value. Two mapped values cannot have the same key value. The elements can be in any order.
+
+
+-> Hashing 
+
+    Inside the main function we can declare an array of int type  till 10^6 else we get a seg fault message.
+    Gobally we can declare till 10^7.
+
+    For boolean values inside main 10^7 and globally 10^8.

@@ -1,3 +1,4 @@
+// number hashing
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -24,6 +25,8 @@ int main(){
         cout<<hash[num]<<endl;
     }
     
-    
     return 0;
 }
+
+
+//character hashing
