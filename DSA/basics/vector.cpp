@@ -93,6 +93,16 @@ int main(){
 3 
 1 2 3 
 */
+//vector of vectors
+/*sample input: 
+3 
+2 
+1 3 
+4 
+5 6 7 8 
+3 
+1 2 3 
+*/
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -114,20 +124,20 @@ int main(){
     for(int i=0;i<N;i++){
         int n;  //number of elements in each vector
         cin>>n;
-        vector<int> temp;   //to take input of each vector seperately and push into the main vector(v)
+        //vector<int> temp;   //to take input of each vector seperately and push into the main vector(v)[alternative way]
+
+        v.push_back(vector<int> ());    //we declare an empty vector and then push back elements using index
         for(int j=0;j<n;++j){
             int x;
             cin>>x;
-            temp.push_back(x);
+            v[i].push_back(x);          //pushing back elements using index
+            //temp.push_back(x); //[alternative way]
         }
-        v.push_back(temp);  //push the sub vector into the main vector
+        // v.push_back(temp);  //push the sub vector into the main vector[alternative way]
     }
-    
-    
     
     for(int i=0;i<v.size();++i)     //or we can use i<N
         print_vec(v[i]);
-    cout<<v[0][1];
     
     return 0;
 }
